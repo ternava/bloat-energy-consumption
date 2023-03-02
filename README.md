@@ -10,4 +10,4 @@
 - Two papers that use the same tool and benchmark:
 1. https://dl.acm.org/doi/pdf/10.1145/3243734.3243838
 2. https://dl.acm.org/doi/pdf/10.1145/3551349.3556970
-- The repo for 2.: https://github.com/qixin5/debloating_study/tree/main/expt/debaug/rslt
+- The repo for 2.: https://github.com/qixin5/debloating_study/
