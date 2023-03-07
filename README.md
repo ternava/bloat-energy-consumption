@@ -6,6 +6,7 @@
 
 - Used tool for debloat: Chisel: https://github.com/aspire-project/chisel
 - Used benchmark for debloat: https://github.com/aspire-project/chisel-bench
+- Used tool for debloat: Razor: https://github.com/cxreet/razor
 
 - Two papers that use the same tool and benchmark:
 1. https://dl.acm.org/doi/pdf/10.1145/3243734.3243838
