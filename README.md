@@ -4,7 +4,7 @@ Deadlines:
 
 =============================
 
-Diversitas: slimium2@diversitas.irisa.fr
+Diversitas: ssh slimium2@diversitas.irisa.fr
 Password (you know)
 
 =============================
