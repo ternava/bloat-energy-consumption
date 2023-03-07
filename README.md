@@ -3,7 +3,10 @@ Deadlines:
 - SPLC23 - 13/04/2023 (abstract), 20/04/2023 (full papers)
 
 =============================
+Diversitas: slimium2@diversitas.irisa.fr
+Password (you know)
 
+=============================
 - The paper in overleaf: https://www.overleaf.com/7639591674qcqmzhxfknnd
 
 - Please add all related papers in the .bib file, directly in the paper in overleaf
