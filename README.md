@@ -4,7 +4,7 @@ Deadlines:
 
 =============================
 
-Diversitas: ssh slimium2@(thedomain.fr)
+Diversitas: ssh slimium2@thedomain.fr . 
 Password (you know)
 
 =============================
