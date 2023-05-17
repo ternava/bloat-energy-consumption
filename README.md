@@ -2,8 +2,7 @@
 
 
 Deadlines: 
-- ASE23 - 28/04/2023 (abstract), 05/05/2023 (full paper)
-- SPLC23 - 13/04/2023 (abstract), 20/04/2023 (full papers)
+- ICSE24 - 01/08/2023 (abstract), 01/08/2023 (full paper)
 
 =============================
 
@@ -27,3 +26,5 @@ Password (you know)
 - Debop paper:
 https://helloqirun.github.io/papers/icse20_qi.pdf
 - The repo for 2.: https://github.com/qixin5/debloating_study/
+
+Hyperfine: https://github.com/sharkdp/hyperfine - A command-line benchmarking tool
