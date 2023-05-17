@@ -1,3 +1,6 @@
+- Next meeting: May 24, 2023
+
+
 Deadlines: 
 - ASE23 - 28/04/2023 (abstract), 05/05/2023 (full paper)
 - SPLC23 - 13/04/2023 (abstract), 20/04/2023 (full papers)
