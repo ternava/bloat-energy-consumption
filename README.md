@@ -28,3 +28,5 @@ https://helloqirun.github.io/papers/icse20_qi.pdf
 - The repo for 2.: https://github.com/qixin5/debloating_study/
 
 Hyperfine: https://github.com/sharkdp/hyperfine - A command-line benchmarking tool
+
+http://www.mattmahoney.net/dc/text.html - An example of benchmarking compression utilities (inputs). Worth looking at energy consumption in this context... and how debloating can help 
