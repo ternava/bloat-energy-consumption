@@ -17,4 +17,6 @@ then
 fi
 
 # Continue with the measurement of the energy consumption
-sudo "$juleit" -n 1 "$the_test" "$program_path"
+# e.g., ./test-configs/energy_measurement.sh ../pre-experiment/exe-ToyBox-v089 ./test-configs/wc-02.sh
+# basically, we call a specific test/example and send as argument the path of the program that we want it to run
+sudo "$juleit" -n 10 "$the_test" "$program_path"
