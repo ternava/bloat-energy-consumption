@@ -20,6 +20,9 @@ then
 fi
 
 # Otherwise, continue with the measurement of the energy consumption
-sudo "$juleit" -n 1 "$wc_gnu" -mlwc "$input_file"
-sudo "$juleit" -n 1 "$wc_toy" -mlwc "$input_file"
-sudo "$juleit" -n 1 "$wc_busy" -mlwc "$input_file"
+sudo "$juleit" ./wc-02.sh
+
+
+#sudo "$juleit" "$wc_gnu" -mlwc "$input_file"
+#sudo "$juleit" "$wc_toy" -mlwc "$input_file"
+#sudo "$juleit" "$wc_busy" -mlwc "$input_file"

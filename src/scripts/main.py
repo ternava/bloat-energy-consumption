@@ -18,7 +18,7 @@ def get_args():
     """get command-line arguments"""
 
     parser = argparse.ArgumentParser(
-        description="For input directory",
+                description="For input directory",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument('--path', type=dir_path)
