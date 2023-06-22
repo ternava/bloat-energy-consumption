@@ -1,28 +1,54 @@
 #!/usr/bin/env bash
 
-#if [[ $# -en 1 ]]
-#then
-#    echo "Usage: $0 <inputfile>"
-#fi
+# use it for debugging
+set -x
 
-input_file="../benchmark/test-inputs/align.sh"
-wc_gnu="../pre-experiment/exe-GNU-v93/wc"
-wc_toy="../pre-experiment/exe-ToyBox-v089/wc"
-wc_busy="../pre-experiment/exe-BusyBox-1360-final/wc"
+main() {
+    local program_path="$1"
+    local wc="wc"
+    local input_file="./test-inputs/align.sh"
 
-juleit="../src/jouleit.sh"
+    validate_inputs "$program_path" "$input_file"
 
-# If the input file does not exist, exit
-if [ ! -e "$input_file" ]
-then
-    echo "Input file '$input_file' does not exist."
-    exit 1
-fi
+    perform_wc "$program_path" "$wc" "$input_file"
+}
 
-# Otherwise, continue with the measurement of the energy consumption
-sudo "$juleit" ./wc-02.sh
+validate_inputs() {
+    local program_path="$1"
+    local input_file="$2"
 
+    if [ ! -e "$program_path" ]
+    then
+        echo "The program path '$program_path' does not exist."
+        exit 1
+    fi
 
-#sudo "$juleit" "$wc_gnu" -mlwc "$input_file"
-#sudo "$juleit" "$wc_toy" -mlwc "$input_file"
-#sudo "$juleit" "$wc_busy" -mlwc "$input_file"
+    if [ ! -f "$input_file" ]
+    then
+        echo "The input file '$input_file' does not exist."
+        exit 1
+    fi
+} 
+
+perform_wc() {
+    local program_path="$1"
+    local wc_command="$2"
+    local input_file="$3"
+
+    # Example: "sudo ../src/jouleit.sh -n 1 ../pre-experiment/exe-ToyBox-v089/wc ./test-inputs/align.sh" 
+
+    # Example/Test 02: program + configuration options + input
+    # Program: it's as a variable because one of the three implementation of it can be called
+    # Options: the configuration options should be the same for each call/ version of the program
+    # Input: an input, if required, and it can be variable, here is fixed
+    "$program_path/$wc_command" "$input_file"
+    local exit_status=$?
+
+    if [ $exit_status -ne 0 ]
+    then
+        echo "Error occurred while executing '$program_path/$wc_command' command."
+        exit 1
+    fi  
+}
+
+main "$@"
