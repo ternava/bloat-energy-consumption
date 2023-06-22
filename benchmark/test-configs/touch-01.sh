@@ -1,16 +1,42 @@
 #!/usr/bin/env bash
 
-program_path="$1"
-touch="touch"
-input_file="./test-inputs/touch01.txt"
+# use it for debugging
+set -x
 
-if [ ! -e "$program_path" ]
-then
-    echo "The program path '$program_path' does not exists."
-    exit 1
-fi
+main() {
+    local program_path="$1"
+    local touch="touch"
+    local input_file="./test-inputs/touch01.txt"
 
-# Usage: ./exe-GNU-v93/touch [OPTION]... FILE...
+    validate_inputs "$program_path"
 
+    perform_touch "$program_path" "$touch" "$input_file"
+}
 
-"$program_path/$touch" "$input_file"
+validate_inputs() {
+    local program_path="$1"
+
+    if [ ! -e "$program_path" ]
+    then
+        echo "The program path '$program_path' does not exist."
+        exit 1
+    fi
+}
+
+perform_touch() {
+    local program_path="$1"
+    local touch_command="$2"
+    local input_file="$3"
+
+    # Usage: ./exe-GNU-v93/touch [OPTION]... FILE...
+    "$program_path/$touch_command" "$input_file"
+    local exit_status=$?
+
+    if [ $exit_status -ne 0 ]
+    then
+        echo "Error occurred while executing '$program_path/$touch_command' command."
+        exit 1
+    fi
+}
+
+main "$@"
