@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# use it for debugging
 set -x
 
 main() {

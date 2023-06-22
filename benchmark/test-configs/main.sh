@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# use it for debugging
 set -x
 
 main() {
@@ -10,7 +11,11 @@ main() {
     local program_path="../pre-experiment/exe-ToyBox-v089"
     local the_script="$1"
 
-    #catch_errors_from_the_nested_script "$the_script" "$program_path"
+    # Be carefull when using this next function, 
+    # because it makes the nested script run, 
+    # in that case the function after it will show an "error".
+    # catch_errors_from_the_nested_script "$the_script" "$program_path"
+    
     measure_energy_of_a_program "$the_script" "$program_path"
 }
 
@@ -25,6 +30,7 @@ measure_energy_of_a_program() {
     $JOULEIT "$script_path" "$program_path"
 }
 
+# This function should be used carefully, only for debugging reasons
 catch_errors_from_the_nested_script() {
     local script_path="$1"
     local program_path="$2"
