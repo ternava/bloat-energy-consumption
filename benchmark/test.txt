@@ -1,0 +1,48 @@
++ JOULEIT='sudo ../src/jouleit.sh -n 1'
++ main ./test-configs/mv-01.sh
++ local program_path=../pre-experiment/exe-ToyBox-v089
++ local the_script=./test-configs/mv-01.sh
++ catch_errors_from_the_nested_script ./test-configs/mv-01.sh ../pre-experiment/exe-ToyBox-v089
++ local script_path=./test-configs/mv-01.sh
++ local program_path=../pre-experiment/exe-ToyBox-v089
+++ ./test-configs/mv-01.sh ../pre-experiment/exe-ToyBox-v089
++ output='+ main ../pre-experiment/exe-ToyBox-v089
++ local program_path=../pre-experiment/exe-ToyBox-v089
++ local mv=mv
++ local source=./test-inputs/largefolder.zip
++ local destination=./test-outputs/
++ validate_inputs ../pre-experiment/exe-ToyBox-v089 ./test-inputs/largefolder.zip ./test-outputs/
++ local program_path=../pre-experiment/exe-ToyBox-v089
++ local source=./test-inputs/largefolder.zip
++ local destination=./test-outputs/
++ '\''['\'' '\''!'\'' -e ../pre-experiment/exe-ToyBox-v089 '\'']'\''
++ '\''['\'' '\''!'\'' -f ./test-inputs/largefolder.zip '\'']'\''
++ '\''['\'' '\''!'\'' -d ./test-outputs/ '\'']'\''
++ perform_move ../pre-experiment/exe-ToyBox-v089 mv ./test-inputs/largefolder.zip ./test-outputs/
++ local program_path=../pre-experiment/exe-ToyBox-v089
++ local mv_command=mv
++ local source=./test-inputs/largefolder.zip
++ local destination=./test-outputs/
++ ../pre-experiment/exe-ToyBox-v089/mv ./test-inputs/largefolder.zip ./test-outputs/
++ local exit_status=0
++ '\''['\'' 0 -ne 0 '\'']'\'''
++ [[ 0 -ne 0 ]]
++ measure_energy_of_a_program ./test-configs/mv-01.sh ../pre-experiment/exe-ToyBox-v089
++ local script_path=./test-configs/mv-01.sh
++ local program_path=../pre-experiment/exe-ToyBox-v089
++ sudo ../src/jouleit.sh -n 1 ./test-configs/mv-01.sh ../pre-experiment/exe-ToyBox-v089
++ main ../pre-experiment/exe-ToyBox-v089
++ local program_path=../pre-experiment/exe-ToyBox-v089
++ local mv=mv
++ local source=./test-inputs/largefolder.zip
++ local destination=./test-outputs/
++ validate_inputs ../pre-experiment/exe-ToyBox-v089 ./test-inputs/largefolder.zip ./test-outputs/
++ local program_path=../pre-experiment/exe-ToyBox-v089
++ local source=./test-inputs/largefolder.zip
++ local destination=./test-outputs/
++ '[' '!' -e ../pre-experiment/exe-ToyBox-v089 ']'
++ '[' '!' -f ./test-inputs/largefolder.zip ']'
++ echo 'The source file '\''./test-inputs/largefolder.zip'\'' does not exist.'
++ exit 1
+../src/jouleit.sh: line 331: The: command not found
+The data is stored in the file data1687363904.csv
