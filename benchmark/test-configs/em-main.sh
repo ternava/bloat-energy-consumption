@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+#set -x
 
 check_arguments() {
     if [[ $# -ne 1 ]]

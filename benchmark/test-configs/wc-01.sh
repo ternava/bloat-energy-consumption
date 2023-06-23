@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-set -x
+set -x # I'm leaving it on because I think there is an error when calling JULEIT :/
 
 main() {
     local program_path="$1"
