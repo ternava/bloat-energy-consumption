@@ -48,7 +48,7 @@ perform_cp() {
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... SOURCE... DIRECTORY
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... -t DIRECTORY SOURCE...
     #       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
-    "$program_path/$cp_command" "$source" "$destination" # >/dev/null 2>&1
+    "$program_path/$cp_command" -f "$source" "$destination" # >/dev/null 2>&1
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
