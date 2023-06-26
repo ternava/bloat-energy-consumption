@@ -6,18 +6,18 @@ set -x
 main() {
     local program_path="$1"
     local cp="cp"
-    local source=./test-configs/*
-    local destination="./"
+    local source="./test-inputs/largefolder.zip"
+    local destination="./test-outputs/"
 
-    validate_inputs "$program_path" "$destination"
+    validate_inputs "$program_path" "$source" "$destination"
 
     perform_cp "$program_path" "$cp" $source "$destination"
 }
 
 validate_inputs() {
     local program_path="$1"
-    #local source="$2"
-    local destination="$2"
+    local source="$2"
+    local destination="$3"
 
     if [ ! -e "$program_path" ]
     then
@@ -25,11 +25,11 @@ validate_inputs() {
         exit 1
     fi
 
-    #if [ ! -d $source ]
-    #then
-    #    echo "The source directory '$source' does not exist."
-    #    exit 1
-    #fi
+    if [ ! -f $source ]
+    then
+        echo "The source file '$source' does not exist."
+        exit 1
+    fi
 
     if [ ! -d "$destination" ]
     then
@@ -48,7 +48,7 @@ perform_cp() {
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... SOURCE... DIRECTORY
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... -t DIRECTORY SOURCE...
     #       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
-    "$program_path/$cp_command" -R $source "$destination" # >/dev/null 2>&1
+    "$program_path/$cp_command" "$source" "$destination" # >/dev/null 2>&1
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
