@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-set -x
+# set -x
 
 main() {
     local program_path="$1"
