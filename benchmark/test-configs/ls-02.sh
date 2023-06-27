@@ -31,7 +31,7 @@ perform_ls() {
     # Usage: ../pre-experiment/exe-GNU-v93/ls [OPTION]... [FILE]...
     # List information about the FILEs (the current directory by default).
     # Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
-    "$program_path/$ls_command" -Ral "$path_to_directory" > /dev/null
+    "$program_path/$ls_command" -Ral "$path_to_directory" > /dev/null 2>&1
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]

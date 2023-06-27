@@ -41,7 +41,7 @@ perform_wc() {
     # Program: it's as a variable because one of the three implementation of it can be called
     # Options: the configuration options should be the same for each call/ version of the program
     # Input: an input, if required, and it can be variable, here is fixed
-    "$program_path/$wc_command" -mlwc "$input_file" > /dev/null
+    "$program_path/$wc_command" -mlwc "$input_file" > /dev/null 2>&1
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
