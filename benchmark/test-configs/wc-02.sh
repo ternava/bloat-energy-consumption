@@ -6,7 +6,7 @@ set -x # I'm leaving it on because I think there is an error when calling JULEIT
 main() {
     local program_path="$1"
     local wc="wc"
-    local input_file="/home/xternava/Documents/GitHub/bloat-energy-consumption/benchmark/data1687445774.csv"
+    local input_file="./test-inputs/align.sh"
 
     validate_inputs "$program_path" "$input_file"
 
