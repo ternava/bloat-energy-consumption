@@ -357,7 +357,16 @@ get_raw_energy() {
 }
 
 bulk() {
-    filename=data$(date +%s).csv
+    # Our change: We added the 4 following lines:
+    # The filename of the .csv file is modified
+    # Now it contain the two arguments of the script itself
+    file_name=$(basename "$1" .sh)
+    file_name="${file_name//[-.]/_}"  # Replace hyphens and dots with underscores
+    file_name="${file_name}_$(basename "$2")"  # Append the 2nd argument to the name
+    filename="data_${file_name}.csv"
+
+    # This line below was in the original implementation of the script
+    #filename=data$(date +%s).csv
     iterations=$((iterations - 1))
     header='iteration;'$(header_csv)
     echo $header >$filename
