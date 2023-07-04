@@ -15,8 +15,7 @@ main() {
 
 validate_inputs() {
     local program_path="$1"
-    local source="$2"
-    local destination="$3"
+    local file="$2"
 
     if [ ! -e "$program_path" ]
     then
