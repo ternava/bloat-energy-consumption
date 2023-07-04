@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local touch="touch"
-    local input_file="./test-inputs/touch01.txt"
+    local input_file="./test-outputs/touch01.txt"
 
     validate_inputs "$program_path"
 
