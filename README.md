@@ -30,3 +30,8 @@ https://helloqirun.github.io/papers/icse20_qi.pdf
 Hyperfine: https://github.com/sharkdp/hyperfine - A command-line benchmarking tool
 
 http://www.mattmahoney.net/dc/text.html - An example of benchmarking compression utilities (inputs). Worth looking at energy consumption in this context... and how debloating can help 
+
+
+================================
+
+- Download Inputs: https://filesender.renater.fr/?s=download&token=43ef40c4-6a6b-413d-a78e-d9940aadbbbb
