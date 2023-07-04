@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-set -x
+# set -x
 
 main() {
     local program_path="$1"
     local cat="cat"
-    local file="./test-inputs/align.sh"
+    local file="./test-inputs/align-cat.sh"
 
     validate_inputs "$program_path" "$file"
 
