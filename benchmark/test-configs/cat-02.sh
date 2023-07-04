@@ -23,7 +23,7 @@ validate_inputs() {
         exit 1
     fi
 
-    if [ ! -f $file ]
+    if [ ! -f "$file" ]
     then
         echo "The source file '$file' does not exist."
         exit 1

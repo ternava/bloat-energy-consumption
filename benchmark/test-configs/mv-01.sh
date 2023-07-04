@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local mv="mv"
-    local source="./test-inputs/Inputs.pdf"
+    local source="./test-inputs/largefolder03.zip"
     local destination="./test-outputs/"
 
     validate_inputs "$program_path" "$source" "$destination"
