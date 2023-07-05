@@ -363,7 +363,7 @@ bulk() {
     file_name=$(basename "$1" .sh)
     file_name="${file_name//[-.]/_}"  # Replace hyphens and dots with underscores
     file_name="${file_name}_$(basename "$2")"  # Append the 2nd argument to the name
-    filename="data_${file_name}.csv"
+    filename="${file_name}.csv"
 
     # This line below was in the original implementation of the script
     #filename=data$(date +%s).csv
