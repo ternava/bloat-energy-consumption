@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+# set -x
 
 main="./mains/main-runone.sh"
 folder_with_programs="./test-configs"

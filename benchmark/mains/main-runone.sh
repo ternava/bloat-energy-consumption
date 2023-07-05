@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-set -x
+# set -x
 
 main() {
     # The path to the program (for now, we change them here): 
-    # "../pre-experiment/exe-BusyBox-1360-final"
-    # "../pre-experiment/exe-ToyBox-v089"
-    # "./pre-experiment/exe-GNU-v93"
-    local program_path="../pre-experiment/exe-ToyBox-v089"
+    # "../pre-experiment/BusyBox"
+    # "../pre-experiment/ToyBox"
+    # "../pre-experiment/GNU"
+    local program_path="../pre-experiment/BusyBox"
     local the_script="$1"
 
     # Be carefull when using this next function, 
