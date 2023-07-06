@@ -8,7 +8,7 @@ main() {
     # "../pre-experiment/BusyBox"
     # "../pre-experiment/ToyBox"
     # "../pre-experiment/GNU"
-    local program_path="../pre-experiment/BusyBox"
+    local program_path="../pre-experiment/GNU"
     local the_script="$1"
 
     # Be carefull when using this next function, 

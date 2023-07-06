@@ -40,7 +40,7 @@ perform_du() {
     # Usage: du [OPTION]... [FILE]...
     #    or:  du [OPTION]... --files0-from=F
     #    Summarize disk usage of the set of FILEs, recursively for directories.
-    "$program_path/$du_command" -h -s -a "$path_to_directory" > /dev/null 2>&1
+    "$program_path/$du_command" -h "$path_to_directory" > /dev/null 2>&1
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]

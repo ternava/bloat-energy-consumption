@@ -47,7 +47,7 @@ perform_move() {
     # Usage: ../pre-experiment/exe-GNU-v93/mv [OPTION]... [-T] SOURCE DEST
     #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... SOURCE... DIRECTORY
     #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... -t DIRECTORY SOURCE...
-    "$program_path/$mv_command" "$source" --verbose "$destination"
+    "$program_path/$mv_command" "$source" -t "$destination"
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
