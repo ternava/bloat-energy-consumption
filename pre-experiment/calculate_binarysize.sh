@@ -24,7 +24,7 @@ then
 fi
 
 # Create or overwrite the output file with header
-echo "Program Name,Size [bytes]" > "$output_file"
+echo "Program;Size" > "$output_file"
 
 # Iterate over the files in the source folder
 for file in "$source_folder"/*
@@ -38,6 +38,6 @@ do
         binary_size=$(stat -c%s "$file")
 
         # Append program name and binary size to the output file
-        echo "$program_name,$binary_size" >> "$output_file"
+        echo "$program_name;$binary_size" >> "$output_file"
     fi
 done
