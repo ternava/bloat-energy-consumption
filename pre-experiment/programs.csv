@@ -1,4 +1,4 @@
-Nr;Program;SizeGNU;SizeToyBox;SizeBusyBox
+Nr;Program;GNU;ToyBox;BusyBox
 1;base32;195992;18664;18760
 2;base64;195272;18664;18760
 3;basename;166328;18632;14600
