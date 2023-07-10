@@ -1,0 +1,403 @@
+Utility,Nr_options,RT_options
+modprobe,3,"['-rq', '-r', '-q']"
+adjtimex,5,"['-q', '-o', '-f', '-p', '-t', '-q', '-o', '-f', '-t', '-t', '-f', '-p']"
+kill,2,"['-l', '-SIG', '-l']"
+dumpleases,4,"['-r', '-a', '-d', '-f', '-f', '-r', '-a', '-d']"
+udhcpc,25,"['-fbqvRB', '-a', '-t', '-T', '-A', '-n', '-i', '-s', '-p', '-oC', '-r', '-V', '-F', '-x', '-O', '-i', '-s', '-p', '-B', '-t', '-T', '-A', '-b', '-n', '-q', '-R', '-f', '-S', '-a', '-r', '-o', '-O', '-O', '-x', '-x', '-x', '-x', '-x', '-quoted', '-F', '-V', '-C', '-v']"
+bzcat,0,[]
+runlevel,0,[]
+expr,0,[]
+expand,2,"['-i', '-t', '-i', '-t']"
+fdformat,1,"['-n', '-n']"
+cut,10,"['-b', '-c', '-d', '-f', '-F', '-O', '-d', '-f', '-F', '-D', '-fF', '-f', '-d', '-F', '-d', '-s', '-n']"
+ipneigh,0,[]
+script,5,"['-afq', '-t', '-c', '-a', '-c', '-q', '-t']"
+stty,4,"['-a', '-F', '-F', '-a', '-readable', '-g', '-readable']"
+nameif,2,"['-s', '-c', '-c', '-s']"
+free,1,['-bkmgh']
+sed,9,"['-i', '-nrE', '-f', '-e', '-i', '-nrE', '-e', '-f', '-i', '-place', '-n', '-r', '-E', '-e', '-f', '-option']"
+acpid,14,"['-df', '-c', '-l', '-a', '-M', '-e', '-p', '-d', '-f', '-f', '-c', '-e', '-l', '-p', '-a', '-M', '-g', '-m', '-s', '-S', '-v']"
+whois,3,"['-i', '-h', '-p', '-i', '-h', '-p']"
+tar,28,"['-zJjahmvokO', '-f', '-C', '-T', '-X', '-f', '-C', '-v', '-O', '-m', '-o', '-k', '-z', '-J', '-j', '--lzma', '-a', '-h', '-T', '-X', '--exclude', '--overwrite', '--strip', '-components', '--no', '-recursion', '--numeric', '-owner', '--no', '-same', '-permissions', '--to', '-command']"
+pscan,7,"['-cb', '-p', '-P', '-t', '-T', '-c', '-b', '-p', '-P', '-t', '-T']"
+readahead,0,[]
+who,3,"['-aH', '-a', '-H']"
+deallocvt,0,[]
+start_stop_daemon,18,"['-stop', '-daemon', '-S', '-K', '-K', '-S', '-u', '-n', '-x', '-p', '-S', '-x', '-a', '-b', '-N', '-c', '-m', '-p', '-K', '-s', '-t', '-o', '-v', '-q']"
+pkill,11,"['-l', '-SIGNAL', '-xfvnoe', '-s', '-P', '-l', '-x', '-f', '-s', '-P', '-v', '-n', '-o', '-e']"
+brctl,0,[]
+kbd_mode,7,"['-a', '-C', '-a', '-k', '-raw', '-s', '-u', '-8', '-C']"
+dd,0,[]
+ls,32,"['-1AaCxdLHRFplinshrSXvctu', '-w', '-1', '-a', '-A', '-a', '-x', '-d', '-L', '-H', '-R', '-p', '-F', '-l', '-i', '-n', '-s', '-lc', '-lu', '--full', '-time', '-h', '--group', '-directories', '-first', '-S', '-X', '-v', '-t', '-tc', '-tu', '-r', '-w', '--color']"
+cryptpw,3,"['-P', '-m', '-S', '-P', '-m', '-S']"
+sv,2,"['-v', '-w']"
+nandwrite,4,"['-np', '-s', '-n', '-p', '-s']"
+cmp,4,"['-ls', '-n', '-l', '-s', '-n']"
+ping,10,"['-c', '-s', '-i', '-A', '-t', '-I', '-W', '-c', '-w', '-c', '-q', '-p']"
+mkfs_ext2,8,"['-Fn', '-b', '-i', '-I', '-m', '-L', '-b', '-F', '-i', '-I', '-L', '-m', '-n']"
+grep,25,"['-HhnlLoqvsrRiwFE', '-m', '-A', '-e', '-f', '-H', '-h', '-n', '-l', '-L', '-c', '-o', '-q', '-v', '-matching', '-s', '-r', '-R', '-i', '-w', '-x', '-F', '-E', '-m', '-A', '-B', '-C', '-A', '-B', '-e', '-f']"
+dnsd,8,"['-dvs', '-c', '-t', '-p', '-i', '-c', '-t', '-p', '-i', '-d', '-v', '-s']"
+openvt,4,"['-c', '-sw', '-c', '-s', '-w']"
+logname,0,[]
+fbsplash,5,"['-s', '-c', '-d', '-i', '-f', '-s', '-c', '-d', '-i', '-f']"
+gunzip,5,"['-cfkt', '-c', '-f', '-k', '-t']"
+killall5,3,"['-l', '-SIG', '-o', '-l', '-o']"
+fsfreeze,0,[]
+chpasswd,5,"['-me', '-c', '-R', '-e', '-m', '-c', '-R']"
+du,13,"['-aHLdclsxhmk', '-a', '-b', '-L', '-H', '-d', '-a', '-c', '-l', '-s', '-x', '-h', '-m', '-k']"
+timeout,2,"['-s', '-k']"
+microcom,4,"['-d', '-t', '-s', '-X', '-d', '-t', '-s', '-X', '-X']"
+ether_wake,4,"['-wake', '-b', '-i', '-p', '-b', '-i', '-p']"
+blkdiscard,3,"['-o', '-l', '-s', '-o', '-l', '-s']"
+xargs,13,"['-0', '-a', '-o', '-r', '-t', '-p', '-E', '-e', '-I', '-n', '-s', '-P', '-x']"
+users,0,[]
+lsattr,7,"['-Radlpv', '-R', '-a', '-d', '-l', '-p', '-v']"
+traceroute,18,"['-IFlnrv', '-f', '-m', '-q', '-p', '-t', '-w', '-s', '-i', '-z', '-F', '-I', '-l', '-n', '-r', '-v', '-f', '-m', '-q', '-p', '-s', '-i', '-t', '-of', '-service', '-w', '-z']"
+fatattr,0,[]
+resize,0,[]
+setlogcons,0,[]
+truncate,2,"['-c', '-s', '-c', '-s']"
+fbset,0,[]
+tail,7,"['-c', '-n', '-n', '-q', '-v', '-f', '-F', '-f', '-s', '-f']"
+lsmod,0,[]
+mkfifo,1,"['-m', '-m']"
+crc32,0,[]
+beep,5,"['-f', '-l', '-d', '-r', '-n', '-f', '-l', '-d', '-r', '-n']"
+test2,0,[]
+crontab,6,"['-c', '-u', '-ler', '-c', '-u', '-l', '-e', '-r']"
+stat,6,"['-ltf', '-c', '-c', '-f', '-L', '-t', '-superuser']"
+loadkmap,0,[]
+mim,2,"['-f', '-like', '-f']"
+tsort,0,[]
+nproc,2,"['--all', '--ignore', '--all', '--ignore']"
+ash,3,"['-il', '-c', '-s']"
+tc,0,[]
+lpr,7,"['-P', '-U', '-J', '-Vmh', '-P', '-m', '-h', '-V']"
+iptunnel,0,[]
+w,0,[]
+top,6,"['-bmH', '-n', '-d', '-b', '-n', '-d', '-m', '-H']"
+setsid,1,"['-c', '-c']"
+chmod,5,"['-Rcvf', '-R', '-c', '-v', '-f']"
+cal,4,"['-jmy', '-j', '-m', '-y']"
+chvt,0,[]
+su,6,"['-lmp', '-s', '-c', '-l', '-p', '-m', '-c', '-c', '-s']"
+mv,7,"['-finT', '-fin', '-t', '-f', '-i', '-n', '-T', '-t']"
+i2cget,5,"['-fy', '-ADDRESS', '-ADDRESS', '-0x77', '-f', '-y']"
+zcat,0,[]
+hdparm,48,"['-a', '-A', '-lookahead', '-b', '-B', '-255', '-c', '-bit', '-C', '-d', '-D', '-mgmt', '-f', '-g', '-h', '-i', '-I', '-k', '-K', '-L', '-m', '-n', '-write', '-errors', '-p', '-P', '-Q', '-queuing', '-r', '-R', '-S', '-t', '-T', '-u', '-U', '-v', '-mcudkrag', '-V', '-w', '-W', '-caching', '-x', '-X', '-y', '-Y', '-Z', '-powersaving', '-z']"
+linux32,0,[]
+sulogin,2,"['-t', '-p', '-t']"
+split,3,"['-b', '-l', '-a']"
+unexpand,4,"['-fa', '-t', '-a', '-f', '-t']"
+telnetd,10,"['-l', '-f', '-K', '-p', '-b', '-F', '-i', '-w', '-w10', '-S', '-i', '-F', '-w']"
+sha3sum,4,"['-c', '-a', '-c', '-s', '-w', '-a']"
+getopt,12,"['-a', '-l', '-n', '-o', '-q', '-Q', '-s', '-T', '-u', '-l', '-a', '-b', '--bb', '-c']"
+modinfo,7,"['-adlpn0', '-F', '-a', '-F', '-d', '-F', '-l', '-F', '-p', '-F', '-F', '-0']"
+hexedit,0,[]
+inetd,5,"['-fe', '-q', '-R', '-f', '-e', '-q', '-R']"
+scriptreplay,0,[]
+ifup,7,"['-nmvf', '-i', '-a', '-a', '-i', '-n', '-m', '-v', '-f']"
+route,6,"['-ne', '-A', '-net', '-host', '-n', '-e', '-A']"
+mountpoint,5,"['-q', '-dn', '-x', '-q', '-d', '-n', '-x']"
+nologin,0,[]
+pwd,0,[]
+nmeter,4,"['-d', '-d', '-1', '-backed', '-based']"
+setfont,2,"['-m', '-C', '-m', '-C']"
+usleep,0,[]
+hostname,6,"['-sidf', '-F', '-s', '-i', '-d', '-f', '-F']"
+lspci,3,"['-mk', '-m', '-k']"
+touch,8,"['-cham', '-d', '-t', '-r', '-c', '-h', '-a', '-m', '-d', '-t', '-r']"
+showkey,4,"['-a', '-k', '-s', '-a', '-k', '-s', '-codes']"
+reformime,3,"['-encoded', '-x', '-X']"
+seedrng,2,"['-d', '-n', '-d', '-n']"
+link,0,[]
+ubidetach,1,"['-d', '-d']"
+runsvdir,2,"['-P', '-s', '-P', '-s']"
+deluser,2,"['--remove', '-home']"
+swapoff,1,"['-a', '-a']"
+ifconfig,1,['-a']
+lzma,6,"['-d', '-cfk', '-d', '-c', '-f', '-k', '-t']"
+poweroff,4,"['-d', '-nf', '-d', '-n', '-f']"
+fstrim,4,"['-o', '-l', '-m', '-v']"
+udhcpd,5,"['-fS', '-I', '-a', '-f', '-S', '-I', '-a']"
+dumpkmap,0,[]
+watchdog,3,"['-t', '-T', '-F', '-T', '-t', '-F']"
+sleep,0,[]
+false,0,[]
+hexdump,13,"['-bcdoxCv', '-e', '-f', '-n', '-s', '-b', '-byte', '-c', '-byte', '-d', '-byte', '-o', '-byte', '-x', '-byte', '-C', '-v', '-e', '-f', '-n', '-s']"
+findfs,0,[]
+groups,0,[]
+chrt,8,"['-m', '-p', '-rfobi', '-m', '-p', '-r', '-f', '-o', '-b', '-i']"
+nanddump,7,"['-no', '--bb', '-s', '-l', '-f', '-n', '-o', '-s', '-l', '-f', '--bb']"
+i2ctransfer,5,"['-fay', '-f', '-a', '-regular', '-y']"
+mount,13,"['-o', '-a', '-f', '-v', '-r', '-only', '-t', '-T', '-O', '-a', '-o', '-user', '-id', '-root', '-r', '-specific', '-o']"
+rtcwake,7,"['-a', '-l', '-u', '-d', '-m', '-s', '-t', '-a', '-l', '-u', '-d', '-m', '-s', '-t']"
+date,12,"['-s', '-u', '-s', '-d', '-D', '-s', '-d', '-r', '-R', '-2822', '-I', '-8601', '-hh', '-MM', '-DD']"
+klogd,3,"['-c', '-n', '-c', '-8', '-n']"
+ping6,9,"['-c', '-s', '-i', '-A', '-I', '-W', '-c', '-w', '-c', '-q', '-p']"
+tftp,5,"['-l', '-r', '-g', '-p', '-b']"
+fsync,1,"['-d', '-d']"
+lsusb,0,[]
+readprofile,12,"['-m', '-p', '-M', '-i', '-v', '-a', '-b', '-bin', '-s', '-r', '-n', '-detection']"
+test,0,[]
+halt,5,"['-d', '-nfw', '-d', '-n', '-f', '-w']"
+nice,1,"['-n', '-n']"
+sha256sum,3,"['-c', '-c', '-s', '-w']"
+ubirename,0,[]
+ftpget,5,"['-c', '-v', '-u', '-p', '-P']"
+watch,2,"['-n', '-t', '-n', '-t']"
+loadfont,0,[]
+ps,2,"['-o', '-T', '-o', '-T']"
+ubiupdatevol,2,"['-t', '-s', '-t', '-s']"
+tunctl,6,"['-f', '-t', '-d', '-u', '-g', '-b', '-f', '-t', '-d', '-u', '-g', '-b']"
+lsscsi,0,[]
+base32,2,"['-d', '-w', '-d', '-w']"
+bc,5,"['-sqlw', '-q', '-l', '-s', '-w']"
+pstree,1,"['-p', '-p']"
+bunzip2,5,"['-cfk', '-c', '-f', '-k', '-t']"
+ifenslave,4,"['-cdf', '-c', '-d', '-f']"
+eject,3,"['-t', '-T', '-s', '-t', '-T']"
+sendmail,23,"['-tv', '-f', '-amLOGIN', '-auUSER', '-apPASS', '-w', '-H', '-S', '-t', '-f', '-auUSER', '-o', '-oi', '-i', '-oi', '-v', '-w', '-H', '-quiet', '-tls1', '-starttls', '-connect', '-quiet', '-tls1', '-connect', '-S', '-amLOGIN', '-amPLAIN', '-amCRAM', '-MD5', '-auUSER', '-apPASS', '-a', '-amLOGIN', '-au', '-ap', '-oi']"
+nsenter,14,"['-t', '-m', '-u', '-i', '-n', '-p', '-U', '-S', '-G', '--preserve', '-credentials', '-r', '-w', '-F']"
+dhcprelay,0,[]
+iplink,0,[]
+chat,1,['-send']
+nc,14,"['-l', '-p', '-e', '-l', '-lk', '-e', '-p', '-s', '-w', '-i', '-n', '-u', '-b', '-v', '-o', '-z', '-I']"
+shuf,6,"['-n', '-o', '-z', '-e', '-i', '-H', '-n', '-o', '-z', '-e', '-i', '-H', '-H']"
+chattr,7,"['-R', '-v', '-p', '-R', '-v', '-p', '-on', '-write', '-insensitive', '-merge']"
+bb_arch,0,[]
+run_parts,10,"['-parts', '-a', '-u', '--reverse', '--test', '--exit', '-on', '-error', '--list', '-a', '-u', '--reverse', '--test', '--exit', '-on', '-error', '-zero', '--list']"
+pidof,2,"['-s', '-o', '-s', '-o']"
+tcpsvd,17,"['-hEv', '-c', '-C', '-b', '-u', '-l', '-u', '-c', '-b', '-C', '-E', '-h', '-l', '-v', '-E', '-to', '-local', '-t', '-A', '-p', '--dport', '-j', '--to', '-h', '-l']"
+freeramdisk,0,[]
+mkdir,2,"['-m', '-p', '-m', '-p']"
+mkdosfs,2,"['-v', '-n', '-v', '-n']"
+rmmod,0,[]
+uevent,1,['-s']
+mkswap,1,"['-L', '-L']"
+readlink,4,"['-fnv', '-f', '-n', '-v']"
+rm,5,"['-irf', '-i', '-f', '-R', '-r']"
+base64,2,"['-d', '-w', '-d', '-w']"
+iostat,6,"['-c', '-d', '-t', '-z', '-k', '-m', '-c', '-d', '-t', '-z', '-k', '-m']"
+chpst,18,"['-vP012', '-u', '-U', '-e', '-n', '-m', '-d', '-o', '-p', '-f', '-c', '-u', '-U', '-e', '-n', '-m', '-d', '-s', '-l', '-d', '-o', '-p', '-f', '-c', '-v', '-P', '-0', '-1', '-2']"
+printf,1,['-la']
+mkpasswd,3,"['-P', '-m', '-S', '-P', '-m', '-S']"
+mt,1,['-f']
+ntpd,11,"['-dnqNwl', '-I', '-S', '-k', '-p', '-d', '-n', '-q', '-N', '-w', '-n', '-S', '-k', '-p', '-p', '-l', '-I', '-l']"
+ipcalc,7,"['-bnmphs', '-b', '-n', '-m', '-p', '-h', '-s']"
+dnsdomainname,0,[]
+slattach,10,"['-ehmLF', '-c', '-s', '-p', '-p', '-s', '-e', '-h', '-c', '-m', '-L', '-wire', '-F']"
+popmaildir,8,"['-s', '-T', '-k', '-t', '-F', '-M', '-k', '-quiet', '-connect']"
+egrep,0,[]
+pgrep,10,"['-flanovx', '-s', '-P', '-l', '-a', '-f', '-n', '-o', '-v', '-x', '-s', '-P']"
+ubirmvol,2,"['-n', '-N', '-n', '-N']"
+traceroute6,16,"['-Inrv', '-f', '-m', '-q', '-p', '-t', '-w', '-s', '-i', '-z', '-I', '-n', '-r', '-v', '-f', '-m', '-q', '-p', '-s', '-i', '-t', '-of', '-service', '-w', '-z']"
+id,6,"['-ugGnr', '-u', '-g', '-G', '-n', '-r']"
+fgconsole,0,[]
+ubimkvol,6,"['-N', '-s', '-m', '-a', '-m', '-n', '-N', '-s', '-t']"
+cat,9,"['-nbvteA', '-n', '-b', '-v', '-x', '-t', '-e', '-A', '-vte']"
+i2cdump,6,"['-fy', '-r', '-LAST', '-0x77', '-f', '-y', '-r']"
+tr,4,"['-cds', '-c', '-d', '-s']"
+time,6,"['-vpa', '-o', '-v', '-p', '-f', '-o', '-a']"
+mke2fs,8,"['-Fn', '-b', '-i', '-I', '-m', '-L', '-b', '-F', '-i', '-I', '-L', '-m', '-n']"
+sort,18,"['-nrughMcszbdfiokt', '-o', '-k', '-t', '-o', '-c', '-b', '-f', '-i', '-d', '-n', '-g', '-h', '-M', '-V', '-t', '-k', '-r', '-s', '-u', '-z']"
+fsck_minix,8,"['-larvsmf', '-l', '-r', '-a', '-v', '-s', '-m', '-f']"
+envdir,0,[]
+comm,4,"['-123', '-1', '-2', '-3']"
+factor,0,[]
+more,0,[]
+unlink,0,[]
+reset,0,[]
+svlogd,14,"['-tttv', '-r', '-R', '-l', '-b', '-r', '-printable', '-R', '-t', '-tt', '-mm', '-dd_hh', '-ttt', '-mm', '-ddThh', '-v', '-PATTERN']"
+ttysize,0,[]
+mesg,0,[]
+telnet,2,"['-a', '-l', '-a', '-l']"
+pmap,3,"['-xq', '-x', '-q']"
+arp,12,"['-vn', '-H', '-i', '-a', '-v', '-i', '-d', '-v', '-H', '-i', '-s', '-v', '-H', '-i', '-s', '-v', '-H', '-i', '-Ds', '-a', '-d', '-s', '-v', '-n', '-i', '-D', '-A', '-p', '-H']"
+ssl_client,4,"['-e', '-s', '-r', '-n']"
+i2cset,7,"['-fy', '-m', '-ADDRESS', '-ADDRESS', '-0x77', '-f', '-y', '-r', '-m']"
+depmod,1,"['-n', '-n']"
+killall,4,"['-lq', '-SIG', '-l', '-q']"
+mpstat,5,"['-A', '-I', '-u', '-P', '-processor', '-A', '-I', '-u', '-P', '-I', '-P', '-u']"
+chroot,0,[]
+ascii,0,[]
+tee,3,"['-ai', '-a', '-i']"
+whoami,0,[]
+ts,3,"['-is', '-s', '-i']"
+volname,0,[]
+insmod,0,[]
+cksum,0,[]
+udpsvd,7,"['-hEv', '-c', '-u', '-l', '-u', '-c', '-E', '-h', '-l', '-v', '-E', '-h', '-l']"
+clear,0,[]
+mkfs_vfat,2,"['-v', '-n', '-v', '-n']"
+bzip2,7,"['-cfkdt123456789', '-1', '-d', '-c', '-f', '-k', '-t']"
+fold,4,"['-bs', '-w', '-b', '-s', '-w']"
+find,40,"['-HL', '-print', '-L', '-follow', '-H', '-xdev', '-maxdepth', '-maxdepth', '-mindepth', '-depth', '-o', '-a', '-a', '-o', '-a', '-o', '-name', '-iname', '-name', '-path', '-ipath', '-path', '-regex', '-type', '-executable', '-perm', '-MASK', '-mtime', '-N', '-atime', '-N', '-ctime', '-N', '-mmin', '-N', '-amin', '-N', '-cmin', '-N', '-newer', '-inum', '-samefile', '-user', '-group', '-size', '-N', '-links', '-N', '-empty', '-prune', '-print', '-print', '-print0', '-exec', '-exec', '-delete', '-depth', '-quit']"
+md5sum,3,"['-c', '-c', '-s', '-w']"
+wall,1,['-in']
+conspy,13,"['-vcsndfFQ', '-x', '-y', '-mode', '-v', '-c', '-s', '-n', '-d', '-f', '-F', '-Q', '-ESC', '-ESC', '-x', '-y']"
+run_init,4,"['-init', '-d', '-n', '-c', '-c', '-d', '-n']"
+delgroup,0,[]
+ftpput,4,"['-v', '-u', '-p', '-P']"
+unxz,5,"['-cfk', '-c', '-f', '-k', '-t']"
+passwd,5,"['-a', '-dlu', '-a', '-d', '-l', '-u']"
+install,10,"['-cdDsp', '-o', '-g', '-m', '-t', '-c', '-d', '-D', '-s', '-p', '-o', '-g', '-m', '-t']"
+taskset,4,"['-ap', '-c', '-p', '-a', '-c']"
+dirname,1,['-directory']
+cpio,19,"['-dmvu', '-F', '-R', '-H', '-tio', '-p', '-i', '-t', '-o', '-p', '-t', '-i', '-o', '-H', '-p', '-H', '-d', '-m', '-v', '-u', '-F', '-t', '-i', '-p', '-o', '-R', '-L', '-0', '--ignore', '-devno', '--renumber', '-inodes']"
+ubiattach,3,"['-m', '-d', '-O', '-m', '-d', '-O']"
+test1,0,[]
+fdflush,0,[]
+cp,19,"['-arPLHpfinlsTu', '-arPLHpfinlsu', '-t', '-a', '-dpR', '-R', '-r', '-d', '-P', '-R', '-L', '-H', '-p', '-f', '-i', '-n', '-l', '-s', '-T', '-t', '-u']"
+ed,2,"['-p', '-s']"
+ipcrm,6,"['-MQS', '-mqs', '-case', '-case', '-mM', '-qQ', '-sS']"
+dos2unix,4,"['-ud', '-place', '-u', '-d']"
+od,7,"['-abcdfhilovxs', '-t', '-A', '-N', '-j', '-S', '-w']"
+syslogd,15,"['-n', '-R', '-L', '-R', '-C', '-K', '-O', '-s', '-b', '-l', '-8', '-S', '-t', '-generated', '-D', '-f']"
+devmem,0,[]
+linux64,0,[]
+hd,1,['-C']
+blockdev,13,"['--setro', '--setrw', '--getro', '--getss', '--getbsz', '--setbsz', '--getsz', '-byte', '--getsize64', '--getra', '-byte', '--setra', '--flushbufs', '--rereadpt']"
+mdev,8,"['-vS', '-s', '-df', '-v', '-S', '-s', '-d', '-f', '-minor2']"
+rmdir,6,"['-p', '-p', '--ignore', '-fail', '-on', '-non', '-empty']"
+bb_sysctl,7,"['-enq', '-a', '-p', '-w', '-e', '-n', '-q', '-a', '-p', '-w']"
+basename,2,"['-a', '-s', '-a', '-s', '-a']"
+mktemp,6,"['-dt', '-p', '-t', '-d', '-q', '-t', '-p', '-t', '-u', '-p']"
+rdev,0,[]
+rpm,6,"['-i', '-qp', '-i', '-qp', '-qpi', '-qpl', '-qpd', '-qpc']"
+which,1,"['-a', '-a']"
+rx,0,[]
+uudecode,1,"['-o', '-o']"
+unix2dos,4,"['-ud', '-place', '-u', '-d']"
+vconfig,0,[]
+netstat,13,"['-al', '-tuwx', '-enWp', '-a', '-l', '-t', '-u', '-w', '-x', '-e', '-n', '-W', '-p']"
+remove_shell,1,['-shell']
+sh_is_ash,3,"['-il', '-c', '-s']"
+switch_root,1,"['-c', '-c']"
+sha512sum,3,"['-c', '-c', '-s', '-w']"
+seq,2,"['-w', '-s', '-w', '-s']"
+diff,16,"['-abBdiNqrTstw', '-L', '-S', '-U', '-a', '-b', '-B', '-d', '-i', '-L', '-N', '-q', '-r', '-S', '-T', '-s', '-t', '-U', '-w']"
+httpd,12,"['-ifv', '-c', '-p', '-u', '-r', '-h', '-d', '-e', '-m', '-i', '-f', '-v', '-p', '-u', '-r', '-h', '-c', '-m', '-e', '-d']"
+resume,2,"['-to', '-disk']"
+fsck,8,"['-ANPRTV', '-t', '-A', '-N', '-P', '-A', '-R', '-A', '-T', '-V', '-t']"
+lsof,0,[]
+unstripped,6,"['-local', '-f', '-q', '-r', '-l', '-v', '-q']"
+xxd,10,"['-pri', '-g', '-c', '-l', '-s', '-o', '-g', '-c', '-p', '-c30', '-i', '-l', '-s', '-o', '-r', '-p']"
+nbdclient,6,"['-client', '-b', '-N', '-t', '-p', '-d']"
+tac,0,[]
+iprule,0,[]
+cttyhack,0,[]
+tftpd,6,"['-crl', '-u', '-l', '-vE', '-r', '-c', '-u', '-l']"
+ifplugd,19,"['-n', '-s', '-i', '-f', '-F', '-a', '-M', '-A', '-r', '-x', '-I', '-p', '-q', '-l', '-t', '-u', '-d', '-m', '-k']"
+ipaddr,1,"['-LIST', '-LIST', '-LIST']"
+ifdown,7,"['-nmvf', '-i', '-a', '-a', '-i', '-n', '-m', '-v', '-f']"
+runsv,0,[]
+bootchartd,0,[]
+fdisk,8,"['-ul', '-C', '-H', '-S', '-b', '-u', '-l', '-b', '-byte', '-C', '-H', '-S']"
+nslookup,2,"['-type', '-debug']"
+ipcs,13,"['-smq', '-i', '-asmq', '-tcplu', '-i', '-m', '-q', '-s', '-a', '-t', '-c', '-p', '-l', '-u']"
+envuidgid,0,[]
+man,3,"['-aw', '-a', '-w']"
+tree,0,[]
+ubirsvol,2,"['-n', '-s', '-n', '-s']"
+hwclock,8,"['-swul', '--systz', '-f', '-s', '-w', '--systz', '-kernel', '-f', '-u', '-l']"
+udhcpc6,23,"['-fbqvR', '-t', '-T', '-A', '-n', '-i', '-s', '-p', '-ldo', '-r', '-x', '-O', '-i', '-p', '-s', '-B', '-t', '-T', '-A', '-b', '-n', '-q', '-R', '-f', '-S', '-l', '-r', '-d', '-o', '-O', '-O', '-x', '-x', '-x', '-x', '-x', '-quoted', '-v']"
+linuxrc,0,[]
+unlzma,5,"['-cfk', '-c', '-f', '-k', '-t']"
+makemime,8,"['-encoded', '-o', '-a', '-R', '-c', '-stream', '-C', '-ascii']"
+pipe_progress,0,[]
+crond,8,"['-fbS', '-l', '-d', '-L', '-c', '-f', '-b', '-S', '-l', '-d', '-L', '-c']"
+dpkg,16,"['-ilCPru', '-F', '-i', '--install', '-l', '--list', '--configure', '-P', '--purge', '-r', '--remove', '--unpack', '--force', '-depends', '--force', '-confnew', '--force', '-confold']"
+add_shell,1,['-shell']
+lpd,2,"['-E', '-m']"
+true,0,[]
+uniq,9,"['-cduiz', '-f', '-c', '-d', '-u', '-i', '-z', '-f', '-s', '-w']"
+init,3,"['-exec', '-Alt', '-Del']"
+iproute,0,[]
+last,3,"['-HW', '-f', '-W', '-f']"
+partprobe,0,[]
+strings,5,"['-fo', '-t', '-n', '-f', '-o', '-t', '-n']"
+rdate,2,"['-s', '-p', '-s', '-p']"
+i2cdetect,8,"['-l', '-F', '-ya', '-q', '-r', '-l', '-F', '-y', '-a', '-regular', '-q', '-r']"
+logread,3,"['-fF', '-f', '-F', '-f']"
+svok,0,[]
+unzip,10,"['-lnojpq', '-x', '-d', '-l', '-q', '-n', '-o', '-j', '-p', '-t', '-q', '-x', '-d']"
+yes,0,[]
+fuser,7,"['-msk46', '-SIGNAL', '-m', '-4', '-6', '-s', '-k', '-SIGNAL']"
+vi,4,"['-c', '-R', '-H', '-c', '-R', '-only', '-H']"
+setkeycodes,2,"['-to', '-keycode']"
+hostid,1,['-bit']
+paste,2,"['-d', '-s', '-d', '-s']"
+lzop,9,"['-cfUvd123456789CF', '-1', '-d', '-c', '-f', '-U', '-v', '-F', '-C']"
+gzip,6,"['-cfkdt', '-d', '-c', '-f', '-k', '-t']"
+losetup,9,"['-rP', '-o', '-f', '-c', '-d', '-a', '-f', '-o', '-P', '-r', '-only', '-f']"
+dmesg,5,"['-cr', '-n', '-s', '-c', '-n', '-s', '-r']"
+echo,1,['--help']
+printenv,0,[]
+getty,11,"['-h', '-L', '-m', '-n', '-w', '-i', '-f', '-l', '-t', '-I', '-H']"
+setpriv,9,"['-d', '--dump', '--nnp', '--no', '-new', '-privs', '--inh', '-caps', '--ambient', '-caps']"
+chgrp,9,"['-RhLHPcvf', '-h', '-L', '-H', '-P', '-R', '-c', '-v', '-f']"
+realpath,0,[]
+uuencode,1,"['-m', '-m']"
+blkid,0,[]
+vlock,1,"['-a', '-a']"
+rev,0,[]
+setarch,1,"['-R', '-R']"
+setfattr,4,"['-h', '-n', '-x', '-v', '-h', '-x', '-n', '-v']"
+xzcat,0,[]
+dpkg_deb,7,"['-deb', '-cefxX', '-c', '-f', '-e', '-x', '-X']"
+ionice,7,"['-c', '-3', '-n', '-7', '-t', '-p', '-c', '-effort', '-n', '-t']"
+uname,10,"['-amnrspvio', '-a', '-m', '-n', '-r', '-s', '-p', '-v', '-i', '-o']"
+ip,2,"['-f', '-o']"
+setconsole,1,"['-r', '-r']"
+rpm2cpio,0,[]
+setuidgid,0,[]
+umount,8,"['-rlfda', '-t', '-a', '-r', '-only', '-l', '-f', '-d', '-t']"
+lzcat,0,[]
+softlimit,11,"['-a', '-m', '-d', '-s', '-l', '-f', '-c', '-r', '-o', '-p', '-t', '-a', '-m', '-d', '-s', '-l', '-a', '-d', '-s', '-l', '-o', '-p', '-f', '-c', '-r', '-t']"
+powertop,1,['-based']
+awk,4,"['-v', '-F', '-f', '-e']"
+reboot,4,"['-d', '-nf', '-d', '-n', '-f']"
+smemcap,0,[]
+nl,5,"['-b', '-i', '-s', '-v', '-w']"
+fakeidentd,5,"['-fiw', '-b', '-f', '-i', '-w', '-b']"
+unshare,17,"['-m', '--mount', '-u', '--uts', '-i', '--ipc', '-n', '--net', '-p', '--pid', '-U', '--user', '-f', '-r', '-U', '--mount', '-proc', '-m', '--propagation', '--setgroups']"
+shred,6,"['-fuz', '-n', '-s', '-f', '-s', '-n', '-z', '-u']"
+pivot_root,0,[]
+raidautorun,0,[]
+nohup,1,['-tty']
+hush,3,"['-enxl', '-c', '-s']"
+login,3,"['-p', '-h', '-f', '-f', '-h', '-p']"
+sha1sum,3,"['-c', '-c', '-s', '-w']"
+fgrep,0,[]
+pwdx,0,[]
+sum,3,"['-rs', '-r', '-s']"
+mknod,1,"['-m', '-m']"
+arping,11,"['-fqbDUA', '-c', '-w', '-I', '-s', '-f', '-q', '-b', '-D', '-U', '-A', '-c', '-w', '-I', '-s']"
+env,4,"['-i0', '-u', '-i', '-0', '-u']"
+svc,6,"['-udopchaitkx', '-u', '-d', '-o', '-pchaitk', '-x']"
+zcip,6,"['-local', '-f', '-q', '-r', '-l', '-v', '-q']"
+swapon,4,"['-a', '-e', '-d', '-p', '-a', '-d', '-e', '-p']"
+df,11,"['-PkmhTai', '-B', '-t', '-P', '-k', '-byte', '-m', '-byte', '-h', '-T', '-t', '-a', '-i', '-B']"
+ln,8,"['-sfnbtv', '-S', '-s', '-f', '-n', '-b', '-S', '-T', '-v']"
+sync,3,"['-df', '-d', '-f']"
+uptime,0,[]
+logger,3,"['-s', '-t', '-p', '-s', '-t', '-p']"
+less,9,"['-EFIMmNSRh', '-E', '-F', '-I', '-M', '-m', '-N', '-S', '-R']"
+renice,4,"['-n', '-p', '-n', '-n', '-p', '-g', '-u']"
+makedevs,1,['-d']
+tty,1,"['-s', '-s']"
+flock,6,"['-sxun', '-c', '-s', '-x', '-u', '-n']"
+adduser,9,"['-h', '-g', '-s', '-G', '-S', '-D', '-H', '-u', '-k']"
+addgroup,2,"['-g', '-S', '-g', '-S']"
+lpq,6,"['-P', '-U', '-d', '-fs', '-P', '-d', '-f', '-s']"
+xz,6,"['-d', '-cfk', '-d', '-c', '-f', '-k', '-t']"
+setserial,7,"['-abGvz', '-g', '-a', '-b', '-G', '-v', '-z', '-g']"
+fallocate,2,"['-o', '-l', '-o', '-l']"
+chown,9,"['-RhLHPcvf', '-h', '-L', '-H', '-P', '-R', '-c', '-v', '-f']"
+patch,8,"['-RNE', '-p', '-i', '-p', '-i', '-R', '-N', '-E', '--dry', '-run']"
+head,5,"['-n', '-n', '-N', '-c', '-q', '-v']"
+ftpd,12,"['-wvS', '-a', '-t', '-T', '-root', '-vE', '-w', '-A', '-a', '-v', '-vv', '-S', '-SS', '-t', '-T']"
+wc,6,"['-cmlwL', '-c', '-m', '-l', '-w', '-L']"
+dc,4,"['-x', '-eSCRIPT', '-fFILE', '-e', '-e']"
+mkfs_minix,7,"['-c', '-l', '-nXX', '-iXX', '-c', '-n', '-i', '-l', '-v']"
