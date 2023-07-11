@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-# set -x
+set -x
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main() {
     local program_path="$1"
     local cat="cat"
-    local file="./test-inputs/align-cat.sh"
+    local file="./test-inputs/align.sh"
 
     validate_inputs "$program_path" "$file"
 
@@ -37,7 +41,9 @@ perform_cat() {
 
     # Usage: ../pre-experiment/exe-GNU-v93/cat [OPTION]... [FILE]...
     #   Concatenate FILE(s) to standard output.
-    "$program_path/$cat_command" -v "$file" > /dev/null 2>&1
+    local program="$program_path/$cat_command -v $file > /dev/null"
+
+    $JOULEIT "$(eval $program)" # This works but we have to do a proper naming of generated files by Jouleit.
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]

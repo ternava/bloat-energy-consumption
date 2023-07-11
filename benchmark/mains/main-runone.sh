@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-# set -x
+set -x
 
 main() {
     # The path to the program (for now, we change them here): 
@@ -16,18 +16,8 @@ main() {
     # in that case the function after it will show an "error".
     # catch_errors_from_the_nested_script "$the_script" "$program_path"
     
-    measure_energy_of_a_program "$the_script" "$program_path"
-}
-
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
-measure_energy_of_a_program() {
-    local script_path="$1"
-    local program_path="$2"
-
-    $JOULEIT "$script_path" "$program_path"
+    # We call the script with a particular test of a program
+    "$the_script" "$program_path"
 }
 
 # This function should be used carefully, only for debugging reasons
