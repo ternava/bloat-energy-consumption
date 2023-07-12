@@ -44,11 +44,15 @@ perform_cp() {
     local source="$3"
     local destination="$4"
 
+    outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
+
     # Usage: ./pre-experiment/exe-GNU-v93/cp [OPTION]... [-T] SOURCE DEST
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... SOURCE... DIRECTORY
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... -t DIRECTORY SOURCE...
     #       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
-    "$program_path/$cp_command" -Rf "$source" "$destination" # >/dev/null 2>&1
+    local program="$program_path/$cp_command -Rf $source $destination" # >/dev/null 2>&1
+    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -57,5 +61,9 @@ perform_cp() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"

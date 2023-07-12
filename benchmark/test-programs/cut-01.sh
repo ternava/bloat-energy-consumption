@@ -35,9 +35,13 @@ perform_cut() {
     local cut_command="$2"
     local large_file="$3"
 
+    outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
+
     # Usage: cut OPTION... [FILE]...
     #   Print selected parts of lines from each FILE to standard output.
-    "$program_path/$cut_command" -d "," -f 1-3 "$large_file" > /dev/null 2>&1
+    local program="$program_path/$cut_command -d ',' -f 1-3 $large_file"
+    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -46,5 +50,9 @@ perform_cut() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"

@@ -35,13 +35,17 @@ perform_wc() {
     local wc_command="$2"
     local input_file="$3"
 
+    outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
+
     # Example: "sudo ../src/jouleit.sh -n 1 ../pre-experiment/exe-ToyBox-v089/wc ./test-inputs/align.sh" 
 
     # Example/Test 02: program + configuration options + input
     # Program: it's as a variable because one of the three implementation of it can be called
     # Options: the configuration options should be the same for each call/ version of the program
     # Input: an input, if required, and it can be variable, here is fixed
-    "$program_path/$wc_command" "$input_file" > /dev/null 2>&1
+    local program="$program_path/$wc_command $input_file"
+    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -50,5 +54,9 @@ perform_wc() {
         exit 1
     fi  
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"

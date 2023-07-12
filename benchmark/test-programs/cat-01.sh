@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-set -x
+# set -x
 
 # The command calling the script for measuring 
 # the energy consumption of a program (given in a second script)
@@ -39,11 +39,14 @@ perform_cat() {
     local cat_command="$2"
     local file="$3"
 
+    outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
+
     # Usage: ../pre-experiment/exe-GNU-v93/cat [OPTION]... [FILE]...
     #   Concatenate FILE(s) to standard output.
-    local program="$program_path/$cat_command -v $file > /dev/null"
-
-    $JOULEIT "$(eval $program)" # This works but we have to do a proper naming of generated files by Jouleit.
+    local program="$program_path/$cat_command -v $file"
+    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    # This works but we have to do a proper naming of generated files by Jouleit.
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -53,4 +56,4 @@ perform_cat() {
     fi
 }
 
-main "$@"
+main $@

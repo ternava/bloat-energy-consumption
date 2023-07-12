@@ -28,8 +28,12 @@ perform_touch() {
     local touch_command="$2"
     local input_file="$3"
 
+    outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
+
     # Usage: ./exe-GNU-v93/touch [OPTION]... FILE...
-    "$program_path/$touch_command" "$input_file"
+    local program="$program_path/$touch_command $input_file"
+    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -38,5 +42,9 @@ perform_touch() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"

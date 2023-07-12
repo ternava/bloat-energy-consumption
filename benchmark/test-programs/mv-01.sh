@@ -44,10 +44,14 @@ perform_move() {
     local source="$3"
     local destination="$4"
 
+    outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
+
     # Usage: ../pre-experiment/exe-GNU-v93/mv [OPTION]... [-T] SOURCE DEST
     #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... SOURCE... DIRECTORY
     #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... -t DIRECTORY SOURCE...
-    "$program_path/$mv_command" "$source" "$destination"
+    local program="$program_path/$mv_command $source $destination"
+    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -56,5 +60,9 @@ perform_move() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"

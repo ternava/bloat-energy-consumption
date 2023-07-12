@@ -360,10 +360,12 @@ bulk() {
     # Our change: We added the 4 following lines:
     # The filename of the .csv file is modified
     # Now it contain the two arguments of the script itself
-    file_name=$(basename "$1" .sh)
-    file_name="${file_name//[-.]/_}"  # Replace hyphens and dots with underscores
-    file_name="${file_name}_$(basename "$2")"  # Append the 2nd argument to the name
-    filename="${file_name}.csv"
+    #file_name=$(basename "$1" .sh)
+    #file_name="${file_name//[-.]/_}"  # Replace hyphens and dots with underscores
+    #file_name="${file_name}_$(basename "$2")"  # Append the 2nd argument to the name
+    #filename="${file_name}.csv"
+
+    filename=$outputfile
 
     # This line below was in the original implementation of the script
     #filename=data$(date +%s).csv

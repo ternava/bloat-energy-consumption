@@ -35,9 +35,13 @@ perform_cat() {
     local cat_command="$2"
     local file="$3"
 
+    outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
+
     # Usage: ../pre-experiment/exe-GNU-v93/cat [OPTION]... [FILE]...
     #   Concatenate FILE(s) to standard output.
-    "$program_path/$cat_command" -vet "$file" > /dev/null 2>&1
+    local program="$program_path/$cat_command -vet $file"
+    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -46,5 +50,9 @@ perform_cat() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"

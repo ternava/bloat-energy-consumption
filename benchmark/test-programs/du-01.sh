@@ -35,12 +35,16 @@ perform_du() {
     local du_command="$2"
     local path_to_directory="$3"
 
+    outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
+
     # Example: "sudo ../src/jouleit.sh -n 1 ../pre-experiment/exe-ToyBox-v089/wc ./test-inputs/align.sh" 
 
     # Usage: du [OPTION]... [FILE]...
     #    or:  du [OPTION]... --files0-from=F
     #    Summarize disk usage of the set of FILEs, recursively for directories.
-    "$program_path/$du_command" "$path_to_directory" > /dev/null 2>&1
+    local programs="$program_path/$du_command $path_to_directory"
+    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -49,5 +53,10 @@ perform_du() {
         exit 1
     fi  
 }
+
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"
