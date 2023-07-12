@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-set -x
+# set -x
 
 main() {
     # The path to the program (for now, we change them here): 
