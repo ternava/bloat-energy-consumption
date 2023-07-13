@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
+# This script contains the inputs that are required to run all our subject programs
+# The downloaded artifacts should be in the "benchmark/test-inputs/" path.
+
 # set -x
 ####10go file####
-fallocate -l 10g ./test-inputs/10gofile
+# fallocate -l 10g ./test-inputs/10gofile # This generates a useless file, we need to find another solution
 
-####Folder#### 
+####Debian ISO#### 
 iso_url="https://cdimage.debian.org/debian-cd/current/source/iso-dvd/debian-12.0.0-source-DVD-1.iso"
 output_folder="./test-inputs/folder"
 

@@ -43,7 +43,7 @@ perform_du() {
     #    or:  du [OPTION]... --files0-from=F
     #    Summarize disk usage of the set of FILEs, recursively for directories.
     local program="$program_path/$du_command -h $path_to_directory"
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

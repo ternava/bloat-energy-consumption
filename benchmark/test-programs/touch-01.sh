@@ -32,7 +32,7 @@ perform_touch() {
 
     # Usage: ./exe-GNU-v93/touch [OPTION]... FILE...
     local program="$program_path/$touch_command $input_file"
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

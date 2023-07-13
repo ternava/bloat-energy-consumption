@@ -50,7 +50,7 @@ perform_move() {
     #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... SOURCE... DIRECTORY
     #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... -t DIRECTORY SOURCE...
     local program="$program_path/$mv_command $source $destination"
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

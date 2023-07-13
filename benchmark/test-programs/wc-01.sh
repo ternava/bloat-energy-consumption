@@ -44,7 +44,7 @@ perform_wc() {
     # Options: the configuration options should be the same for each call/ version of the program
     # Input: an input, if required, and it can be variable, here is fixed
     local program="$program_path/$wc_command $input_file"
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

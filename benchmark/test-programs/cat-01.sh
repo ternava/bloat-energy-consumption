@@ -44,7 +44,7 @@ perform_cat() {
     # Usage: ../pre-experiment/exe-GNU-v93/cat [OPTION]... [FILE]...
     #   Concatenate FILE(s) to standard output.
     local program="$program_path/$cat_command -v $file"
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     # This works but we have to do a proper naming of generated files by Jouleit.
     
     local exit_status=$?

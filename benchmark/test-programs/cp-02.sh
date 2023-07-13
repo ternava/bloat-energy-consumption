@@ -51,7 +51,7 @@ perform_cp() {
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... -t DIRECTORY SOURCE...
     #       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
     local program="$program_path/$cp_command -Rf $source $destination" # >/dev/null 2>&1
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

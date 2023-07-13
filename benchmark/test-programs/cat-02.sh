@@ -40,7 +40,7 @@ perform_cat() {
     # Usage: ../pre-experiment/exe-GNU-v93/cat [OPTION]... [FILE]...
     #   Concatenate FILE(s) to standard output.
     local program="$program_path/$cat_command -vet $file"
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

@@ -40,7 +40,7 @@ perform_cut() {
     # Usage: cut OPTION... [FILE]...
     #   Print selected parts of lines from each FILE to standard output.
     local program="$program_path/$cut_command -c 3-5 $large_file"
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

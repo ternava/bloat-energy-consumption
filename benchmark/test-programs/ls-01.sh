@@ -34,7 +34,7 @@ perform_ls() {
     # List information about the FILEs (the current directory by default).
     # Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
     local program="$program_path/$ls_command -R $path_to_directory"
-    $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
+    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 
