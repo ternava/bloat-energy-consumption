@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local cat="cat"
-    local file="./test-inputs/align-cat.sh"
+    local file="./test-inputs/10gofile"
 
     validate_inputs "$program_path" "$file"
 

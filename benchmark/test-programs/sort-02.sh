@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local sort="sort"
-    local source="./test-inputs/enwik8"
+    local source="./test-inputs/enwik9"
 
     validate_inputs "$program_path" "$source"
 
