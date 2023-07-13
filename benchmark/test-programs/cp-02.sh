@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local cp="cp"
-    local source="./test-inputs/folder"
+    local source="./test-inputs/largefolder01"
     local destination="./test-outputs/"
 
     validate_inputs "$program_path" "$source" "$destination"
@@ -52,7 +52,7 @@ perform_cp() {
     #       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
     local program="$program_path/$cp_command -Rf $source $destination" # >/dev/null 2>&1
     $JOULEIT -o "$outputfile.csv" "./test-programs/wrapper.sh" "$program"
-    
+
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]

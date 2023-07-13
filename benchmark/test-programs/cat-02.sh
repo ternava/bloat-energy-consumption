@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local cat="cat"
-    local file="./test-inputs/10gofile"
+    local file="./test-inputs/10gofile.txt"
 
     validate_inputs "$program_path" "$file"
 

@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local ls="ls"
-    local path_to_directory="./test-inputs/folder" # We use the home directory
+    local path_to_directory="./test-inputs/debian" # We use the home directory
 
     validate_inputs "$program_path"
 
