@@ -10,7 +10,7 @@ JOULEIT="sudo ../src/jouleit.sh -n 1"
 main() {
     local program_path="$1"
     local cat="cat"
-    local file="./test-inputs/10gofile.txt"
+    local file="./test-inputs/enwik9"
 
     validate_inputs "$program_path" "$file"
 
