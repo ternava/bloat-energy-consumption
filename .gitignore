@@ -130,4 +130,5 @@ dmypy.json
 .pyre/
 
 # Folders
-benchmark/test-inputs/
+benchmark/inputs/
+benchmark/outputs/
