@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-# set -x
+set -x
 
 # The command calling the script for measuring 
 # the energy consumption of a program (given in a second script)
@@ -9,12 +9,12 @@ JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main() {
     local program_path="$1"
-    local cat="cat"
-    local file="./test-inputs/enwik9"
+    local base64="base64"
+    local file="./inputs/panicmonster.png"
 
     validate_inputs "$program_path" "$file"
 
-    perform_cat "$program_path" "$cat" "$file"
+    perform_base64 "$program_path" "$base64" "$file"
 }
 
 validate_inputs() {
@@ -34,16 +34,17 @@ validate_inputs() {
     fi
 }
 
-perform_cat() {
+perform_base64() {
     local program_path="$1"
-    local cat_command="$2"
+    local base64_command="$2"
     local file="$3"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/cat [OPTION]... [FILE]...
-    #   Concatenate FILE(s) to standard output.
-    local program="$program_path/$cat_command -v $file"
+    # Usage: ../pre-experiment/GNU/base64 [OPTION]... [FILE]
+    # Base64 encode or decode FILE, or standard input, to standard output.
+    # With no FILE, or when FILE is -, read standard input
+    local program="$program_path/$base64_command -w 76 $file"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     # This works but we have to do a proper naming of generated files by Jouleit.
     
@@ -51,7 +52,7 @@ perform_cat() {
 
     if [ $exit_status -ne 0 ]
     then
-        echo "Error occurred while executing '$program_path/$cat_command' command."
+        echo "Error occurred while executing '$program_path/$base64_command' command."
         exit 1
     fi
 }

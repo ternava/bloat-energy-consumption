@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local du="du"
-    local path_to_directory="./test-inputs/debian"
+    local path_to_directory="./inputs/debian"
 
     validate_inputs "$program_path" "$path_to_directory"
 

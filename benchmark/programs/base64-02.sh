@@ -10,7 +10,7 @@ JOULEIT="sudo ../src/jouleit.sh -n 1"
 main() {
     local program_path="$1"
     local base64="base64"
-    local file="./test-inputs/encoded-panicmonster.png"
+    local file="./inputs/encoded-panicmonster.png"
 
     validate_inputs "$program_path" "$file"
 

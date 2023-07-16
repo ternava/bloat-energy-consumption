@@ -5,17 +5,17 @@
 
 main() {
     local program_path="$1"
-    local cut="cut"
-    local large_file="./test-inputs/CVD_cleaned.csv"
+    local sort="sort"
+    local source="./inputs/enwik9"
 
-    validate_inputs "$program_path" "$large_file"
+    validate_inputs "$program_path" "$source"
 
-    perform_cut "$program_path" "$cut" "$large_file"
+    perform_sort "$program_path" "$sort" "$source"
 }
 
 validate_inputs() {
     local program_path="$1"
-    local large_file="$2"
+    local source="$2"
 
     if [ ! -e "$program_path" ]
     then
@@ -23,30 +23,31 @@ validate_inputs() {
         exit 1
     fi
 
-    if [ ! -f "$large_file" ]
+    if [ ! -f "$source" ]
     then
-        echo "The source file '$large_file' does not exist."
+        echo "The source file '$source' does not exist."
         exit 1
     fi
 }
 
-perform_cut() {
+perform_sort() {
     local program_path="$1"
-    local cut_command="$2"
-    local large_file="$3"
+    local sort_command="$2"
+    local source="$3"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: cut OPTION... [FILE]...
-    #   Print selected parts of lines from each FILE to standard output.
-    local program="$program_path/$cut_command -d ',' -f 1-3 $large_file"
+    # Usage: ../pre-experiment/exe-GNU-v93/sort [OPTION]... [FILE]...
+    #    or:  ../pre-experiment/exe-GNU-v93/sort [OPTION]... --files0-from=F
+    #       Write sorted concatenation of all FILE(s) to standard output.
+    local program="$program_path/$sort_command -r $source"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
-
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
     then
-        echo "Error occurred while executing '$program_path/$cut_command' command."
+        echo "Error occurred while executing '$program_path/$sort_command' command."
         exit 1
     fi
 }

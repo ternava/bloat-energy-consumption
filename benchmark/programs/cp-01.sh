@@ -6,8 +6,8 @@
 main() {
     local program_path="$1"
     local cp="cp"
-    local source="./test-inputs/largefolder01"
-    local destination="./test-outputs/"
+    local source="./test-inputs/largefolder01.zip"
+    local destination="./outputs/"
 
     validate_inputs "$program_path" "$source" "$destination"
 
@@ -25,7 +25,7 @@ validate_inputs() {
         exit 1
     fi
 
-    if [ ! -f "$source" ]
+    if [ ! -f $source ]
     then
         echo "The source file '$source' does not exist."
         exit 1
@@ -50,7 +50,7 @@ perform_cp() {
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... SOURCE... DIRECTORY
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... -t DIRECTORY SOURCE...
     #       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
-    local program="$program_path/$cp_command -Rf $source $destination" # >/dev/null 2>&1
+    local program="$program_path/$cp_command -f $source $destination" # >/dev/null 2>&1
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?

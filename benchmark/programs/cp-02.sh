@@ -5,13 +5,13 @@
 
 main() {
     local program_path="$1"
-    local mv="mv"
-    local source="./test-inputs/largefolder02.zip"
-    local destination="./test-outputs/"
+    local cp="cp"
+    local source="./test-inputs/largefolder01"
+    local destination="./outputs/"
 
     validate_inputs "$program_path" "$source" "$destination"
 
-    perform_move "$program_path" "$mv" "$source" "$destination"
+    perform_cp "$program_path" "$cp" $source "$destination"
 }
 
 validate_inputs() {
@@ -38,25 +38,26 @@ validate_inputs() {
     fi
 }
 
-perform_move() {
+perform_cp() {
     local program_path="$1"
-    local mv_command="$2"
+    local cp_command="$2"
     local source="$3"
     local destination="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/mv [OPTION]... [-T] SOURCE DEST
-    #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... SOURCE... DIRECTORY
-    #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... -t DIRECTORY SOURCE...
-    local program="$program_path/$mv_command $source -t $destination"
+    # Usage: ./pre-experiment/exe-GNU-v93/cp [OPTION]... [-T] SOURCE DEST
+    #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... SOURCE... DIRECTORY
+    #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... -t DIRECTORY SOURCE...
+    #       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+    local program="$program_path/$cp_command -Rf $source $destination" # >/dev/null 2>&1
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
-    
+
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
     then
-        echo "Error occurred while executing '$program_path/$mv_command' command."
+        echo "Error occurred while executing '$program_path/$cp_command' command."
         exit 1
     fi
 }

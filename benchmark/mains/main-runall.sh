@@ -3,7 +3,7 @@
 # set -x
 
 main="./mains/main-runone.sh"
-folder_with_programs="./test-programs"
+folder_with_programs="./programs"
 
 # Run all experiments once.
 # All programs to run are located in the ./test-configs folder

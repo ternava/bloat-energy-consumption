@@ -9,7 +9,7 @@
 
 ####Debian ISO#### 
 iso_url="https://cdimage.debian.org/debian-cd/current/source/iso-dvd/debian-12.0.0-source-DVD-1.iso"
-output_folder="./test-inputs/folder"
+output_folder="./inputs/folder"
 
 # Create the output folder if it doesn't exist
 mkdir -p "$output_folder"
@@ -33,6 +33,6 @@ curl -o "./test-inputs/enwik9.zip" "$download_url"
 
 # Unzip the file
 echo "Unzipping $zip_file..."
-unzip "./test-inputs/enwik9.zip" -d "./test-inputs/"
+unzip "./inputs/enwik9.zip" -d "./test-inputs/"
 
 echo "Extraction completed."

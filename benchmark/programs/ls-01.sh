@@ -5,12 +5,12 @@
 
 main() {
     local program_path="$1"
-    local touch="touch"
-    local input_file="./test-outputs/touch01.txt"
+    local ls="ls"
+    local path_to_directory="./inputs/debian" # We use the home directory
 
     validate_inputs "$program_path"
 
-    perform_touch "$program_path" "$touch" "$input_file"
+    perform_ls "$program_path" "$ls" "$path_to_directory"
 }
 
 validate_inputs() {
@@ -23,22 +23,24 @@ validate_inputs() {
     fi
 }
 
-perform_touch() {
+perform_ls() {
     local program_path="$1"
-    local touch_command="$2"
-    local input_file="$3"
+    local ls_command="$2"
+    local path_to_directory="$3"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ./exe-GNU-v93/touch [OPTION]... FILE...
-    local program="$program_path/$touch_command $input_file"
+    # Usage: ../pre-experiment/exe-GNU-v93/ls [OPTION]... [FILE]...
+    # List information about the FILEs (the current directory by default).
+    # Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+    local program="$program_path/$ls_command -R $path_to_directory"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
     then
-        echo "Error occurred while executing '$program_path/$touch_command' command."
+        echo "Error occurred while executing '$program_path/$ls_command' command."
         exit 1
     fi
 }
@@ -48,3 +50,6 @@ perform_touch() {
 JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"
+
+
+
