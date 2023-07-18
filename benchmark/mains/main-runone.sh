@@ -8,8 +8,8 @@ main() {
     # "../pre-experiment/BusyBox"
     # "../pre-experiment/ToyBox"
     # "../pre-experiment/GNU"
-    local program_path="../pre-experiment/GNU"
-    local the_script="$1"
+    local program_path="$1"
+    local the_script="$2"
 
     # Be carefull when using this next function, 
     # because it makes the nested script run, 

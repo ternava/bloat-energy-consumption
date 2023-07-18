@@ -2,21 +2,29 @@
 
 # set -x
 
+# These are the three possible program paths, for 3 sets of utilities
+program_paths=(
+    "../pre-experiment/GNU"
+    "../pre-experiment/BusyBox"
+    "../pre-experiment/ToyBox"
+)
+
 main="./mains/main-runone.sh"
 folder_with_programs="./programs"
 
-# Run all experiments once.
-# All programs to run are located in the ./test-configs folder
-for program in "$folder_with_programs"/*.sh
+# Run all experiments once for each program_path
+# All programs to run are located in the ./programs/ folder, and only them!
+for program_path in "${program_paths[@]}"
 do
-    echo "$program"
-    if [ -f "$program" ] && [ -x "$program" ]
-    then
-        echo "Executing $main $program..."
-        "$main" "$program"
-        echo "Completed $main $program."
-    fi
+    echo "Running experiments for program path: $program_path"
+    for program in "$folder_with_programs"/*.sh
+    do
+        echo "$program"
+        if [ -f "$program" ] && [ -x "$program" ]
+        then
+            echo "Executing $main $program $program_path..."
+            "$main" "$program" "$program_path"
+            echo "Completed $main $program $program_path."
+        fi
+    done
 done
-
-
-#find "$folder_with_programs" -type f -name "*.sh" -exec sh -c "$main {}" \;
