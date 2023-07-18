@@ -1,76 +1,76 @@
-,Utility,Options ToyBox,Options BusyBox,Options GNU
-0,base32,"['-d', '-i', '-w']","['-d', '-w']","['-d', '-i', '-w', '--help', '--version']"
-1,base64,"['-d', '-i', '-w']","['-d', '-w']","['-d', '-i', '-w', '--help', '--version']"
-2,basename,"['-a', '-s']","['-a', '-s']","['-a', '-s', '-z', '--help', '--version']"
-3,cat,"['-e', '-t', '-u', '-v']","['-n', '-b', '-v', '-t', '-e', '-A']","['-A', '-b', '-e', '-E', '-n', '-s', '-t', '-T', '-u', '-v', '--help', '--version']"
-4,chgrp,"['-f', '-h', '-R', '-H', '-L', '-P', '-v']","['-h', '-L', '-H', '-P', '-R', '-c', '-v', '-f']","['-c', '-f', '-v', '--dereference', '-h', '--no', '--preserve', '--reference', '-R', '-H', '-L', '-P', '--help', '--version']"
-5,chmod,[],"['-R', '-c', '-v', '-f']","['-c', '-f', '-v', '--no', '--preserve', '--reference', '-R', '--help', '--version']"
-6,chown,"['-f', '-h', '-R', '-H', '-L', '-P', '-v']","['-h', '-L', '-H', '-P', '-R', '-c', '-v', '-f']","['-c', '-f', '-v', '--dereference', '-h', '--from', '--no', '--preserve', '--reference', '-R', '-H', '-L', '-P', '--help', '--version']"
-7,chroot,[],[],"['--groups', '--userspec', '--skip', '--help', '--version']"
-8,cksum,"['-H', '-L', '-P', '-I', '-N']",[],"['-a', '-b', '-c', '-l', '--raw', '--tag', '--untagged', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--debug', '--help', '--version']"
-9,comm,"['-1', '-2', '-3']","['-1', '-2', '-3']","['-1', '-2', '-3', '--check', '--nocheck', '--output', '--total', '-z', '--help', '--version']"
-10,cp,"['-a', '-D', '-d', '-F', '-f', '-H', '-i', '-L', '-l', '-n', '-u', '-P', '-p', '-R', '-r', '-s', '-t', '-T', '-v']","['-a', '-R', '-d', '-L', '-H', '-p', '-f', '-i', '-n', '-l', '-T', '-t', '-u']","['-a', '--attributes', '--backup', '-b', '--copy', '-d', '--debug', '-f', '-i', '-H', '-l', '-L', '-n', '-u', '-P', '-p', '--preserve', '--no', '--parents', '-R', '--reflink', '--remove', '--sparse', '--strip', '-s', '-S', '-t', '-T', '--update', '-u', '-v', '-x', '-Z', '--context', '--help', '--version']"
-11,cut,"['-b', '-c', '-C', '-d', '-D', '-f', '-F', '-O', '-s']","['-b', '-c', '-d', '-O', '-D', '-f', '-F', '-s', '-n']","['-b', '-c', '-d', '-f', '-n', '--complement', '-s', '--output', '-z', '--help', '--version', '-M']"
-12,date,"['-d', '-D', '-I', '-r', '-s', '-u']","['-u', '-d', '-D', '-r', '-R', '-I']","['-d', '--debug', '-f', '-I', '--resolution', '-R', '--rfc', '-r', '-s', '-u', '--help', '--version']"
-13,df,"['-a', '-P', '-k', '-h', '-H', '-i', '-t']","['-P', '-k', '-m', '-h', '-T', '-t', '-a', '-i', '-B']","['-a', '-B', '-h', '-H', '-i', '-k', '-l', '--no', '--output', '-P', '--sync', '--total', '-t', '-T', '-x', '-v', '--help', '--version']"
-14,dirname,[],[],"['-z', '--help', '--version']"
-15,du,"['-b', '-k', '-K', '-m', '-h', '-a', '-H', '-L', '-s', '-x', '-c', '-d', '-l']","['-a', '-b', '-L', '-H', '-d', '-c', '-l', '-s', '-x', '-h', '-m', '-k']","['-0', '-a', '--apparent', '-B', '-b', '-c', '-D', '-d', '--summarize', '--files0', '-H', '-h', '--inodes', '-k', '-L', '-l', '-m', '-P', '-S', '--si', '-s', '-t', '--time', '--time', '--time', '-X', '--exclude', '-x', '--help', '--version']"
-16,echo,"['-n', '-E', '-e']",['--help'],"['-n', '-e', '-E', '--help', '--version']"
-17,env,[],"['-0', '-u']","['-i', '-0', '-u', '-C', '-S', '--block', '--default', '--ignore', '--list', '-v', '--help', '--version']"
-18,expand,['-t'],"['-i', '-t']","['-i', '-t', '-t', '--help', '--version']"
-19,factor,"['-h', '-x']",[],"['-h', '--help', '--version']"
-20,false,[],[],[]
-21,groups,[],[],"['--help', '--version']"
-22,head,"['-n', '-c', '-q', '-v']","['-n', '-n', '-c', '-q', '-v']","['-c', '-n', '-q', '-v', '-z', '--help', '--version']"
-23,id,"['-G', '-g', '-n', '-r', '-u']","['-u', '-g', '-G', '-n', '-r']","['-a', '-Z', '-g', '-G', '-n', '-r', '-u', '-z', '--help', '--version']"
-24,kill,"['-l', '-s']",['-l'],"['-s', '-l', '-t', '--help', '--version']"
-25,link,[],[],"['--help', '--version']"
-26,ln,"['-s', '-f', '-n', '-r', '-t', '-T', '-v']","['-s', '-f', '-n', '-b', '-S', '-T', '-v']","['--backup', '-b', '-d', '-f', '-i', '-L', '-n', '-P', '-r', '-s', '-S', '-t', '-T', '-v', '--help', '--version']"
-27,logname,[],[],"['--help', '--version']"
-28,ls,"['-a', '-c', '-i', '-q', '-u', '-H', '-R', '-N', '-1', '-g', '-l', '-n', '-w', '-ll', '--color', '-f']","['-1', '-a', '-A', '-x', '-d', '-L', '-H', '-R', '-p', '-F', '-l', '-i', '-n', '-s', '-lc', '-lu', '--full', '-h', '--group', '-S', '-X', '-v', '-t', '-tc', '-tu', '-r', '-w', '--color']","['-a', '-A', '--author', '-b', '--block', '-B', '-c', '-C', '--color', '-d', '-D', '-f', '-F', '--file', '--format', '--full', '-g', '--group', '-G', '-h', '--si', '-H', '--dereference', '--hide', '--hyperlink', '--indicator', '-i', '-I', '-k', '-l', '-L', '-m', '-n', '-N', '-o', '-p', '-q', '--show', '-Q', '--quoting', '-r', '-R', '-s', '-S', '--sort', '--time', '--time', '-t', '-T', '-u', '-U', '-v', '-w', '-x', '-X', '-Z', '--zero', '-1', '--help', '--version']"
-29,md5sum,"['-b', '-c', '-s']","['-c', '-s', '-w']","['-b', '-c', '--tag', '-t', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--help', '--version']"
-30,mkdir,"['-m', '-p', '-v']","['-m', '-p']","['-m', '-p', '-v', '-Z', '--context', '--help', '--version']"
-31,mkfifo,[],['-m'],"['-m', '-Z', '--context', '--help', '--version']"
-32,mknod,['-m'],['-m'],"['-m', '-Z', '--context', '--help', '--version']"
-33,mktemp,"['-d', '-p', '-q', '-t', '-u']","['-d', '-q', '-t', '-p', '-u']","['-d', '-u', '-q', '--suffix', '-p', '-t', '--help', '--version']"
-34,mv,"['-f', '-i', '-n', '-t', '-T', '-v']","['-f', '-i', '-n', '-T', '-t']","['--backup', '-b', '--debug', '-f', '-i', '-n', '--no', '--strip', '-S', '-t', '-T', '--update', '-u', '-v', '-Z', '--help', '--version']"
-35,nice,[],['-n'],"['-20', '-n', '--help', '--version']"
-36,nl,"['-E', '-b', '-l', '-n', '-s', '-v', '-w']","['-b', '-i', '-s', '-v', '-w']","['-b', '-d', '-f', '-h', '-i', '-l', '-n', '-p', '-s', '-v', '-w', '--help', '--version']"
-37,nohup,[],[],"['--help', '--version']"
-38,nproc,['--all'],"['--all', '--ignore']","['--all', '--ignore', '--help', '--version']"
-39,od,"['-A', '-j', '-N', '-t', '-v', '-w']",[],"['-A', '--endian', '-j', '-N', '-S', '-t', '-v', '-w', '--traditional', '--help', '--version', '-a', '-b', '-c', '-d', '-f', '-i', '-l', '-o', '-s', '-x']"
-40,paste,"['-d', '-s']","['-d', '-s']","['-d', '-s', '-z', '--help', '--version']"
-41,printenv,['-0'],[],"['-0', '--help', '--version']"
-42,printf,[],[],"['--help', '--version']"
-43,pwd,"['-L', '-P']",[],"['-L', '-P', '--help', '--version']"
-44,readlink,"['-e', '-f', '-m', '-n', '-q', '-z']","['-f', '-n', '-v']","['-f', '-e', '-m', '-n', '-q', '-s', '-v', '-z', '--help', '--version']"
-45,realpath,"['-R', '-L', '-P', '-e', '-m', '-q', '-s', '-z', '--relative']",[],"['-e', '-m', '-L', '-P', '-q', '--relative', '--relative', '-s', '-z', '--help', '--version']"
-46,rm,"['-f', '-i', '-rR', '-v']","['-i', '-f', '-R']","['-f', '-i', '-I', '--interactive', '--one', '--no', '--preserve', '-r', '-d', '-v', '--help', '--version']"
-47,rmdir,"['-p', '--ignore']","['-p', '--ignore']","['--ignore', '-p', '-v', '--help', '--version']"
-48,seq,"['-f', '-s', '-w']","['-w', '-s']","['-f', '-s', '-w', '--help', '--version']"
-49,sha1sum,"['-b', '-c', '-s']","['-c', '-s', '-w']","['-b', '-c', '--tag', '-t', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--help', '--version']"
-50,sha256sum,"['-b', '-c', '-s']","['-c', '-s', '-w']","['-b', '-c', '--tag', '-t', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--help', '--version']"
-51,sha512sum,"['-b', '-c', '-s']","['-c', '-s', '-w']","['-b', '-c', '--tag', '-t', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--help', '--version']"
-52,shred,"['-f', '-n', '-o', '-s', '-u', '-x', '-z']","['-f', '-s', '-n', '-z', '-u']","['-f', '-n', '--random', '-s', '-u', '--remove', '-v', '-x', '-z', '--help', '--version']"
-53,sleep,[],[],"['--help', '--version']"
-54,sort,[],"['-o', '-c', '-b', '-f', '-i', '-d', '-n', '-g', '-h', '-M', '-V', '-t', '-k', '-r', '-s', '-u', '-z']","['-b', '-d', '-f', '-g', '-i', '-M', '-h', '-n', '-R', '--random', '-r', '--sort', '-V', '--batch', '-c', '-C', '--compress', '--debug', '--files0', '-k', '-m', '-o', '-s', '-S', '-t', '-T', '--parallel', '-u', '-z', '--help', '--version']"
-55,split,"['-a', '-b', '-l', '-n']","['-b', '-l', '-a']","['-a', '--additional', '-b', '-C', '-d', '--numeric', '-x', '--hex', '-e', '--filter', '-l', '-n', '-t', '-u', '--verbose', '--help', '--version']"
-56,stat,"['-c', '-f', '-L', '-t']","['-c', '-f', '-L', '-t']","['-L', '-f', '--cached', '-c', '--printf', '-t', '--help', '--version', '--terse', '--terse']"
-57,sync,[],"['-d', '-f']","['-d', '-f', '--help', '--version']"
-58,tac,[],[],"['-b', '-r', '-s', '--help', '--version']"
-59,tail,"['-n', '-c', '-f', '-F', '-s']","['-c', '-n', '-n', '-q', '-v', '-f', '-F', '-s']","['-c', '-f', '-F', '-n', '--max', '--pid', '-q', '--retry', '-s', '-v', '-z', '--help', '--version']"
-60,tee,"['-a', '-i']","['-a', '-i']","['-a', '-i', '-p', '--output', '--help', '--version']"
-61,test,[],[],[]
-62,timeout,[],[],"['--preserve', '--foreground', '-k', '-s', '-v', '--help', '--version']"
-63,touch,"['-a', '-m', '-c', '-h', '-d', '-t', '-r']","['-c', '-h', '-a', '-m', '-d', '-t', '-r']","['-a', '-c', '-d', '-f', '-h', '-m', '-r', '-t', '--time', '--help', '--version']"
-64,true,[],[],"['--help', '--version']"
-65,truncate,"['-c', '-s']","['-c', '-s']","['-c', '-o', '-r', '-s', '--help', '--version']"
-66,tty,['-s'],['-s'],"['-s', '--help', '--version']"
-67,uname,"['-s', '-n', '-r', '-v', '-m', '-o', '-a']","['-a', '-m', '-n', '-r', '-s', '-p', '-v', '-i', '-o']","['-a', '-s', '-n', '-r', '-v', '-m', '-p', '-i', '-o', '--help', '--version']"
-68,uniq,"['-c', '-d', '-u', '-i', '-z', '-w', '-f', '-s']","['-c', '-d', '-u', '-i', '-z', '-f', '-s', '-w']","['-c', '-d', '-D', '--all', '-f', '--group', '-i', '-s', '-u', '-z', '-w', '--help', '--version']"
-69,unlink,[],[],"['--help', '--version']"
-70,uptime,"['-p', '-s']",[],"['--help', '--version']"
-71,wc,"['-l', '-w', '-c', '-m']","['-c', '-m', '-l', '-w', '-L']","['-c', '-m', '-l', '--files0', '-L', '-w', '--total', '--help', '--version']"
-72,who,[],"['-a', '-H']","['-a', '-b', '-d', '-H', '-l', '--lookup', '-m', '-p', '-q', '-r', '-s', '-t', '-T', '-u', '--message', '--writable', '--help', '--version']"
-73,whoami,[],[],"['--help', '--version']"
-74,yes,[],[],"['--help', '--version']"
+,Utility,Options ToyBox,Number of optionsToyBox,Options BusyBox,Number of optionsBusyBox,Options GNU,Number of optionsGNU
+0,base32,"['-d', '-i', '-w']",3,"['-d', '-w']",2,"['-d', '-i', '-w', '--help', '--version']",5
+1,base64,"['-d', '-i', '-w']",3,"['-d', '-w']",2,"['-d', '-i', '-w', '--help', '--version']",5
+2,basename,"['-a', '-s']",2,"['-a', '-s']",2,"['-a', '-s', '-z', '--help', '--version']",5
+3,cat,"['-e', '-t', '-u', '-v']",4,"['-n', '-b', '-v', '-t', '-e', '-A']",6,"['-A', '-b', '-e', '-E', '-n', '-s', '-t', '-T', '-u', '-v', '--help', '--version']",12
+4,chgrp,"['-f', '-h', '-R', '-H', '-L', '-P', '-v']",7,"['-h', '-L', '-H', '-P', '-R', '-c', '-v', '-f']",8,"['-c', '-f', '-v', '--dereference', '-h', '--no', '--preserve', '--reference', '-R', '-H', '-L', '-P', '--help', '--version']",14
+5,chmod,[],0,"['-R', '-c', '-v', '-f']",4,"['-c', '-f', '-v', '--no', '--preserve', '--reference', '-R', '--help', '--version']",9
+6,chown,"['-f', '-h', '-R', '-H', '-L', '-P', '-v']",7,"['-h', '-L', '-H', '-P', '-R', '-c', '-v', '-f']",8,"['-c', '-f', '-v', '--dereference', '-h', '--from', '--no', '--preserve', '--reference', '-R', '-H', '-L', '-P', '--help', '--version']",15
+7,chroot,[],0,[],0,"['--groups', '--userspec', '--skip', '--help', '--version']",5
+8,cksum,"['-H', '-L', '-P', '-I', '-N']",5,[],0,"['-a', '-b', '-c', '-l', '--raw', '--tag', '--untagged', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--debug', '--help', '--version']",16
+9,comm,"['-1', '-2', '-3']",3,"['-1', '-2', '-3']",3,"['-1', '-2', '-3', '--check', '--nocheck', '--output', '--total', '-z', '--help', '--version']",10
+10,cp,"['-a', '-D', '-d', '-F', '-f', '-H', '-i', '-L', '-l', '-n', '-u', '-P', '-p', '-R', '-r', '-s', '-t', '-T', '-v']",19,"['-a', '-R', '-d', '-L', '-H', '-p', '-f', '-i', '-n', '-l', '-T', '-t', '-u']",13,"['-a', '--attributes', '--backup', '-b', '--copy', '-d', '--debug', '-f', '-i', '-H', '-l', '-L', '-n', '-u', '-P', '-p', '--preserve', '--no', '--parents', '-R', '--reflink', '--remove', '--sparse', '--strip', '-s', '-S', '-t', '-T', '--update', '-u', '-v', '-x', '-Z', '--context', '--help', '--version']",36
+11,cut,"['-b', '-c', '-C', '-d', '-D', '-f', '-F', '-O', '-s']",9,"['-b', '-c', '-d', '-O', '-D', '-f', '-F', '-s', '-n']",9,"['-b', '-c', '-d', '-f', '-n', '--complement', '-s', '--output', '-z', '--help', '--version', '-M']",12
+12,date,"['-d', '-D', '-I', '-r', '-s', '-u']",6,"['-u', '-d', '-D', '-r', '-R', '-I']",6,"['-d', '--debug', '-f', '-I', '--resolution', '-R', '--rfc', '-r', '-s', '-u', '--help', '--version']",12
+13,df,"['-a', '-P', '-k', '-h', '-H', '-i', '-t']",7,"['-P', '-k', '-m', '-h', '-T', '-t', '-a', '-i', '-B']",9,"['-a', '-B', '-h', '-H', '-i', '-k', '-l', '--no', '--output', '-P', '--sync', '--total', '-t', '-T', '-x', '-v', '--help', '--version']",18
+14,dirname,[],0,[],0,"['-z', '--help', '--version']",3
+15,du,"['-b', '-k', '-K', '-m', '-h', '-a', '-H', '-L', '-s', '-x', '-c', '-d', '-l']",13,"['-a', '-b', '-L', '-H', '-d', '-c', '-l', '-s', '-x', '-h', '-m', '-k']",12,"['-0', '-a', '--apparent', '-B', '-b', '-c', '-D', '-d', '--summarize', '--files0', '-H', '-h', '--inodes', '-k', '-L', '-l', '-m', '-P', '-S', '--si', '-s', '-t', '--time', '--time', '--time', '-X', '--exclude', '-x', '--help', '--version']",30
+16,echo,"['-n', '-E', '-e']",3,['--help'],1,"['-n', '-e', '-E', '--help', '--version']",5
+17,env,"['-i', '-u', '-0']",3,"['-0', '-u']",2,"['-i', '-0', '-u', '-C', '-S', '--block', '--default', '--ignore', '--list', '-v', '--help', '--version']",12
+18,expand,['-t'],1,"['-i', '-t']",2,"['-i', '-t', '-t', '--help', '--version']",5
+19,factor,"['-h', '-x']",2,[],0,"['-h', '--help', '--version']",3
+20,false,[],0,[],0,"['--help', '--version']",2
+21,groups,[],0,[],0,"['--help', '--version']",2
+22,head,"['-n', '-c', '-q', '-v']",4,"['-n', '-n', '-c', '-q', '-v']",5,"['-c', '-n', '-q', '-v', '-z', '--help', '--version']",7
+23,id,"['-G', '-g', '-n', '-r', '-u']",5,"['-u', '-g', '-G', '-n', '-r']",5,"['-a', '-Z', '-g', '-G', '-n', '-r', '-u', '-z', '--help', '--version']",10
+24,kill,"['-l', '-s']",2,['-l'],1,"['-s', '-l', '-t', '--help', '--version']",5
+25,link,[],0,[],0,"['--help', '--version']",2
+26,ln,"['-s', '-f', '-n', '-r', '-t', '-T', '-v']",7,"['-s', '-f', '-n', '-b', '-S', '-T', '-v']",7,"['--backup', '-b', '-d', '-f', '-i', '-L', '-n', '-P', '-r', '-s', '-S', '-t', '-T', '-v', '--help', '--version']",16
+27,logname,[],0,[],0,"['--help', '--version']",2
+28,ls,"['-a', '-c', '-i', '-q', '-u', '-H', '-R', '-N', '-1', '-g', '-l', '-n', '-w', '-ll', '--color', '-f']",16,"['-1', '-a', '-A', '-x', '-d', '-L', '-H', '-R', '-p', '-F', '-l', '-i', '-n', '-s', '-lc', '-lu', '--full', '-h', '--group', '-S', '-X', '-v', '-t', '-tc', '-tu', '-r', '-w', '--color']",28,"['-a', '-A', '--author', '-b', '--block', '-B', '-c', '-C', '--color', '-d', '-D', '-f', '-F', '--file', '--format', '--full', '-g', '--group', '-G', '-h', '--si', '-H', '--dereference', '--hide', '--hyperlink', '--indicator', '-i', '-I', '-k', '-l', '-L', '-m', '-n', '-N', '-o', '-p', '-q', '--show', '-Q', '--quoting', '-r', '-R', '-s', '-S', '--sort', '--time', '--time', '-t', '-T', '-u', '-U', '-v', '-w', '-x', '-X', '-Z', '--zero', '-1', '--help', '--version']",60
+29,md5sum,"['-b', '-c', '-s']",3,"['-c', '-s', '-w']",3,"['-b', '-c', '--tag', '-t', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--help', '--version']",12
+30,mkdir,"['-m', '-p', '-v']",3,"['-m', '-p']",2,"['-m', '-p', '-v', '-Z', '--context', '--help', '--version']",7
+31,mkfifo,[],0,['-m'],1,"['-m', '-Z', '--context', '--help', '--version']",5
+32,mknod,['-m'],1,['-m'],1,"['-m', '-Z', '--context', '--help', '--version']",5
+33,mktemp,"['-d', '-p', '-q', '-t', '-u']",5,"['-d', '-q', '-t', '-p', '-u']",5,"['-d', '-u', '-q', '--suffix', '-p', '-t', '--help', '--version']",8
+34,mv,"['-f', '-i', '-n', '-t', '-T', '-v']",6,"['-f', '-i', '-n', '-T', '-t']",5,"['--backup', '-b', '--debug', '-f', '-i', '-n', '--no', '--strip', '-S', '-t', '-T', '--update', '-u', '-v', '-Z', '--help', '--version']",17
+35,nice,[],0,['-n'],1,"['-20', '-n', '--help', '--version']",4
+36,nl,"['-E', '-b', '-l', '-n', '-s', '-v', '-w']",7,"['-b', '-i', '-s', '-v', '-w']",5,"['-b', '-d', '-f', '-h', '-i', '-l', '-n', '-p', '-s', '-v', '-w', '--help', '--version']",13
+37,nohup,[],0,[],0,"['--help', '--version']",2
+38,nproc,['--all'],1,"['--all', '--ignore']",2,"['--all', '--ignore', '--help', '--version']",4
+39,od,"['-A', '-j', '-N', '-t', '-v', '-w']",6,[],0,"['-A', '--endian', '-j', '-N', '-S', '-t', '-v', '-w', '--traditional', '--help', '--version', '-a', '-b', '-c', '-d', '-f', '-i', '-l', '-o', '-s', '-x']",21
+40,paste,"['-d', '-s']",2,"['-d', '-s']",2,"['-d', '-s', '-z', '--help', '--version']",5
+41,printenv,['-0'],1,[],0,"['-0', '--help', '--version']",3
+42,printf,[],0,[],0,"['--help', '--version']",2
+43,pwd,"['-L', '-P']",2,[],0,"['-L', '-P', '--help', '--version']",4
+44,readlink,"['-e', '-f', '-m', '-n', '-q', '-z']",6,"['-f', '-n', '-v']",3,"['-f', '-e', '-m', '-n', '-q', '-s', '-v', '-z', '--help', '--version']",10
+45,realpath,"['-R', '-L', '-P', '-e', '-m', '-q', '-s', '-z', '--relative']",9,[],0,"['-e', '-m', '-L', '-P', '-q', '--relative', '--relative', '-s', '-z', '--help', '--version']",11
+46,rm,"['-f', '-i', '-rR', '-v']",4,"['-i', '-f', '-R']",3,"['-f', '-i', '-I', '--interactive', '--one', '--no', '--preserve', '-r', '-d', '-v', '--help', '--version']",12
+47,rmdir,"['-p', '--ignore']",2,"['-p', '--ignore']",2,"['--ignore', '-p', '-v', '--help', '--version']",5
+48,seq,"['-f', '-s', '-w']",3,"['-w', '-s']",2,"['-f', '-s', '-w', '--help', '--version']",5
+49,sha1sum,"['-b', '-c', '-s']",3,"['-c', '-s', '-w']",3,"['-b', '-c', '--tag', '-t', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--help', '--version']",12
+50,sha256sum,"['-b', '-c', '-s']",3,"['-c', '-s', '-w']",3,"['-b', '-c', '--tag', '-t', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--help', '--version']",12
+51,sha512sum,"['-b', '-c', '-s']",3,"['-c', '-s', '-w']",3,"['-b', '-c', '--tag', '-t', '-z', '--ignore', '--quiet', '--status', '--strict', '-w', '--help', '--version']",12
+52,shred,"['-f', '-n', '-o', '-s', '-u', '-x', '-z']",7,"['-f', '-s', '-n', '-z', '-u']",5,"['-f', '-n', '--random', '-s', '-u', '--remove', '-v', '-x', '-z', '--help', '--version']",11
+53,sleep,[],0,[],0,"['--help', '--version']",2
+54,sort,"['-r', '-u', '-n', '-b', '-C', '-c', '-d', '-f', '-i', '-M', '-x', '-s', '-z', '-k', '-t', '-o', '-V', '-k2', '-k2']",19,"['-o', '-c', '-b', '-f', '-i', '-d', '-n', '-g', '-h', '-M', '-V', '-t', '-k', '-r', '-s', '-u', '-z']",17,"['-b', '-d', '-f', '-g', '-i', '-M', '-h', '-n', '-R', '--random', '-r', '--sort', '-V', '--batch', '-c', '-C', '--compress', '--debug', '--files0', '-k', '-m', '-o', '-s', '-S', '-t', '-T', '--parallel', '-u', '-z', '--help', '--version']",31
+55,split,"['-a', '-b', '-l', '-n']",4,"['-b', '-l', '-a']",3,"['-a', '--additional', '-b', '-C', '-d', '--numeric', '-x', '--hex', '-e', '--filter', '-l', '-n', '-t', '-u', '--verbose', '--help', '--version']",17
+56,stat,"['-c', '-f', '-L', '-t']",4,"['-c', '-f', '-L', '-t']",4,"['-L', '-f', '--cached', '-c', '--printf', '-t', '--help', '--version', '--terse', '--terse']",10
+57,sync,[],0,"['-d', '-f']",2,"['-d', '-f', '--help', '--version']",4
+58,tac,[],0,[],0,"['-b', '-r', '-s', '--help', '--version']",5
+59,tail,"['-n', '-c', '-f', '-F', '-s']",5,"['-c', '-n', '-n', '-q', '-v', '-f', '-F', '-s']",8,"['-c', '-f', '-F', '-n', '--max', '--pid', '-q', '--retry', '-s', '-v', '-z', '--help', '--version']",13
+60,tee,"['-a', '-i']",2,"['-a', '-i']",2,"['-a', '-i', '-p', '--output', '--help', '--version']",6
+61,test,[],0,[],0,[],0
+62,timeout,"['-i', '-k', '-s', '-v', '--foreground', '--preserve']",6,[],0,"['--preserve', '--foreground', '-k', '-s', '-v', '--help', '--version']",7
+63,touch,"['-a', '-m', '-c', '-h', '-d', '-t', '-r']",7,"['-c', '-h', '-a', '-m', '-d', '-t', '-r']",7,"['-a', '-c', '-d', '-f', '-h', '-m', '-r', '-t', '--time', '--help', '--version']",11
+64,true,[],0,[],0,"['--help', '--version']",2
+65,truncate,"['-c', '-s']",2,"['-c', '-s']",2,"['-c', '-o', '-r', '-s', '--help', '--version']",6
+66,tty,['-s'],1,['-s'],1,"['-s', '--help', '--version']",3
+67,uname,"['-s', '-n', '-r', '-v', '-m', '-o', '-a']",7,"['-a', '-m', '-n', '-r', '-s', '-p', '-v', '-i', '-o']",9,"['-a', '-s', '-n', '-r', '-v', '-m', '-p', '-i', '-o', '--help', '--version']",11
+68,uniq,"['-c', '-d', '-u', '-i', '-z', '-w', '-f', '-s']",8,"['-c', '-d', '-u', '-i', '-z', '-f', '-s', '-w']",8,"['-c', '-d', '-D', '--all', '-f', '--group', '-i', '-s', '-u', '-z', '-w', '--help', '--version']",13
+69,unlink,[],0,[],0,"['--help', '--version']",2
+70,uptime,"['-p', '-s']",2,[],0,"['--help', '--version']",2
+71,wc,"['-l', '-w', '-c', '-m']",4,"['-c', '-m', '-l', '-w', '-L']",5,"['-c', '-m', '-l', '--files0', '-L', '-w', '--total', '--help', '--version']",9
+72,who,[],0,"['-a', '-H']",2,"['-a', '-b', '-d', '-H', '-l', '--lookup', '-m', '-p', '-q', '-r', '-s', '-t', '-T', '-u', '--message', '--writable', '--help', '--version']",18
+73,whoami,[],0,[],0,"['--help', '--version']",2
+74,yes,[],0,[],0,"['--help', '--version']",2
