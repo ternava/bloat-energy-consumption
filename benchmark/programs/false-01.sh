@@ -6,18 +6,13 @@
 # TO CONSIDER: false program has two identical scripts becuase
 # it doesn't require any inputs and has no options
 
-# ERROR: maybe because of the returned value, the generated .csv has the return status 1
-
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
+# ERROR: maybe because of the returned value, the generated .csv has the return status 
 
 main() {
     local program_path="$1"
     local false="false"
 
     validate_inputs "$program_path"
-
     perform_false "$program_path" "$false"
 }
 
@@ -51,5 +46,9 @@ perform_false() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

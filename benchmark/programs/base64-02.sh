@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-set -x
-
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
+# set -x
 
 main() {
     local program_path="$1"
@@ -13,7 +9,6 @@ main() {
     local file="./inputs/encoded-panicmonster.png"
 
     validate_inputs "$program_path" "$file"
-
     perform_base64 "$program_path" "$base64" "$file"
 }
 
@@ -46,7 +41,6 @@ perform_base64() {
     # With no FILE, or when FILE is -, read standard input
     local program="$program_path/$base64_command -d $file > decoded_file.png"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
-    # This works but we have to do a proper naming of generated files by Jouleit.
     
     local exit_status=$?
 
@@ -56,5 +50,9 @@ perform_base64() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

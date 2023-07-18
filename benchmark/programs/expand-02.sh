@@ -5,17 +5,12 @@
 
 # ERROR: This program shows an error with the "expand" command in ToyBox
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local expand="expand"
     local file="./inputs/enwik8"
 
     validate_inputs "$program_path" "$file"
-
     perform_expand "$program_path" "$expand" "$file"
 }
 
@@ -56,5 +51,9 @@ perform_expand() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

@@ -6,12 +6,12 @@
 main() {
     local program_path="$1"
     local cp="cp"
-    local source="./test-inputs/largefolder01"
+    local source="./inputs/largefolder01"
     local destination="./outputs/"
 
     validate_inputs "$program_path" "$source" "$destination"
-
     perform_cp "$program_path" "$cp" $source "$destination"
+    reverse_action "$destination" "$source"
 }
 
 validate_inputs() {
@@ -60,6 +60,16 @@ perform_cp() {
         echo "Error occurred while executing '$program_path/$cp_command' command."
         exit 1
     fi
+}
+
+reverse_action() {
+    local input_folder=$1
+    local file_path=$2
+    ##########################################################
+    # In this part, we reverse the action, for the next execution
+    file_basename=$(basename "$file_path")
+    rm -f $input_folder/$file_basename
+    ##########################################################
 }
 
 # The command calling the script for measuring 

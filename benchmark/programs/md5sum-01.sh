@@ -3,17 +3,12 @@
 # use it for debugging
 # set -x
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local md5sum="md5sum"
     local file="./inputs/paper.pdf"
 
     validate_inputs "$program_path" "$file"
-
     perform_md5sum "$program_path" "$md5sum" "$file"
 }
 
@@ -41,8 +36,8 @@ perform_md5sum() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/md5sum [OPTION]... [FILE]...
-    #   Conmd5sumenate FILE(s) to standard output.
+    # Usage: ../pre-experiment/GNU/md5sum [OPTION]... [FILE]...
+    #   Print or check MD5 (128-bit) checksums.
     local program="$program_path/$md5sum_command $file"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
 
@@ -54,5 +49,9 @@ perform_md5sum() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

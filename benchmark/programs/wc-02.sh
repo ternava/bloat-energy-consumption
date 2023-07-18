@@ -9,7 +9,6 @@ main() {
     local input_file="./inputs/enwik9"
 
     validate_inputs "$program_path" "$input_file"
-
     perform_wc "$program_path" "$wc" "$input_file"
 }
 
@@ -37,12 +36,11 @@ perform_wc() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Example: "sudo ../src/jouleit.sh -n 1 ../pre-experiment/exe-ToyBox-v089/wc ./test-inputs/align.sh" 
-
-    # Example/Test 02: program + configuration options + input
-    # Program: it's as a variable because one of the three implementation of it can be called
-    # Options: the configuration options should be the same for each call/ version of the program
-    # Input: an input, if required, and it can be variable, here is fixed
+    # Usage: ../pre-experiment/GNU/wc [OPTION]... [FILE]...
+    #    or:  ../pre-experiment/GNU/wc [OPTION]... --files0-from=F
+    #   Print newline, word, and byte counts for each FILE, and a total line if
+    #   more than one FILE is specified.  A word is a non-zero-length sequence of
+    #   printable characters delimited by white space.
     local program="$program_path/$wc_command -mlwc $input_file"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     

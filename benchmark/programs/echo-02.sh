@@ -3,7 +3,7 @@
 # use it for debugging
 # set -x
 
-# TO CONSIDER: echo program has only one script
+# TO CONSIDER: echo program has two identical scripts (input can vary),
 # because in one set of utilities it has no configuration options
 
 main() {

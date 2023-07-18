@@ -3,14 +3,17 @@
 # use it for debugging
 # set -x
 
+# TO CONSIDER: dirname program has two almost identical scripts (inputs vary a bit),
+# because in two sets of utilities it has no configuration options
+# neither it accepts more than 1 path
+
 main() {
     local program_path="$1"
-    local chown="chown"
-    local file="./inputs/paper.pdf"
+    local dirname="dirname"
+    local file="../benchmark/programs/dirname-02.sh"
 
     validate_inputs "$program_path" "$file"
-    perform_chown "$program_path" "$chown" "$file"
-    reverse_action "$file"
+    perform_dirname "$program_path" "$dirname" "$file"
 }
 
 validate_inputs() {
@@ -30,34 +33,26 @@ validate_inputs() {
     fi
 }
 
-perform_chown() {
+perform_dirname() {
     local program_path="$1"
-    local chown_command="$2"
+    local dirname_command="$2"
     local file="$3"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/chown [OPTION]... [OWNER][:[GROUP]] FILE...
-    #    or:  ../pre-experiment/GNU/chown [OPTION]... --reference=RFILE FILE...
-    # Change the owner and/or group of each FILE to OWNER and/or GROUP.
-    local program="$program_path/$chown_command root $file"
+    # Usage: ../pre-experiment/GNU/dirname [OPTION] NAME...
+    #   Output each NAME with its last non-slash component and trailing slashes
+    #   removed; if NAME contains no /'s, output '.' (meaning the current directory).
+    local program="$program_path/$dirname_command $file"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
-    
+
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
     then
-        echo "Error occurred while executing '$program_path/$chown_command' command."
+        echo "Error occurred while executing '$program_path/$dirname_command' command."
         exit 1
     fi
-}
-
-reverse_action() {
-    local file=$1
-    ##########################################################
-    # In this part, we reverse the action, for the next execution
-    sudo chown xternava "$file"
-    ##########################################################
 }
 
 # The command calling the script for measuring 

@@ -3,12 +3,17 @@
 # use it for debugging
 # set -x
 
+# TO CONSIDER: true program has two identical scripts becuase
+# it doesn't require any inputs and has no options
+
+# ERROR: maybe because of the returned value, the generated .csv has the return status 1
+
 main() {
     local program_path="$1"
-    local date="date"
--
+    local true="true"
+
     validate_inputs "$program_path"
-    perform_date "$program_path" "$date"
+    perform_true "$program_path" "$true"
 }
 
 validate_inputs() {
@@ -21,23 +26,23 @@ validate_inputs() {
     fi
 }
 
-perform_date() {
+perform_true() {
     local program_path="$1"
-    local date_command="$2"
-
+    local true_command="$2"
+    
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/date [OPTION]... [+FORMAT]
-    #    or:  ../pre-experiment/GNU/date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
-    #   Display date and time in the given FORMAT.
-    local program="$program_path/$date_command +'%Y-%m-%d %H:%M:%S'"
+    # sage: ../pre-experiment/GNU/true [ignored command line arguments]
+    #   or:  ../pre-experiment/GNU/true OPTION
+    # Exit with a status code indicating success.
+    local program="$program_path/$true_command"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
     then
-        echo "Error occurred while executing '$program_path/$date_command' command."
+        echo "Error occurred while executing '$program_path/$true_command' command."
         exit 1
     fi
 }

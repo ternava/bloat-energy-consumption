@@ -3,13 +3,9 @@
 # use it for debugging
 # set -x
 
-# TO CONSIDER: dirname program has only one script
+# TO CONSIDER: dirname program has two almost identical scripts (inputs vary a bit),
 # because in two sets of utilities it has no configuration options
 # neither it accepts more than 1 path
-
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main() {
     local program_path="$1"
@@ -17,7 +13,6 @@ main() {
     local file="../benchmark/programs/dirname-01.sh"
 
     validate_inputs "$program_path" "$file"
-
     perform_dirname "$program_path" "$dirname" "$file"
 }
 
@@ -59,5 +54,9 @@ perform_dirname() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

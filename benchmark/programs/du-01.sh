@@ -9,7 +9,6 @@ main() {
     local path_to_directory="./inputs/debian"
 
     validate_inputs "$program_path" "$path_to_directory"
-
     perform_du "$program_path" "$du" "$path_to_directory"
 }
 
@@ -53,7 +52,6 @@ perform_du() {
         exit 1
     fi  
 }
-
 
 # The command calling the script for measuring 
 # the energy consumption of a program (given in a second script)

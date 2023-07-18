@@ -3,18 +3,14 @@
 # use it for debugging
 # set -x
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local chmod="chmod"
     local file="./inputs/enwik8"
 
     validate_inputs "$program_path" "$file"
-
     perform_chmod "$program_path" "$chmod" "$file"
+    reverse_action "$file"
 }
 
 validate_inputs() {
@@ -56,5 +52,17 @@ perform_chmod() {
         exit 1
     fi
 }
+
+reverse_action() {
+    local file=$1
+    ##########################################################
+    # In this part, we reverse the action, for the next execution
+    chmod u+rw,g+rw,o+r $file
+    ##########################################################
+}
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

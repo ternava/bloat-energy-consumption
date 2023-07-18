@@ -3,14 +3,16 @@
 # use it for debugging
 # set -x
 
+# TO CONSIDER: cksum program has two identical scripts, with different inputs only
+# because in one set of utilities it has no configuration options
+
 main() {
     local program_path="$1"
-    local chown="chown"
-    local file="./inputs/paper.pdf"
+    local cksum="cksum"
+    local file="./inputs/panicmonster.png"
 
     validate_inputs "$program_path" "$file"
-    perform_chown "$program_path" "$chown" "$file"
-    reverse_action "$file"
+    perform_cksum "$program_path" "$cksum" "$file"
 }
 
 validate_inputs() {
@@ -30,34 +32,25 @@ validate_inputs() {
     fi
 }
 
-perform_chown() {
+perform_cksum() {
     local program_path="$1"
-    local chown_command="$2"
+    local cksum_command="$2"
     local file="$3"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/chown [OPTION]... [OWNER][:[GROUP]] FILE...
-    #    or:  ../pre-experiment/GNU/chown [OPTION]... --reference=RFILE FILE...
-    # Change the owner and/or group of each FILE to OWNER and/or GROUP.
-    local program="$program_path/$chown_command root $file"
+    # Usage: ../pre-experiment/GNU/cksum [OPTION]... [FILE]...
+    #   Print or verify checksums.
+    #   By default use the 32 bit CRC algorithm.
+    local program="$program_path/$cksum_command $file"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
-    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
     then
-        echo "Error occurred while executing '$program_path/$chown_command' command."
+        echo "Error occurred while executing '$program_path/$cksum_command' command."
         exit 1
     fi
-}
-
-reverse_action() {
-    local file=$1
-    ##########################################################
-    # In this part, we reverse the action, for the next execution
-    sudo chown xternava "$file"
-    ##########################################################
 }
 
 # The command calling the script for measuring 

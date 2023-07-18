@@ -9,8 +9,8 @@ main() {
     local input_file="./outputs/touch02.txt"
 
     validate_inputs "$program_path"
-
     perform_touch "$program_path" "$touch" "$input_file"
+    reverse_action "$input_file"
 }
 
 validate_inputs() {
@@ -41,6 +41,14 @@ perform_touch() {
         echo "Error occurred while executing '$program_path/$touch_command' command."
         exit 1
     fi
+}
+
+reverse_action() {
+    local input_file=$1
+    ##########################################################
+    # In this part, we reverse the action, for the next execution
+    rm -f $input_file
+    ##########################################################
 }
 
 # The command calling the script for measuring 

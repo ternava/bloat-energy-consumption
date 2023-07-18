@@ -41,13 +41,13 @@ $JOULEIT chroot /newroot /bin/bash -c "exit" > /dev/null
 # $JOULEIT cut -d ',' -f 2,4 --output-delimiter='|' file.csv > /dev/null
 
 # date benchmark
-$JOULEIT date +"%Y-%m-%d %H:%M:%S" > /dev/null
+# $JOULEIT date +"%Y-%m-%d %H:%M:%S" > /dev/null
 
 # df benchmark
-$JOULEIT df -hT > /dev/null
+# $JOULEIT df -hT > /dev/null
 
 # dirname benchmark
-$JOULEIT dirname "/home/user/documents/example.txt" > /dev/null
+# $JOULEIT dirname "/home/user/documents/example.txt" > /dev/null
 
 # du benchmark
 # $JOULEIT du -sh --exclude=directory/subdir/ directory/ > /dev/null
@@ -59,43 +59,43 @@ $JOULEIT dirname "/home/user/documents/example.txt" > /dev/null
 $JOULEIT env -i HOME=/tmp USER=testuser bash -c 'echo $HOME' > /dev/null
 
 # expand benchmark
-$JOULEIT expand -t 4 file.txt > /dev/null
+# $JOULEIT expand -t 4 file.txt > /dev/null
 
 # factor benchmark
-$JOULEIT factor -e 42 > /dev/null
+# $JOULEIT factor -e 42 > /dev/null
 
 # false benchmark
-$JOULEIT false > /dev/null
+# $JOULEIT false > /dev/null
 
 # groups benchmark
 $JOULEIT groups --group basefile username > /dev/null
 
 # head benchmark
-$JOULEIT head -n 5 file.txt > /dev/null
+# $JOULEIT head -n 5 file.txt > /dev/null
 
 # id benchmark
-$JOULEIT id -u -n > /dev/null
+# $JOULEIT id -u -n > /dev/null
 
 # kill benchmark
 $JOULEIT kill -s HUP $$ > /dev/null
 
 # link benchmark
-$JOULEIT link -v file.txt hardlink.txt > /dev/null
+# $JOULEIT link -v file.txt hardlink.txt > /dev/null
 
 # ln benchmark
-$JOULEIT ln -sfT file.txt symlink.txt > /dev/null
+# $JOULEIT ln -sfT file.txt symlink.txt > /dev/null
 
 # logname benchmark
-$JOULEIT logname > /dev/null
+# $JOULEIT logname > /dev/null
 
 # ls benchmark
-$JOULEIT ls -alh --group-directories-first > /dev/null
+# $JOULEIT ls -alh --group-directories-first > /dev/null
 
 # md5sum benchmark
-$JOULEIT md5sum -c file.txt.md5 > /dev/null
+# $JOULEIT md5sum -c file.txt.md5 > /dev/null
 
 # mkdir benchmark
-$JOULEIT mkdir -p directory/subdir > /dev/null
+# $JOULEIT mkdir -p directory/subdir > /dev/null
 
 # mkfifo benchmark
 $JOULEIT mkfifo --mode=0666 pipe > /dev/null
@@ -107,7 +107,7 @@ $JOULEIT mknod --mode=0600 device.txt b 1 3 > /dev/null
 $JOULEIT mktemp -d -p /tmp mytempdir.XXXXXX > /dev/null
 
 # mv benchmark
-$JOULEIT mv -i file.txt newfile.txt > /dev/null
+# $JOULEIT mv -i file.txt newfile.txt > /dev/null
 
 # nice benchmark
 $JOULEIT nice -n 10 command > /dev/null
@@ -167,7 +167,7 @@ $JOULEIT shred -u -n 5 file.txt > /dev/null
 $JOULEIT sleep 5
 
 # sort benchmark
-$JOULEIT sort -r -n -k 2 file.txt > /dev/null
+# $JOULEIT sort -r -n -k 2 file.txt > /dev/null
 
 # split benchmark
 $JOULEIT split -b 1M -d -a 3 file.txt part > /dev/null
@@ -185,7 +185,7 @@ $JOULEIT tac file.txt > /dev/null
 $JOULEIT tail -n 5 file.txt > /dev/null
 
 # tee benchmark
-$JOULEIT echo "Hello, world!" | tee file.txt > /dev/null
+# $JOULEIT echo "Hello, world!" | tee file.txt > /dev/null
 
 # test benchmark
 $JOULEIT test -f file.txt > /dev/null
@@ -194,10 +194,10 @@ $JOULEIT test -f file.txt > /dev/null
 $JOULEIT $JOULEITout 10s command > /dev/null
 
 # touch benchmark
-$JOULEIT touch -d "2 days ago" file.txt > /dev/null
+# $JOULEIT touch -d "2 days ago" file.txt > /dev/null
 
 # true benchmark
-$JOULEIT true > /dev/null
+# $JOULEIT true > /dev/null
 
 # truncate benchmark
 $JOULEIT truncate -s 1K file.txt > /dev/null
@@ -218,7 +218,7 @@ $JOULEIT unlink hardlink.txt > /dev/null
 $JOULEIT up$JOULEIT > /dev/null
 
 # wc benchmark
-$JOULEIT wc -l -w -c file.txt > /dev/null
+# $JOULEIT wc -l -w -c file.txt > /dev/null
 
 # who benchmark
 $JOULEIT who --heading > /dev/null

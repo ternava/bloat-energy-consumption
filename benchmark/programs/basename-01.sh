@@ -3,17 +3,12 @@
 # use it for debugging
 # set -x
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local basename="basename"
     local input_path="bloat-energy-consumption/benchmark/programs/basename-01.sh"
 
     validate_inputs "$program_path" "$input_path"
-
     perform_basename "$program_path" "$basename" "$input_path"
 }
 
@@ -55,5 +50,9 @@ perform_basename() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

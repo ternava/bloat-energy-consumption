@@ -6,12 +6,12 @@
 main() {
     local program_path="$1"
     local mv="mv"
-    local source="./test-inputs/largefolder02.zip"
+    local source="./inputs/largefolder02.zip"
     local destination="./outputs/"
 
     validate_inputs "$program_path" "$source" "$destination"
-
     perform_move "$program_path" "$mv" "$source" "$destination"
+    reverse_action "$source" "$destination"
 }
 
 validate_inputs() {
@@ -59,6 +59,17 @@ perform_move() {
         echo "Error occurred while executing '$program_path/$mv_command' command."
         exit 1
     fi
+}
+
+reverse_action() {
+    local source=$1 # ./inputs/paper.pdf
+    local destination=$2 # outputs 
+    ##########################################################
+    # In this part, we reverse the action, for the next execution
+    filename=$(basename $source)
+    to_dir=$(dirname $source)
+    mv "$destination/$filename" "$to_dir"
+    ##########################################################
 }
 
 # The command calling the script for measuring 

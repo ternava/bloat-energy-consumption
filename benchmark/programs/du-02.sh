@@ -9,7 +9,6 @@ main() {
     local path_to_directory="./inputs/debian"
 
     validate_inputs "$program_path" "$path_to_directory"
-
     perform_du "$program_path" "$du" "$path_to_directory"
 }
 

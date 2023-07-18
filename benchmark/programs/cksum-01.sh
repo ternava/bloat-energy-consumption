@@ -3,12 +3,8 @@
 # use it for debugging
 # set -x
 
-# TO CONSIDER: cksum program has only one script
+# TO CONSIDER: cksum program has two identical scripts, with different inputs only
 # because in one set of utilities it has no configuration options
-
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main() {
     local program_path="$1"
@@ -16,7 +12,6 @@ main() {
     local file="./inputs/largefolder01.zip"
 
     validate_inputs "$program_path" "$file"
-
     perform_cksum "$program_path" "$cksum" "$file"
 }
 
@@ -57,5 +52,9 @@ perform_cksum() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

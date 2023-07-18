@@ -9,7 +9,6 @@ main() {
     local file="./inputs/enwik9"
 
     validate_inputs "$program_path" "$file"
-
     perform_cat "$program_path" "$cat" "$file"
 }
 

@@ -9,7 +9,6 @@ main() {
     local path_to_directory="./inputs/debian" # We use the home directory
 
     validate_inputs "$program_path"
-
     perform_ls "$program_path" "$ls" "$path_to_directory"
 }
 

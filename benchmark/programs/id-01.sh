@@ -3,16 +3,11 @@
 # use it for debugging
 #set -x
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local id="id"
 
     validate_inputs "$program_path"
-
     perform_id "$program_path" "$id"
 }
 
@@ -34,6 +29,7 @@ perform_id() {
 
     # Usage: ../pre-experiment/GNU/id [ignored command line arguments]
     #   or:  ../pre-experiment/GNU/id OPTION
+    # Print user and group information for each specified USER, or (when USER omitted) for the current user.
     #   Exit with a status code indicating failure.
     local program="$program_path/$id_command -u -n"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
@@ -46,5 +42,9 @@ perform_id() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

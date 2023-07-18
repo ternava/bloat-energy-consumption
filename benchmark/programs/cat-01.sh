@@ -3,17 +3,12 @@
 # use it for debugging
 # set -x
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local cat="cat"
     local file="./inputs/enwik9"
 
     validate_inputs "$program_path" "$file"
-
     perform_cat "$program_path" "$cat" "$file"
 }
 
@@ -54,5 +49,9 @@ perform_cat() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

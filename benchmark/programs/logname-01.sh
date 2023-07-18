@@ -1,21 +1,16 @@
 #!/usr/bin/env bash
 
 # use it for debugging
-#set -x
+# set -x
 
 # TO CONSIDER: logname program has two identical scripts because
 # it doesn't require any inputs and has no options
-
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main() {
     local program_path="$1"
     local logname="logname"
 
     validate_inputs "$program_path"
-
     perform_logname "$program_path" "$logname"
 }
 
@@ -48,5 +43,9 @@ perform_logname() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

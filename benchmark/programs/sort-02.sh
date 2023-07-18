@@ -9,7 +9,6 @@ main() {
     local source="./inputs/enwik9"
 
     validate_inputs "$program_path" "$source"
-
     perform_sort "$program_path" "$sort" "$source"
 }
 

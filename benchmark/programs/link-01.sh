@@ -6,10 +6,6 @@
 # TO CONSIDER: link program has two identical scripts becuase
 # it doesn't require any inputs and has no options
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local link="link"
@@ -68,5 +64,9 @@ reverse_action() {
     rm $file_link
     ##########################################################
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

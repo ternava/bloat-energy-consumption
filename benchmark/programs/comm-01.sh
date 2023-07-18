@@ -3,18 +3,13 @@
 # use it for debugging
 # set -x
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local comm="comm"
-    local first_file="./outputs/enwik8"
-    local second_file="./outputs/enwik9"
+    local first_file="./inputs/enwik8"
+    local second_file="./inputs/enwik9"
 
     validate_inputs "$program_path" "$first_file" "$second_file"
-
     perform_comm "$program_path" "$comm" "$first_file" "$second_file"
 }
 
@@ -56,6 +51,8 @@ perform_comm() {
     local program="$program_path/$comm_command $file1_srt $file2_srt"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
 
+    reverse_action "$file1_srt" "$file2_srt"
+
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -63,6 +60,20 @@ perform_comm() {
         echo "Error occurred while executing '$program_path/$comm_command' command."
         exit 1
     fi
+
 }
+
+reverse_action() {
+    local input_file1=$1
+    local input_file2=$2
+    ##########################################################
+    # In this part, we reverse the action, for the next execution
+    rm "$input_file1" "$input_file2"
+    ##########################################################
+}
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@

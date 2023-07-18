@@ -9,7 +9,6 @@ main() {
     local large_file="./inputs/CVD_cleaned.csv"
 
     validate_inputs "$program_path" "$large_file"
-
     perform_cut "$program_path" "$cut" "$large_file"
 }
 

@@ -3,17 +3,12 @@
 # use it for debugging
 # set -x
 
-# The command calling the script for measuring 
-# the energy consumption of a program (given in a second script)
-JOULEIT="sudo ../src/jouleit.sh -n 1"
-
 main() {
     local program_path="$1"
     local date="date"
     local epoch_timestamp=1689590096 # Current epoch timestemp
 
     validate_inputs "$program_path"
-
     perform_date "$program_path" "$date" "$epoch_timestamp"
 }
 
@@ -48,5 +43,9 @@ perform_date() {
         exit 1
     fi
 }
+
+# The command calling the script for measuring 
+# the energy consumption of a program (given in a second script)
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main $@
