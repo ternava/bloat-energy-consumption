@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-eval "$@" > prog_data_for_verification.txt
+eval "$@" > /dev/null # prog_data_for_verification.txt
