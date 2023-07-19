@@ -34,14 +34,18 @@ perform_base64() {
     local base64_command="$2"
     local file="$3"
 
+    local decoded_file="./outputs/decoded_panicmonster.png"
+
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
     # Usage: ../pre-experiment/GNU/base64 [OPTION]... [FILE]
     # Base64 encode or decode FILE, or standard input, to standard output.
     # With no FILE, or when FILE is -, read standard input
-    local program="$program_path/$base64_command -d $file > decoded_file.png"
+    local program="$program_path/$base64_command -d $file > $decoded_file"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
+    reverse_action "$decoded_file"
+
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -49,6 +53,14 @@ perform_base64() {
         echo "Error occurred while executing '$program_path/$base64_command' command."
         exit 1
     fi
+}
+
+reverse_action() {
+    local decoded_file=$1
+    ##########################################################
+    # In this part, we reverse the action, for the next execution
+    rm -f "$decoded_file"
+    ##########################################################
 }
 
 # The command calling the script for measuring 
