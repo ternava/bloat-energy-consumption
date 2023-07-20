@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 
+
 def merge_csv_files(directory_path, output_file):
     # Get a list of all CSV files in the directory
     csv_files = [file for file in os.listdir(directory_path) if file.endswith('.csv')]
@@ -21,6 +22,7 @@ def merge_csv_files(directory_path, output_file):
     merged_df.to_csv(output_file, index=False)
     print("Merged CSV files have been exported to:", output_file)
 
+
 if __name__ == '__main__':
 
     directory = './data/repeat21'
@@ -28,6 +30,7 @@ if __name__ == '__main__':
     # Create a set to store the unique filenames
     commands = set()
     utilities = set()
+    data = {"Program": [], "Utilities": []}
 
     # Iterate over the files in the directory
     for filename in os.listdir(directory):
@@ -55,37 +58,35 @@ if __name__ == '__main__':
     for config in ["01", "02"]:
         # Iterate over commands
         for command in commands:
-            data = {}
             # Iterate over directories
             for directory in ["./data/" + x for x in directories]:
-                #Iterate over utilities (GNU, Toybox, etc)
+                # Iterate over utilities (GNU, Toybox, etc)
                 for utility in utilities:
                     file_path = os.path.join(directory, command + "-" + config + "_" + utility + ".csv")
                     print(file_path)
+                    # Get the PSYS value and append it to the data dictionary
+                    column_name = directory.split('repeat')[1]  # Extract the numeric suffix
                     # Read the CSV file in the current directory
+
                     if os.path.exists(file_path):
                         df = pd.read_csv(file_path, delimiter=";")
-
-                        # Get the PSYS value and append it to the data dictionary
-                        column_name = directory.split('repeat')[1]  # Extract the numeric suffix
-                        print(column_name)
-                        if "PSYS_repeat" + column_name not in data.keys():
-                            data["PSYS_repeat" + column_name] = [df['PSYS'].values[0]]
-                            data["DURATION_repeat" + column_name] = [df['DURATION'].values[0]]
-                            data["Utilities"] = [utility]
-                            data["Program"] = [command]
-                            data["config"] = [config]
+                        if config + "_" + column_name not in data.keys():
+                            data[config + "_" + column_name] = [df['PSYS'].values[0]]
                         else:
-                            data["PSYS_repeat" + column_name].append(df['PSYS'].values[0])
-                            data["DURATION_repeat" + column_name].append(df['DURATION'].values[0])
-                            data["Utilities"].append(utility)
-                            data["Program"].append(command)
-                            data["config"].append(config)
+                            data[config + "_" + column_name].append(df['PSYS'].values[0])
 
-            # Create a new DataFrame using the data dictionary
-            new_df = pd.DataFrame(data)
-            # Write the new DataFrame to a CSV file
-            new_df.to_csv("./merged_data_"+ config + "/"  + command + "-" + config + '.csv', index=False)
+                    else:
+                        if config + "_" + column_name not in data.keys():
+                            data[config + "_" + column_name] = [None]
+                        else:
+                            data[config + "_" + column_name].append(None)
+            # Add Program and utilities only during the first iteration
+            if config == "01":
+                data["Program"] += [command for _ in range(0, len(utilities))]
+                data["Utilities"] += utilities
 
-    merge_csv_files("./merged_data_01", "./merged_data_01/all_data_01.csv")
-    merge_csv_files("./merged_data_02", "./merged_data_02/all_data_02.csv")
+    # Create a new DataFrame using the data dictionary
+    new_df = pd.DataFrame(data)
+
+    # Write the new DataFrame to a CSV file
+    new_df.to_csv("./data/merged_all_data" + '.csv', index=False)
