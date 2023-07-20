@@ -132,3 +132,5 @@ dmypy.json
 # Folders
 benchmark/inputs/
 benchmark/outputs/
+debloat_benchmark/inputs/
+debloat_benchmark/outputs/

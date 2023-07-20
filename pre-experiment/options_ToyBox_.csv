@@ -1,0 +1,222 @@
+,Utility,Options ToyBox
+169,acpi,"['-a', '-b', '-c', '-t', '-V']"
+53,arch,[]
+191,ascii,[]
+112,base32,"['-d', '-i', '-w']"
+14,base64,"['-d', '-i', '-w']"
+195,basename,"['-a', '-s']"
+36,blkdiscard,"['-o', '-l', '-s', '-z', '-f']"
+5,blkid,"['-U', '-L', '-o', '-s']"
+150,blockdev,"['--setro', '--setrw', '--getro', '--getss', '--getbsz', '--setbsz', '--getsz', '--getsize', '--getsize64', '--getra', '--setra', '--flushbufs', '--rereadpt']"
+114,bunzip2,"['-c', '-f', '-k', '-t', '-v']"
+151,bzcat,[]
+137,cal,['-h']
+1,cat,"['-e', '-t', '-u', '-v']"
+207,chattr,"['-R', '-p', '-v']"
+156,chgrp,"['-f', '-h', '-R', '-H', '-L', '-P', '-v']"
+13,chmod,[]
+119,chown,"['-f', '-h', '-R', '-H', '-L', '-P', '-v']"
+188,chroot,[]
+55,chrt,"['-p', '-R', '-m', '-o', '-b']"
+25,chvt,[]
+123,cksum,"['-H', '-L', '-P', '-I', '-N']"
+92,clear,[]
+47,cmp,[]
+185,comm,"['-1', '-2', '-3']"
+167,count,[]
+109,cp,"['-a', '-D', '-d', '-F', '-f', '-H', '-i', '-L', '-l', '-n', '-u', '-P', '-p', '-R', '-r', '-s', '-t', '-T', '-v']"
+141,cpio,"['-F', '-p', '-i', '-o', '-t', '-d', '-u', '-v', '--no']"
+37,crc32,[]
+136,cut,"['-b', '-c', '-C', '-d', '-D', '-f', '-F', '-O', '-s']"
+173,date,"['-d', '-D', '-I', '-r', '-s', '-u']"
+160,deallocvt,[]
+28,devmem,[]
+29,df,"['-a', '-P', '-k', '-h', '-H', '-i', '-t']"
+216,dirname,[]
+95,dmesg,"['-C', '-c', '-n', '-r', '-S', '-s', '-T', '-t', '-w']"
+63,dnsdomainname,[]
+2,dos2unix,[]
+189,du,"['-b', '-k', '-K', '-m', '-h', '-a', '-H', '-L', '-s', '-x', '-c', '-d', '-l']"
+17,echo,"['-n', '-E', '-e']"
+202,egrep,[]
+133,eject,"['-s', '-t', '-T']"
+184,env,[]
+79,expand,['-t']
+166,factor,"['-h', '-x']"
+66,fallocate,[]
+74,false,[]
+192,fgrep,[]
+138,file,"['-b', '-h', '-L', '-s']"
+219,find,"['-H', '-name', '-path', '-user', '-group', '-perm', '-size', '-links', '-ctime', '-inum', '-true', '-context', '-samefile', '-depth', '-newer', '-newerXY', '-type', '-Xtime', '-print', '-exec', '-ok', '-delete', '-printf']"
+38,flock,"['-s', '-x', '-u', '-n']"
+124,fmt,['-w']
+27,free,"['-bkmg', '-h']"
+129,freeramdisk,[]
+72,fsfreeze,"['-f', '-u']"
+126,fstype,[]
+135,fsync,['-d']
+78,ftpget,"['-c', '-p', '-P', '-u', '-v', '-d', '-D', '-g', '-l', '-L', '-m', '-M', '-s']"
+120,ftpput,"['-c', '-p', '-P', '-u', '-v', '-d', '-D', '-g', '-l', '-L', '-m', '-M', '-s']"
+104,getconf,"['-a', '-l']"
+115,gpiodetect,[]
+82,gpiofind,[]
+183,gpioget,['-l']
+90,gpioinfo,[]
+125,gpioset,['-l']
+19,grep,[]
+142,groups,[]
+101,gunzip,"['-c', '-f', '-k']"
+45,head,"['-n', '-c', '-q', '-v']"
+158,help,"['-a', '-u', '-h']"
+121,hexedit,['-r']
+204,host,"['-a', '-t', '-v']"
+217,hostname,"['-b', '-d', '-f', '-F', '-s']"
+43,httpd,"['-e', '-d', '-v']"
+113,hwclock,"['-f', '-l', '-r', '-s', '-t', '-u', '-w']"
+144,i2cdetect,"['-a', '-F', '-l', '-q', '-r', '-y']"
+174,i2cdump,"['-f', '-y']"
+122,i2cget,"['-f', '-y']"
+139,i2cset,"['-f', '-y']"
+33,iconv,"['-c', '-f', '-t']"
+146,id,"['-G', '-g', '-n', '-r', '-u']"
+134,ifconfig,"['-a', '-S']"
+172,inotifyd,[]
+67,insmod,[]
+89,ionice,"['-c', '-n', '-p', '-t']"
+170,iorenice,[]
+64,iotop,"['-A', '-a', '-H', '-K', '-k', '-m', '-O', '-o', '-s', '-b', '-d', '-n', '-p', '-u', '-q']"
+83,kill,"['-l', '-s']"
+34,killall,"['-i', '-l', '-q', '-s', '-v', '-w']"
+58,killall5,"['-l', '-o', '-s']"
+99,link,[]
+154,linux32,[]
+171,ln,"['-s', '-f', '-n', '-r', '-t', '-T', '-v']"
+23,logger,"['-s', '-t', '-p']"
+187,login,[]
+4,logname,[]
+60,losetup,"['-a', '-f', '-j', '-c', '-d', '-D', '-s', '-o', '-r', '-S']"
+193,ls,"['-a', '-c', '-i', '-q', '-u', '-H', '-R', '-N', '-1', '-g', '-l', '-n', '-w', '-ll', '--color', '-f']"
+200,lsattr,"['-R', '-a', '-d', '-l', '-p', '-v']"
+40,lsmod,[]
+155,lspci,"['-e', '-i', '-k', '-m', '-n']"
+211,lsusb,['-i']
+209,makedevs,['-d']
+162,mcookie,"['-v', '-V']"
+10,md5sum,"['-b', '-c', '-s']"
+140,microcom,"['-s', '-X']"
+181,mix,"['-c', '-d', '-l', '-r']"
+212,mkdir,"['-m', '-p', '-v']"
+3,mkfifo,[]
+100,mknod,['-m']
+164,mkpasswd,[]
+52,mkswap,[]
+35,mktemp,"['-d', '-p', '-q', '-t', '-u']"
+20,modinfo,"['-F', '-0', '-b', '-k']"
+84,mount,"['-a', '-O', '-f', '-r', '-w', '-t', '-v']"
+7,mountpoint,"['-q', '-d', '-x']"
+105,mv,"['-f', '-i', '-n', '-t', '-T', '-v']"
+62,nbd-client,"['-b', '-n', '-s']"
+203,nbd-server,['-r']
+131,netcat,"['-4', '-6', '-E', '-f', '-l', '-L', '-n', '-p', '-q', '-s', '-t', '-u', '-U', '-w', '-W']"
+21,netstat,"['-r', '-a', '-l', '-t', '-u', '-w', '-x', '-e', '-n', '-W', '-p']"
+12,nice,[]
+132,nl,"['-E', '-b', '-l', '-n', '-s', '-v', '-w']"
+102,nohup,[]
+88,nproc,['--all']
+49,nsenter,"['-a', '-F', '-t', '-C', '-i', '-m', '-n', '-p', '-u', '-U']"
+108,od,"['-A', '-j', '-N', '-t', '-v', '-w']"
+197,oneit,"['-c', '-p', '-r', '-n', '-3']"
+50,openvt,"['-c', '-s', '-w']"
+46,partprobe,[]
+57,passwd,[]
+26,paste,"['-d', '-s']"
+76,patch,"['-d', '-i', '-l', '-p', '-R', '-s', '-u', '--dry']"
+147,pgrep,"['-c', '-d', '-L', '-l', '-f', '-G', '-g', '-n', '-o', '-P', '-s', '-t', '-U', '-u', '-v', '-x']"
+106,pidof,"['-o', '-s', '-x']"
+77,ping,"['-4', '-c', '-f', '-i', '-I', '-m', '-q', '-s', '-t', '-W', '-w']"
+117,pivot_root,[]
+182,pkill,"['-l', '-V', '-f', '-G', '-g', '-n', '-o', '-P', '-s', '-t', '-U', '-u', '-v', '-x']"
+178,pmap,"['-p', '-q', '-x']"
+18,printenv,['-0']
+97,printf,[]
+31,ps,"['-A', '-d', '-g', '-p', '-s', '-T', '-U', '-k', '-n', '-f', '-l', '-o', '-O', '-Z']"
+94,pwd,"['-L', '-P']"
+116,pwdx,[]
+59,pwgen,"['-c', '-A', '-n', '-0', '-y', '-r', '-s', '-B', '-h', '-C', '-1', '-v']"
+48,readahead,[]
+39,readelf,"['-a', '-d', '-e', '-h', '-l', '-n', '-p', '-S', '-s', '-x', '--dyn']"
+71,readlink,"['-e', '-f', '-m', '-n', '-q', '-z']"
+210,realpath,"['-R', '-L', '-P', '-e', '-m', '-q', '-s', '-z', '--relative']"
+180,reboot,"['-d', '-f', '-n']"
+213,renice,[]
+175,reset,[]
+196,rev,[]
+215,rfkill,[]
+130,rm,"['-f', '-i', '-rR', '-v']"
+70,rmdir,"['-p', '--ignore']"
+128,rmmod,"['-f', '-w']"
+161,rtcwake,"['-a', '-d', '-l', '-m', '-s', '-t', '-u', '-v']"
+214,sed,"['-e', '-f', '-i', '-n', '-r', '-E', '-s', '-z']"
+61,seq,"['-f', '-s', '-w']"
+96,setfattr,"['-h', '-n', '-x', '-v']"
+143,setsid,"['-d', '-c', '-w']"
+176,sha1sum,"['-b', '-c', '-s']"
+51,sha224sum,"['-b', '-c', '-s']"
+145,sha256sum,"['-b', '-c', '-s']"
+201,sha384sum,"['-b', '-c', '-s']"
+24,sha3sum,"['-a', '-b', '-S']"
+152,sha512sum,"['-b', '-c', '-s']"
+159,shred,"['-f', '-n', '-o', '-s', '-u', '-x', '-z']"
+194,sleep,[]
+22,sntp,"['-p', '-s', '-a', '-S', '-m', '-M', '-t', '-d', '-D', '-r', '-q']"
+186,sort,[]
+86,split,"['-a', '-b', '-l', '-n']"
+91,stat,"['-c', '-f', '-L', '-t']"
+205,strings,"['-f', '-n', '-o', '-t']"
+111,su,[]
+81,swapoff,[]
+41,swapon,"['-d', '-p']"
+15,switch_root,"['-c', '-h']"
+54,sync,[]
+68,sysctl,"['-a', '-e', '-N', '-n', '-p', '-q', '-w']"
+80,tac,[]
+206,tail,"['-n', '-c', '-f', '-F', '-s']"
+0,tar,"['--exclude', '--mode', '--mtime', '--sparse', '--restrict', '--numeric', '--null', '--strip', '--xform', '-I']"
+56,taskset,"['-p', '-a']"
+168,tee,"['-a', '-i']"
+98,test,[]
+93,time,"['-p', '-v']"
+220,timeout,[]
+75,top,"['-H', '-h', '-k', '-o', '-O', '-s', '-b', '-d', '-m', '-n', '-p', '-u', '-q']"
+149,touch,"['-a', '-m', '-c', '-h', '-d', '-t', '-r']"
+8,true,[]
+127,truncate,"['-c', '-s']"
+9,tty,['-s']
+85,tunctl,"['-T', '-d', '-t', '-u']"
+69,uclampset,"['-m', '-M', '-p', '-R', '-a']"
+177,ulimit,"['-P', '-S', '-c', '-e', '-i', '-m', '-p', '-r', '-s', '-u']"
+165,umount,"['-a', '-D', '-f', '-l', '-n', '-r', '-t', '-v']"
+32,uname,"['-s', '-n', '-r', '-v', '-m', '-o', '-a']"
+157,unicode,[]
+208,uniq,"['-c', '-d', '-u', '-i', '-z', '-w', '-f', '-s']"
+30,unix2dos,[]
+148,unlink,[]
+179,unshare,"['-a', '-f', '-r', '-C', '-i', '-m', '-n', '-p', '-u', '-U']"
+153,uptime,"['-p', '-s']"
+163,usleep,[]
+73,uudecode,['-o']
+103,uuencode,['-m']
+199,uuidgen,[]
+198,vconfig,[]
+16,vmstat,['-n']
+118,w,[]
+65,watch,"['-n', '-t', '-e', '-b', '-x']"
+42,watchdog,"['-F', '-t', '-T']"
+87,wc,"['-l', '-w', '-c', '-m']"
+11,which,['-a']
+44,who,[]
+110,whoami,[]
+218,xargs,"['-0', '-E', '-n', '-o', '-p', '-P', '-r', '-s', '-t']"
+107,xxd,"['-c', '-g', '-i', '-l', '-o', '-p', '-r', '-s']"
+190,yes,[]
+6,zcat,['-f']
