@@ -9,7 +9,7 @@ main() {
     local new_parent_dir="./inputs/parent_directory"
     local new_dirs="$new_parent_dir/subdirectory1 $new_parent_dir/subdirectory2/subsubdirectory $new_parent_dir/subdirectory3"
 
-    validate_inputs "$program_path" "$new_dirs"
+    validate_inputs "$program_path"
     perform_mkdir "$program_path" "$mkdir" "$new_dirs"
     reverse_action "$new_parent_dir"
 }

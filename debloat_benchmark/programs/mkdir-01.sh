@@ -8,7 +8,7 @@ main() {
     local mkdir="mkdir-5.2.1"
     local new_dir="./outputs/newdir"
 
-    validate_inputs "$program_path" "$new_dir"
+    validate_inputs "$program_path"
     perform_mkdir "$program_path" "$mkdir" "$new_dir"
     reverse_action "$new_dir"
 }
