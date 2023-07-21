@@ -5,8 +5,8 @@
 
 main() {
     local program_path="$1"
-    local mkdir="mkdir"
-    local new_dir="./inputs/newdir"
+    local mkdir="mkdir-5.2.1"
+    local new_dir="./outputs/newdir"
 
     validate_inputs "$program_path" "$new_dir"
     perform_mkdir "$program_path" "$mkdir" "$new_dir"
@@ -30,9 +30,9 @@ perform_mkdir() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/mkdir [OPTION]... DIRECTORY...
+    # Usage: ../pre-experiment/bloated/mkdir-5.2.1 [OPTION]... DIRECTORY...
     # Create the DIRECTORY(ies), if they do not already exist.
-    local program="$program_path/$mkdir_command -p $new_dir"
+    local program="$program_path/$mkdir_command $new_dir"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
