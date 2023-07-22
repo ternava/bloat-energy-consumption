@@ -6,9 +6,10 @@
 main() {
     local program_path="$1"
     local id="id"
+    local repetition="$2"
 
     validate_inputs "$program_path"
-    perform_id "$program_path" "$id"
+    perform_id "$program_path" "$id" "$repetition"
 }
 
 validate_inputs() {
@@ -24,6 +25,7 @@ validate_inputs() {
 perform_id() {
     local program_path="$1"
     local id_command="$2"
+    local repetition="$3"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -32,7 +34,7 @@ perform_id() {
     # Print user and group information for each specified USER, or (when USER omitted) for the current user.
     #   Exit with a status code indicating failure.
     local program="$program_path/$id_command -G"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" $program
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" $program
 
     local exit_status=$?
 

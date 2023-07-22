@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local md5sum="md5sum"
     local file="./inputs/paper.pdf"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$file"
-    perform_md5sum "$program_path" "$md5sum" "$file"
+    perform_md5sum "$program_path" "$md5sum" "$file" "$repetition"
 }
 
 validate_inputs() {
@@ -33,13 +34,14 @@ perform_md5sum() {
     local program_path="$1"
     local md5sum_command="$2"
     local file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
     # Usage: ../pre-experiment/GNU/md5sum [OPTION]... [FILE]...
     #   Print or check MD5 (128-bit) checksums.
     local program="$program_path/$md5sum_command $file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

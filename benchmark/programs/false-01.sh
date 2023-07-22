@@ -11,9 +11,10 @@
 main() {
     local program_path="$1"
     local false="false"
+    local repetition="$2"
 
     validate_inputs "$program_path"
-    perform_false "$program_path" "$false"
+    perform_false "$program_path" "$false" "$repetition"
 }
 
 validate_inputs() {
@@ -29,6 +30,7 @@ validate_inputs() {
 perform_false() {
     local program_path="$1"
     local false_command="$2"
+    local repetition="$3"
     
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -36,7 +38,7 @@ perform_false() {
     #   or:  ../pre-experiment/GNU/false OPTION
     #   Exit with a status code indicating failure.
     local program="$program_path/$false_command"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

@@ -10,9 +10,10 @@ main() {
     local program_path="$1"
     local cksum="cksum"
     local file="./inputs/panicmonster.png"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$file"
-    perform_cksum "$program_path" "$cksum" "$file"
+    perform_cksum "$program_path" "$cksum" "$file" "$repetition"
 }
 
 validate_inputs() {
@@ -36,6 +37,7 @@ perform_cksum() {
     local program_path="$1"
     local cksum_command="$2"
     local file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -43,7 +45,8 @@ perform_cksum() {
     #   Print or verify checksums.
     #   By default use the 32 bit CRC algorithm.
     local program="$program_path/$cksum_command $file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
+    
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]

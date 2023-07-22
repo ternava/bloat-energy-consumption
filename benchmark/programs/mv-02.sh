@@ -8,9 +8,10 @@ main() {
     local mv="mv"
     local source="./inputs/largefolder02.zip"
     local destination="./outputs/"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$source" "$destination"
-    perform_move "$program_path" "$mv" "$source" "$destination"
+    perform_move "$program_path" "$mv" "$source" "$destination" "$repetition"
     reverse_action "$source" "$destination"
 }
 
@@ -43,6 +44,7 @@ perform_move() {
     local mv_command="$2"
     local source="$3"
     local destination="$4"
+    local repetition="$5"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -50,7 +52,7 @@ perform_move() {
     #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... SOURCE... DIRECTORY
     #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... -t DIRECTORY SOURCE...
     local program="$program_path/$mv_command $source -t $destination"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

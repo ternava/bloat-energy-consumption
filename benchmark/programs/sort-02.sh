@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local sort="sort"
     local source="./inputs/enwik9"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$source"
-    perform_sort "$program_path" "$sort" "$source"
+    perform_sort "$program_path" "$sort" "$source" "$repetition"
 }
 
 validate_inputs() {
@@ -33,6 +34,7 @@ perform_sort() {
     local program_path="$1"
     local sort_command="$2"
     local source="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -40,7 +42,7 @@ perform_sort() {
     #    or:  ../pre-experiment/exe-GNU-v93/sort [OPTION]... --files0-from=F
     #       Write sorted concatenation of all FILE(s) to standard output.
     local program="$program_path/$sort_command -r $source"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

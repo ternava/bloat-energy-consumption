@@ -11,6 +11,7 @@ program_paths=(
 
 main="./mains/main-runone.sh"
 folder_with_programs="./programs"
+folder_with_repetitions="$1"
 
 # Run all experiments once for each program_path
 # All programs to run are located in the ./programs/ folder, and only them!
@@ -23,7 +24,7 @@ do
         if [ -f "$program" ] && [ -x "$program" ]
         then
             echo "Executing $main $program $program_path..."
-            "$main" "$program" "$program_path"
+            "$main" "$program" "$program_path" "$folder_with_repetitions"
             echo "Completed $main $program $program_path."
         fi
     done

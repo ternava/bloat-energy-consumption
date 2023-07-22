@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local basename="basename"
     local input_path="bloat-energy-consumption/benchmark/test-programs/basename-01.sh bloat-energy-consumption/benchmark/programs/basename-02.sh"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$input_path"
-    perform_basename "$program_path" "$basename" "$input_path"
+    perform_basename "$program_path" "$basename" "$input_path" "$repetition"
 }
 
 validate_inputs() {
@@ -33,6 +34,7 @@ perform_basename() {
     local program_path="$1"
     local basename_command="$2"
     local input_path="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -40,7 +42,7 @@ perform_basename() {
     #    or:  ../pre-experiment/GNU/basename OPTION... NAME...
     # Print NAME with any leading directory components removed.
     local program="$program_path/$basename_command -a $input_path"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

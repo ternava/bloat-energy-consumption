@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local date="date"
     local epoch_timestamp=1689590096 # Current epoch timestemp
+    local repetition="$2"
 
     validate_inputs "$program_path"
-    perform_date "$program_path" "$date" "$epoch_timestamp"
+    perform_date "$program_path" "$date" "$epoch_timestamp" "$repetition"
 }
 
 validate_inputs() {
@@ -26,6 +27,7 @@ perform_date() {
     local program_path="$1"
     local date_command="$2"
     local epoch_timestamp="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -33,7 +35,7 @@ perform_date() {
     #    or:  ../pre-experiment/GNU/date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
     #   Display date and time in the given FORMAT.
     local program="$program_path/$date_command -d @$epoch_timestamp +'%Y-%m-%d %H:%M:%S'"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

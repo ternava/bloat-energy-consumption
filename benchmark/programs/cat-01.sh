@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local cat="cat"
     local file="./inputs/enwik8"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$file"
-    perform_cat "$program_path" "$cat" "$file"
+    perform_cat "$program_path" "$cat" "$file" "$repetition"
 }
 
 validate_inputs() {
@@ -33,13 +34,14 @@ perform_cat() {
     local program_path="$1"
     local cat_command="$2"
     local file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
     # Usage: ../pre-experiment/exe-GNU-v93/cat [OPTION]... [FILE]...
     #   Concatenate FILE(s) to standard output.
     local program="$program_path/$cat_command -v $file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

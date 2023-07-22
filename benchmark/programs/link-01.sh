@@ -11,9 +11,10 @@ main() {
     local link="link"
     local file="./inputs/enwik8"
     local file_link="./inputs/enwik8link"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$file"
-    perform_link "$program_path" "$link" "$file" "$file_link"
+    perform_link "$program_path" "$link" "$file" "$file_link" "$repetition"
     reverse_action "$file_link"
 }
 
@@ -39,6 +40,7 @@ perform_link() {
     local link_command="$2"
     local file="$3"
     local file_link="$4"
+    local repetition="$5"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -46,7 +48,7 @@ perform_link() {
     #    or:  ../pre-experiment/GNU/link OPTION
     #   Call the link function to create a link named FILE2 to an existing FILE1.
     local program="$program_path/$link_command $file $file_link"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 
@@ -61,7 +63,7 @@ reverse_action() {
     local file_link=$1
     ##########################################################
     # In this part, we reverse the action, for the next execution
-    rm $file_link
+    rm -f $file_link
     ##########################################################
 }
 

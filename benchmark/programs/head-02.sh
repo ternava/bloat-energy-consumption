@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local head="head"
     local file="./inputs/enwik9"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$file"
-    perform_head "$program_path" "$head" "$file"
+    perform_head "$program_path" "$head" "$file" "$repetition"
 }
 
 validate_inputs() {
@@ -33,6 +34,7 @@ perform_head() {
     local program_path="$1"
     local head_command="$2"
     local file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -40,7 +42,7 @@ perform_head() {
     #   Print the first 10 lines of each FILE to standard output.
     #   With more than one FILE, precede each with a header giving the file name.
     local program="$program_path/$head_command -n 20 -c 10 -q -v $file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

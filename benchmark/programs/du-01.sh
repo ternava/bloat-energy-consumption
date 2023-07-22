@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local du="du"
     local path_to_directory="./inputs/debian"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$path_to_directory"
-    perform_du "$program_path" "$du" "$path_to_directory"
+    perform_du "$program_path" "$du" "$path_to_directory" "$repetition"
 }
 
 validate_inputs() {
@@ -33,6 +34,7 @@ perform_du() {
     local program_path="$1"
     local du_command="$2"
     local path_to_directory="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -42,7 +44,7 @@ perform_du() {
     #    or:  du [OPTION]... --files0-from=F
     #    Summarize disk usage of the set of FILEs, recursively for directories.
     local programs="$program_path/$du_command $path_to_directory"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

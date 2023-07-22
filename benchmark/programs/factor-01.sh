@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local factor="factor"
     local number="123456789"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$number"
-    perform_factor "$program_path" "$factor" "$number"
+    perform_factor "$program_path" "$factor" "$number" "$repetition"
 }
 
 validate_inputs() {
@@ -32,6 +33,7 @@ perform_factor() {
     local program_path="$1"
     local factor_command="$2"
     local number="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -39,7 +41,7 @@ perform_factor() {
     #   Print the prime factors of each specified integer NUMBER.  If none
     #   are specified on the command line, read them from standard input.
     local program="$program_path/$factor_command $number"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

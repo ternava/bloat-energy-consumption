@@ -8,9 +8,10 @@ main() {
     local ln="ln"
     local file="./inputs/enwik9"
     local file_ln="./inputs/enwik9ln"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$file"
-    perform_ln "$program_path" "$ln" "$file" "$file_ln"
+    perform_ln "$program_path" "$ln" "$file" "$file_ln" "$repetition"
     reverse_action "$file_ln"
 }
 
@@ -36,6 +37,7 @@ perform_ln() {
     local ln_command="$2"
     local file="$3"
     local file_ln="$4"
+    local repetition="$5"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -45,7 +47,7 @@ perform_ln() {
     #   or:  ../pre-experiment/GNU/ln [OPTION]... -t DIRECTORY TARGET...
     #   Create hard links by default, symbolic links with --symbolic.
     local program="$program_path/$ln_command -sv $file $file_ln"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

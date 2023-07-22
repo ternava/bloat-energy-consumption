@@ -11,9 +11,10 @@ main() {
     local program_path="$1"
     local dirname="dirname"
     local file="../benchmark/programs/dirname-02.sh"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$file"
-    perform_dirname "$program_path" "$dirname" "$file"
+    perform_dirname "$program_path" "$dirname" "$file" "$repetition"
 }
 
 validate_inputs() {
@@ -37,6 +38,7 @@ perform_dirname() {
     local program_path="$1"
     local dirname_command="$2"
     local file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -44,7 +46,7 @@ perform_dirname() {
     #   Output each NAME with its last non-slash component and trailing slashes
     #   removed; if NAME contains no /'s, output '.' (meaning the current directory).
     local program="$program_path/$dirname_command $file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

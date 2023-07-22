@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local cut="cut"
     local large_file="./inputs/CVD_cleaned.csv"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$large_file"
-    perform_cut "$program_path" "$cut" "$large_file"
+    perform_cut "$program_path" "$cut" "$large_file" "$repetition"
 }
 
 validate_inputs() {
@@ -33,13 +34,14 @@ perform_cut() {
     local program_path="$1"
     local cut_command="$2"
     local large_file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
     # Usage: cut OPTION... [FILE]...
     #   Print selected parts of lines from each FILE to standard output.
     local program="$program_path/$cut_command -d ',' -f 1-3 $large_file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

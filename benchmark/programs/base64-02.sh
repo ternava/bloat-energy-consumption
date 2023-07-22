@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local base64="base64"
     local file="./inputs/encoded-panicmonster.png"
-
+    local repetition="$2"
+    
     validate_inputs "$program_path" "$file"
-    perform_base64 "$program_path" "$base64" "$file"
+    perform_base64 "$program_path" "$base64" "$file" "$repetition"
 }
 
 validate_inputs() {
@@ -33,6 +34,7 @@ perform_base64() {
     local program_path="$1"
     local base64_command="$2"
     local file="$3"
+    local repetition="$4"
 
     local decoded_file="./outputs/decoded_panicmonster.png"
 
@@ -42,7 +44,7 @@ perform_base64() {
     # Base64 encode or decode FILE, or standard input, to standard output.
     # With no FILE, or when FILE is -, read standard input
     local program="$program_path/$base64_command -d $file > $decoded_file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     reverse_action "$decoded_file"
 

@@ -8,9 +8,10 @@ main() {
     local cp="cp"
     local source="./inputs/largefolder01"
     local destination="./outputs/"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$source" "$destination"
-    perform_cp "$program_path" "$cp" $source "$destination"
+    perform_cp "$program_path" "$cp" $source "$destination" "$repetition"
     reverse_action "$destination" "$source"
 }
 
@@ -43,6 +44,7 @@ perform_cp() {
     local cp_command="$2"
     local source="$3"
     local destination="$4"
+    local repetition="$5"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -51,7 +53,7 @@ perform_cp() {
     #    or:  ./pre-experiment/exe-GNU-v93/cp [OPTION]... -t DIRECTORY SOURCE...
     #       Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
     local program="$program_path/$cp_command -Rf $source $destination" # >/dev/null 2>&1
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

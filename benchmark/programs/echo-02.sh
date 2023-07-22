@@ -9,10 +9,12 @@
 main() {
     local program_path="$1"
     local echo="echo"
-    local input_text="Hello, World"
+    local file_path="./inputs/checksumstest.txt"
+    local input_text=$(<"$file_path")
+    local repetition="$2"
 
     validate_inputs "$program_path" "$input_text"
-    perform_echo "$program_path" "$echo" "$input_text"
+    perform_echo "$program_path" "$echo" "$input_text" "$repetition"
 }
 
 validate_inputs() {
@@ -36,6 +38,7 @@ perform_echo() {
     local program_path="$1"
     local echo_command="$2"
     local input_text="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -43,7 +46,7 @@ perform_echo() {
     #    or:  ../pre-experiment/GNU/echo LONG-OPTION
     #   Echo the STRING(s) to standard output.
     local program="$program_path/$echo_command $input_text"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
     # This works but we have to do a proper naming of generated files by Jouleit.
     
     local exit_status=$?

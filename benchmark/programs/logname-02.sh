@@ -9,9 +9,10 @@
 main() {
     local program_path="$1"
     local logname="logname"
+    local repetition="$2"
 
     validate_inputs "$program_path"
-    perform_logname "$program_path" "$logname"
+    perform_logname "$program_path" "$logname" "$repetition"
 }
 
 validate_inputs() {
@@ -27,13 +28,14 @@ validate_inputs() {
 perform_logname() {
     local program_path="$1"
     local logname_command="$2"
+    local repetition="$3"
     
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
     # Usage: ../pre-experiment/GNU/logname [OPTION]
     #   Print the user's login name.
     local program="$program_path/$logname_command"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

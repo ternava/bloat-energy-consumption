@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local wc="wc"
     local input_file="./inputs/enwik9"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$input_file"
-    perform_wc "$program_path" "$wc" "$input_file"
+    perform_wc "$program_path" "$wc" "$input_file" "$repetition"
 }
 
 validate_inputs() {
@@ -33,6 +34,7 @@ perform_wc() {
     local program_path="$1"
     local wc_command="$2"
     local input_file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -42,7 +44,7 @@ perform_wc() {
     #   more than one FILE is specified.  A word is a non-zero-length sequence of
     #   printable characters delimited by white space.
     local program="$program_path/$wc_command -mlwc $input_file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

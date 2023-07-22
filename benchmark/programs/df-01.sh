@@ -6,9 +6,10 @@
 main() {
     local program_path="$1"
     local df="df"
+    local repetition="$2"
 
     validate_inputs "$program_path"
-    perform_df "$program_path" "$df"
+    perform_df "$program_path" "$df" "$repetition"
 }
 
 validate_inputs() {
@@ -26,6 +27,7 @@ perform_df() {
     local program_path="$1"
     local df_command="$2"
     local file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -33,7 +35,7 @@ perform_df() {
     #   Show information about the file system on which each FILE resides,
     #   or all file systems by default.
     local program="$program_path/$df_command -h -a"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

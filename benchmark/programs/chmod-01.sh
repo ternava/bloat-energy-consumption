@@ -7,9 +7,10 @@ main() {
     local program_path="$1"
     local chmod="chmod"
     local file="./inputs/enwik8"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$file"
-    perform_chmod "$program_path" "$chmod" "$file"
+    perform_chmod "$program_path" "$chmod" "$file" "$repetition"
     reverse_action "$file"
 }
 
@@ -34,6 +35,7 @@ perform_chmod() {
     local program_path="$1"
     local chmod_command="$2"
     local file="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -42,7 +44,7 @@ perform_chmod() {
     #    or:  ../pre-experiment/GNU/chmod [OPTION]... --reference=RFILE FILE...
     # Change the mode of each FILE to MODE.
     local program="$program_path/$chmod_command 640 $file"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

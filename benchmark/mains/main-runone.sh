@@ -10,6 +10,7 @@ main() {
     # "../pre-experiment/GNU"
     local the_script="$1"
     local program_path="$2"
+    local repetition="$3"
 
     # Be carefull when using this next function, 
     # because it makes the nested script run, 
@@ -17,7 +18,7 @@ main() {
     # catch_errors_from_the_nested_script "$the_script" "$program_path"
     
     # We call the script with a particular test of a program
-    "$the_script" "$program_path"
+    "$the_script" "$program_path" "$repetition"
 }
 
 # This function should be used carefully, only for debugging reasons

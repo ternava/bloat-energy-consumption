@@ -6,10 +6,11 @@
 main() {
     local program_path="$1"
     local ls="ls"
-    local path_to_directory="./inputs/debian" # We use the home directory
+    local path_to_directory="./inputs/debian"
+    local repetition="$2"
 
     validate_inputs "$program_path"
-    perform_ls "$program_path" "$ls" "$path_to_directory"
+    perform_ls "$program_path" "$ls" "$path_to_directory" "$repetition"
 }
 
 validate_inputs() {
@@ -26,6 +27,7 @@ perform_ls() {
     local program_path="$1"
     local ls_command="$2"
     local path_to_directory="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -33,7 +35,7 @@ perform_ls() {
     # List information about the FILEs (the current directory by default).
     # Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
     local program="$program_path/$ls_command -R $path_to_directory"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 

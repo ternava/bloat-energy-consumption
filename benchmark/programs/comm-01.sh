@@ -8,9 +8,10 @@ main() {
     local comm="comm"
     local first_file="./inputs/enwik8"
     local second_file="./inputs/enwik9"
+    local repetition="$2"
 
     validate_inputs "$program_path" "$first_file" "$second_file"
-    perform_comm "$program_path" "$comm" "$first_file" "$second_file"
+    perform_comm "$program_path" "$comm" "$first_file" "$second_file" "$repetition"
 }
 
 validate_inputs() {
@@ -36,6 +37,7 @@ perform_comm() {
     local comm_command="$2"
     local file1="$3"
     local file2="$4"
+    local repetition="$5"
 
     local file1_srt="./outputs/enwik8_sorted.txt"
     local file2_srt="./outputs/enwik9_sorted.txt"
@@ -49,7 +51,7 @@ perform_comm() {
     # Usage: ../pre-experiment/GNU/comm [OPTION]... FILE1 FILE2
     #   Compare sorted files FILE1 and FILE2 line by line.
     local program="$program_path/$comm_command $file1_srt $file2_srt"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     reverse_action "$file1_srt" "$file2_srt"
 
