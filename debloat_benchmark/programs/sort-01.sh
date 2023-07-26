@@ -5,8 +5,8 @@
 
 main() {
     local program_path="$1"
-    local sort="sort-8.16"
-    local source="./inputs/enwik9"
+    local sort="sort-8.16_I3"
+    local source="./small_inputs/file.txt"
 
     validate_inputs "$program_path" "$source"
     perform_sort "$program_path" "$sort" "$source"
