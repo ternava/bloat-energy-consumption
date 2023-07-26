@@ -25,7 +25,7 @@ def merge_csv_files(directory_path, output_file):
 
 if __name__ == '__main__':
 
-    directory = './data/repeat21'
+    directory = './data/repeat1'
 
     # Create a set to store the unique filenames
     commands = set()
@@ -90,3 +90,4 @@ if __name__ == '__main__':
 
     # Write the new DataFrame to a CSV file
     new_df.to_csv("./data/merged_all_data" + '.csv', index=False)
+    new_df.to_csv("../energy_consumption_viewer/merged_all_data" + '.csv', index=False)

@@ -3,7 +3,7 @@
 
 import os
 
-prg = "src/scripts/main.py"
+prg = "src/scripts/ecv.py"
 
 def test_exists():
     """exists"""

@@ -2,7 +2,7 @@
 
 """
 Usage example: 
-./main.py --path /home/xternava/Documents/GitHub/bloat-energy-consumption/src/debloat_examples/
+./ecv.py --path /home/xternava/Documents/GitHub/bloat-energy-consumption/src/debloat_examples/
 """
 
 """calculates the binary size of the executable"""
