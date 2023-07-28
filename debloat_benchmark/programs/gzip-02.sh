@@ -5,11 +5,11 @@
 
 main() {
     local program_path="$1"
-    local sort="sort-8.16_I3"
-    local source="./small_inputs/out3.txt"
+    local zip="gzip-1.3_p03train"
+    local source="./small_inputs/file2"
 
     validate_inputs "$program_path" "$source"
-    perform_sort "$program_path" "$sort" "$source"
+    perform_zip "$program_path" "$zip" "$source"
 }
 
 validate_inputs() {
@@ -29,24 +29,24 @@ validate_inputs() {
     fi
 }
 
-perform_sort() {
+perform_zip() {
     local program_path="$1"
-    local sort_command="$2"
+    local zip_command="$2"
     local source="$3"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/sort [OPTION]... [FILE]...
-    #    or:  ../pre-experiment/exe-GNU-v93/sort [OPTION]... --files0-from=F
-    #       Write sorted concatenation of all FILE(s) to standard output.
-    local program="$program_path/$sort_command $source"
+    # Usage: ../pre-experiment/exe-GNU-v93/zip [OPTION]... [FILE]...
+    #    or:  ../pre-experiment/exe-GNU-v93/zip [OPTION]... --files0-from=F
+    #       Write ziped concatenation of all FILE(s) to standard output.
+    local program="$program_path/$zip_command -c $source"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
     then
-        echo "Error occurred while executing '$program_path/$sort_command' command."
+        echo "Error occurred while executing '$program_path/$zip_command' command."
         exit 1
     fi
 }
