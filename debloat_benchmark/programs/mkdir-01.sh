@@ -5,7 +5,7 @@
 
 main() {
     local program_path="$1"
-    local mkdir="mkdir-5.2.1"
+    local mkdir="mkdir-5.2.1_I0"
     local new_dir="./outputs/newdir"
 
     validate_inputs "$program_path"

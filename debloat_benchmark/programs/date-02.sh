@@ -5,7 +5,7 @@
 
 main() {
     local program_path="$1"
-    local date="date"
+    local date="date_8.21_I2"
     local epoch_timestamp=1689590096 # Current epoch timestemp
 
     validate_inputs "$program_path"

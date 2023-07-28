@@ -5,12 +5,14 @@
 
 main() {
     local program_path="$1"
-    local mkdir="mkdir-5.2.1"
-    local new_dir="./outputs/second_dir"
+    local mkdir="mkdir-5.2.1_I1"
+    local new_parent_dir="./inputs/parent_directory"
+    local new_dirs="$new_parent_dir/subdirectory1 $new_parent_dir/subdirectory2/subsubdirectory $new_parent_dir/subdirectory3"
+    local repetition="$2"
 
     validate_inputs "$program_path"
-    perform_mkdir "$program_path" "$mkdir" "$new_dir"
-    #reverse_action "$new_dir"
+    perform_mkdir "$program_path" "$mkdir" "$new_dirs" "$repetition"
+    reverse_action "$new_parent_dir"
 }
 
 validate_inputs() {
@@ -26,14 +28,15 @@ validate_inputs() {
 perform_mkdir() {
     local program_path="$1"
     local mkdir_command="$2"
-    local new_dir="$3"
+    local new_dirs="$3"
+    local repetition="$4"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
     # Usage: ../pre-experiment/GNU/mkdir [OPTION]... DIRECTORY...
     # Create the DIRECTORY(ies), if they do not already exist.
-    local program="$program_path/$mkdir_command -m 755 $new_dir"
-    $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
+    local program="$program_path/$mkdir_command -p $new_dirs"
+    $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
 
     local exit_status=$?
 

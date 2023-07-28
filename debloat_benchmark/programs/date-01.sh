@@ -5,7 +5,7 @@
 
 main() {
     local program_path="$1"
-    local date="date"
+    local date="date_8.21_I2"
 -
     validate_inputs "$program_path"
     perform_date "$program_path" "$date"
