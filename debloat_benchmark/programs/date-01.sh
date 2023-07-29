@@ -5,8 +5,10 @@
 
 main() {
     local program_path="$1"
-    local date="date_8.21_I2"
--
+    local date="date-8.21_I2"
+    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+        date=${date%%_*}
+    fi
     validate_inputs "$program_path"
     perform_date "$program_path" "$date"
 }
@@ -23,6 +25,7 @@ validate_inputs() {
 
 perform_date() {
     local program_path="$1"
+    
     local date_command="$2"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"

@@ -5,7 +5,10 @@
 
 main() {
     local program_path="$1"
-    local date="date_8.21_I2"
+    local date="date-8.21_I2"
+    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+        date=${date%%_*}
+    fi
     local epoch_timestamp=1689590096 # Current epoch timestemp
 
     validate_inputs "$program_path"

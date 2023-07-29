@@ -6,8 +6,14 @@
 main() {
     local program_path="$1"
     local mkdir="mkdir-5.2.1_I0"
+    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+        mkdir=${mkdir%%_*}
+    fi
     local new_dir="./outputs/newdir"
-
+    if [ ! -e "./outputs" ]
+    then
+    mkdir ./outputs
+    fi
     validate_inputs "$program_path"
     perform_mkdir "$program_path" "$mkdir" "$new_dir"
     reverse_action "$new_dir"

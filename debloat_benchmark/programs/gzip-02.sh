@@ -5,7 +5,10 @@
 
 main() {
     local program_path="$1"
-    local zip="gzip-1.3_p03train"
+    local zip="gzip-1.3_p0.3train"
+    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+        zip=${zip%%_*}
+    fi
     local source="./small_inputs/file2"
 
     validate_inputs "$program_path" "$source"
@@ -53,6 +56,6 @@ perform_zip() {
 
 # The command calling the script for measuring 
 # the energy consumption of a program (given in a second script)
-JOULEIT="../src/jouleit.sh -n 1"
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"

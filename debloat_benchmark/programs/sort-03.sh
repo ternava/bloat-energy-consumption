@@ -6,6 +6,10 @@
 main() {
     local program_path="$1"
     local sort="sort-8.16_I3"
+    if [ "$program_path" = "../pre-experiment/bloated" ]; 
+    then
+        sort=${sort%%_*}
+    fi
     local source="./small_inputs/out3.txt"
 
     validate_inputs "$program_path" "$source"
@@ -53,6 +57,6 @@ perform_sort() {
 
 # The command calling the script for measuring 
 # the energy consumption of a program (given in a second script)
-JOULEIT="../src/jouleit.sh -n 1"
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"

@@ -4,7 +4,10 @@
 
 # These are the three possible program paths, for 3 sets of utilities
 program_paths=(
-    "./chisel_programs"
+    "../pre-experiment/debloated/chisel"
+    "../pre-experiment/debloated/debop"
+    "../pre-experiment/debloated/cov"
+    "../pre-experiment/bloated"
 )
 
 main="./mains/main-runone.sh"
@@ -14,8 +17,7 @@ folder_with_programs="./programs"
 # All programs to run are located in the ./programs/ folder, and only them!
 for program_path in "${program_paths[@]}"
 do
-   echo "Running experiments for program path: $program_path"
-    for 
+    echo "Running experiments for program path: $program_path"
     for program in "$folder_with_programs"/*.sh
     do
         echo "$program"

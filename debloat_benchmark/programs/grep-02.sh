@@ -6,6 +6,9 @@
 main() {
     local program_path="$1"
     local grep="grep-2.4.2_p0.3train"
+    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+        grep=${grep%%_*}
+    fi
     local source1="./small_inputs/grep/grep0.dat"
     local source2="./small_inputs/grep/grep1.dat"
     local source3="./small_inputs/grep/grepNull.dat"
@@ -46,12 +49,12 @@ validate_inputs() {
     fi
 }
 
-perform_sort() {
+perform_grep() {
     local program_path="$1"
     local grep_command="$2"
-    local source1="$2"
-    local source2="$3"
-    local source3="$4"
+    local source1="$3"
+    local source2="$4"
+    local source3="$5"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
@@ -59,6 +62,7 @@ perform_sort() {
     #    or:  ../pre-experiment/exe-GNU-v93/sort [OPTION]... --files0-from=F
     #       Write sorted concatenation of all FILE(s) to standard output.
     local program="$program_path/$grep_command -vibh include $source1 $source2 $source3"
+    echo "$program"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
     
     local exit_status=$?
@@ -72,6 +76,6 @@ perform_sort() {
 
 # The command calling the script for measuring 
 # the energy consumption of a program (given in a second script)
-JOULEIT="../src/jouleit.sh -n 1"
+JOULEIT="sudo ../src/jouleit.sh -n 1"
 
 main "$@"
