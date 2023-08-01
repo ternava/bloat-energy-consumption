@@ -5,7 +5,7 @@
 
 main() {
     local program_path="$1"
-    local zip="gzip-1.3_n10train"
+    local zip="gzip-1.3_p0.2train"
     if [ "$program_path" = "../pre-experiment/bloated" ]; then
         zip=${zip%%_*}
     fi

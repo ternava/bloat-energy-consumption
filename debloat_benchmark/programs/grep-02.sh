@@ -5,7 +5,7 @@
 
 main() {
     local program_path="$1"
-    local grep="grep-2.4.2_p0.3train"
+    local grep="grep-2.4.2_p0.2train"
     if [ "$program_path" = "../pre-experiment/bloated" ]; then
         grep=${grep%%_*}
     fi

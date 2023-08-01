@@ -25,7 +25,7 @@ def merge_csv_files(directory_path, output_file):
 
 if __name__ == '__main__':
 
-    directory = './data/repeat1'
+    directory = './data/debloating/repeat1'
 
     # Create a set to store the unique filenames
     commands = set()
@@ -52,14 +52,14 @@ if __name__ == '__main__':
 
     # Get a list of directories starting with "repeat_" and sort them in lexical order
     directories = sorted(
-        [directory for directory in os.listdir('./data') if directory.startswith('repeat')])
+        [directory for directory in os.listdir('./data/debloating') if directory.startswith('repeat')])
 
     # Iterate over the configurations
     for config in ["01", "02"]:
         # Iterate over commands
         for command in commands:
             # Iterate over directories
-            for directory in ["./data/" + x for x in directories]:
+            for directory in ["./data/debloating/" + x for x in directories]:
                 # Iterate over utilities (GNU, Toybox, etc)
                 for utility in utilities:
                     file_path = os.path.join(directory, command + "-" + config + "_" + utility + ".csv")
@@ -89,5 +89,5 @@ if __name__ == '__main__':
     new_df = pd.DataFrame(data)
 
     # Write the new DataFrame to a CSV file
-    new_df.to_csv("./data/merged_all_data" + '.csv', index=False)
-    new_df.to_csv("../energy_consumption_viewer/merged_all_data" + '.csv', index=False)
+    new_df.to_csv("./data/merged_all_data_debloating" + '.csv', index=False)
+    #new_df.to_csv("../energy_consumption_viewer/merged_all_data" + '.csv', index=False)

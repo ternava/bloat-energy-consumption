@@ -54,7 +54,7 @@ reverse_action() {
     local parent_directory=$1
     ##########################################################
     # In this part, we reverse the action, for the next execution
-    sudo rm -r $parent_directory
+    rm -r $parent_directory
     ##########################################################
 }
 

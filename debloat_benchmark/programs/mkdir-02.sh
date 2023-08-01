@@ -5,7 +5,7 @@
 
 main() {
     local program_path="$1"
-    local mkdir="mkdir-5.2.1_I1"
+    local mkdir="mkdir-5.2.1_I5"
     if [ "$program_path" = "../pre-experiment/bloated" ]; then
         mkdir=${mkdir%%_*}
     fi
@@ -42,8 +42,8 @@ perform_mkdir() {
     # Usage: ../pre-experiment/GNU/mkdir [OPTION]... DIRECTORY...
     # Create the DIRECTORY(ies), if they do not already exist.
     local program="$program_path/$mkdir_command -p $new_dirs"
+    echo $program
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"
-
     local exit_status=$?
 
     if [ $exit_status -ne 0 ]
@@ -57,7 +57,7 @@ reverse_action() {
     local parent_directory=$1
     ##########################################################
     # In this part, we reverse the action, for the next execution
-    sudo rm -r $parent_directory
+    rm -r $parent_directory
     ##########################################################
 }
 
