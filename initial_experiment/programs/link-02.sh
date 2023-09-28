@@ -44,8 +44,8 @@ perform_link() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/link FILE1 FILE2
-    #    or:  ../pre-experiment/GNU/link OPTION
+    # Usage: ../inputs/GNU/link FILE1 FILE2
+    #    or:  ../inputs/GNU/link OPTION
     #   Call the link function to create a link named FILE2 to an existing FILE1.
     local program="$program_path/$link_command $file $file_link"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local grep="grep-2.4.2_p0.2train"
-    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+    if [ "$program_path" = "../inputs/bloated" ]; then
         grep=${grep%%_*}
     fi
     local source1="./small_inputs/grep/grep0.dat"
@@ -58,8 +58,8 @@ perform_grep() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/sort [OPTION]... [FILE]...
-    #    or:  ../pre-experiment/exe-GNU-v93/sort [OPTION]... --files0-from=F
+    # Usage: ../inputs/exe-GNU-v93/sort [OPTION]... [FILE]...
+    #    or:  ../inputs/exe-GNU-v93/sort [OPTION]... --files0-from=F
     #       Write sorted concatenation of all FILE(s) to standard output.
     local program="$program_path/$grep_command -vibh include $source1 $source2 $source3"
     echo "$program"

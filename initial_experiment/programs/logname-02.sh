@@ -32,7 +32,7 @@ perform_logname() {
     
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/logname [OPTION]
+    # Usage: ../inputs/GNU/logname [OPTION]
     #   Print the user's login name.
     local program="$program_path/$logname_command"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

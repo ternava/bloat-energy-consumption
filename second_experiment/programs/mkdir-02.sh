@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local mkdir="mkdir-5.2.1_I5"
-    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+    if [ "$program_path" = "../inputs/bloated" ]; then
         mkdir=${mkdir%%_*}
     fi
     local new_parent_dir="./inputs/parent_directory"
@@ -39,7 +39,7 @@ perform_mkdir() {
     local new_dirs="$3"
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
-    # Usage: ../pre-experiment/GNU/mkdir [OPTION]... DIRECTORY...
+    # Usage: ../inputs/GNU/mkdir [OPTION]... DIRECTORY...
     # Create the DIRECTORY(ies), if they do not already exist.
     local program="$program_path/$mkdir_command -p $new_dirs"
     echo $program

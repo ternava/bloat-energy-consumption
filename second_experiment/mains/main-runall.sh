@@ -4,10 +4,10 @@
 
 # These are the three possible program paths, for 3 sets of utilities
 program_paths=(
-    "../pre-experiment/debloated/chisel"
-    "../pre-experiment/debloated/debop"
-    "../pre-experiment/debloated/cov"
-    "../pre-experiment/bloated"
+    "../inputs/debloated/chisel"
+    "../inputs/debloated/debop"
+    "../inputs/debloated/cov"
+    "../inputs/bloated"
 )
 
 main="./mains/main-runone.sh"

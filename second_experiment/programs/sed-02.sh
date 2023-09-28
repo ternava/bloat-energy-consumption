@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local sed="sed-4.1.5_p0.3train"
-    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+    if [ "$program_path" = "../inputs/bloated" ]; then
         sed=${sed%%_*}
     fi
     local source1="./small_inputs/default.in"
@@ -42,8 +42,8 @@ perform_sed() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/sort [OPTION]... [FILE]...
-    #    or:  ../pre-experiment/exe-GNU-v93/sort [OPTION]... --files0-from=F
+    # Usage: ../inputs/exe-GNU-v93/sort [OPTION]... [FILE]...
+    #    or:  ../inputs/exe-GNU-v93/sort [OPTION]... --files0-from=F
     #       Write sorted concatenation of all FILE(s) to standard output.
     local program="$program_path/$sed_command -e 's/dog/cat/; =' $source1"
     echo "$program"

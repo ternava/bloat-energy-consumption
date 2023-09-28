@@ -4,9 +4,9 @@
 
 # These are the three possible program paths, for 3 sets of utilities
 program_paths=(
-    "../pre-experiment/GNU"
-    "../pre-experiment/BusyBox"
-    "../pre-experiment/ToyBox"
+    "../inputs/GNU"
+    "../inputs/BusyBox"
+    "../inputs/ToyBox"
 )
 
 main="./mains/main-runone.sh"

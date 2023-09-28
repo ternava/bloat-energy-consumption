@@ -40,7 +40,7 @@ perform_expand() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/expand [OPTION]... [FILE]...
+    # Usage: ../inputs/GNU/expand [OPTION]... [FILE]...
     # Convert tabs in each FILE to spaces, writing to standard output.
     local program="$program_path/$expand_command -t 8 $file"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

@@ -38,7 +38,7 @@ perform_base64() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/base64 [OPTION]... [FILE]
+    # Usage: ../inputs/GNU/base64 [OPTION]... [FILE]
     # Base64 encode or decode FILE, or standard input, to standard output.
     # With no FILE, or when FILE is -, read standard input
     local program="$program_path/$base64_command -w 76 $file"

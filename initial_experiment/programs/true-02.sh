@@ -34,8 +34,8 @@ perform_true() {
     
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # sage: ../pre-experiment/GNU/true [ignored command line arguments]
-    #   or:  ../pre-experiment/GNU/true OPTION
+    # sage: ../inputs/GNU/true [ignored command line arguments]
+    #   or:  ../inputs/GNU/true OPTION
     # Exit with a status code indicating success.
     local program="$program_path/$true_command"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

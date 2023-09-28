@@ -15,7 +15,7 @@ echo
 
 # Test case 2: Missing required inputs
 echo "Running test case 2: Missing required inputs"
-output=$(./test-configs/energy_measurement.sh "./pre-experiment/exe-GNU-v93")
+output=$(./test-configs/energy_measurement.sh "./inputs/exe-GNU-v93")
 expected_output="Error: Missing required inputs. Check the 'Usage'."
 
 if [[ "$output" != "$expected_output" ]]; then
@@ -27,5 +27,5 @@ echo
 
 # Test case 3: Valid command-line arguments
 echo "Running test case 3: Valid command-line arguments"
-output=$(./test-configs/energy_measurement.sh "../pre-experiment/exe-GNU-v93" "./test-configs/wc-02.sh")
+output=$(./test-configs/energy_measurement.sh "../inputs/exe-GNU-v93" "./test-configs/wc-02.sh")
 

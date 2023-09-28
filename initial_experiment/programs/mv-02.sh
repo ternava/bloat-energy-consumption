@@ -48,9 +48,9 @@ perform_move() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/mv [OPTION]... [-T] SOURCE DEST
-    #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... SOURCE... DIRECTORY
-    #    or:  ../pre-experiment/exe-GNU-v93/mv [OPTION]... -t DIRECTORY SOURCE...
+    # Usage: ../inputs/exe-GNU-v93/mv [OPTION]... [-T] SOURCE DEST
+    #    or:  ../inputs/exe-GNU-v93/mv [OPTION]... SOURCE... DIRECTORY
+    #    or:  ../inputs/exe-GNU-v93/mv [OPTION]... -t DIRECTORY SOURCE...
     local program="$program_path/$mv_command $source -t $destination"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
     

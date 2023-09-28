@@ -38,8 +38,8 @@ perform_basename() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/basename NAME [SUFFIX]
-    #    or:  ../pre-experiment/GNU/basename OPTION... NAME...
+    # Usage: ../inputs/GNU/basename NAME [SUFFIX]
+    #    or:  ../inputs/GNU/basename OPTION... NAME...
     # Print NAME with any leading directory components removed.
     local program="$program_path/$basename_command -a $input_path"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

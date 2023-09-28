@@ -34,8 +34,8 @@ perform_false() {
     
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/false [ignored command line arguments]
-    #   or:  ../pre-experiment/GNU/false OPTION
+    # Usage: ../inputs/GNU/false [ignored command line arguments]
+    #   or:  ../inputs/GNU/false OPTION
     #   Exit with a status code indicating failure.
     local program="$program_path/$false_command --version"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

@@ -31,7 +31,7 @@ perform_df() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/df [OPTION]... [FILE]...
+    # Usage: ../inputs/GNU/df [OPTION]... [FILE]...
     #   Show information about the file system on which each FILE resides,
     #   or all file systems by default.
     local program="$program_path/$df_command -h -a -i"

@@ -41,10 +41,10 @@ perform_ln() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # sage: ../pre-experiment/GNU/ln [OPTION]... [-T] TARGET LINK_NAME
-    #   or:  ../pre-experiment/GNU/ln [OPTION]... TARGET
-    #   or:  ../pre-experiment/GNU/ln [OPTION]... TARGET... DIRECTORY
-    #   or:  ../pre-experiment/GNU/ln [OPTION]... -t DIRECTORY TARGET...
+    # sage: ../inputs/GNU/ln [OPTION]... [-T] TARGET LINK_NAME
+    #   or:  ../inputs/GNU/ln [OPTION]... TARGET
+    #   or:  ../inputs/GNU/ln [OPTION]... TARGET... DIRECTORY
+    #   or:  ../inputs/GNU/ln [OPTION]... -t DIRECTORY TARGET...
     #   Create hard links by default, symbolic links with --symbolic.
     local program="$program_path/$ln_command -sfT $file $file_ln"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

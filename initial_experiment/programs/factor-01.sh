@@ -37,7 +37,7 @@ perform_factor() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/factor [OPTION] [NUMBER]...
+    # Usage: ../inputs/GNU/factor [OPTION] [NUMBER]...
     #   Print the prime factors of each specified integer NUMBER.  If none
     #   are specified on the command line, read them from standard input.
     local program="$program_path/$factor_command $number"

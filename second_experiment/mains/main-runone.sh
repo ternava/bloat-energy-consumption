@@ -5,9 +5,9 @@
 
 main() {
     # The path to the program (for now, we change them here): 
-    # "../pre-experiment/BusyBox"
-    # "../pre-experiment/ToyBox"
-    # "../pre-experiment/GNU"
+    # "../inputs/BusyBox"
+    # "../inputs/ToyBox"
+    # "../inputs/GNU"
     local the_script="$1"
     local program_path="$2"
 

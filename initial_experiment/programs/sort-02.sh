@@ -38,8 +38,8 @@ perform_sort() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/sort [OPTION]... [FILE]...
-    #    or:  ../pre-experiment/exe-GNU-v93/sort [OPTION]... --files0-from=F
+    # Usage: ../inputs/exe-GNU-v93/sort [OPTION]... [FILE]...
+    #    or:  ../inputs/exe-GNU-v93/sort [OPTION]... --files0-from=F
     #       Write sorted concatenation of all FILE(s) to standard output.
     local program="$program_path/$sort_command -r $source"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

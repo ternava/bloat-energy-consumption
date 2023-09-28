@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local mkdir="mkdir-5.2.1_I0"
-    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+    if [ "$program_path" = "../inputs/bloated" ]; then
         mkdir=${mkdir%%_*}
     fi
     local new_dir="./outputs/newdir"
@@ -36,7 +36,7 @@ perform_mkdir() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/bloated/mkdir-5.2.1 [OPTION]... DIRECTORY...
+    # Usage: ../inputs/bloated/mkdir-5.2.1 [OPTION]... DIRECTORY...
     # Create the DIRECTORY(ies), if they do not already exist.
     local program="$program_path/$mkdir_command $new_dir"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"

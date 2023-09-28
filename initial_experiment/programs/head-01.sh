@@ -38,7 +38,7 @@ perform_head() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/head [OPTION]... [FILE]...
+    # Usage: ../inputs/GNU/head [OPTION]... [FILE]...
     #   Print the first 10 lines of each FILE to standard output.
     #   With more than one FILE, precede each with a header giving the file name.
     local program="$program_path/$head_command -n 50 $file"

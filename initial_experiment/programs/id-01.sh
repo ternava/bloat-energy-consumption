@@ -29,8 +29,8 @@ perform_id() {
     
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/id [ignored command line arguments]
-    #   or:  ../pre-experiment/GNU/id OPTION
+    # Usage: ../inputs/GNU/id [ignored command line arguments]
+    #   or:  ../inputs/GNU/id OPTION
     # Print user and group information for each specified USER, or (when USER omitted) for the current user.
     #   Exit with a status code indicating failure.
     local program="$program_path/$id_command -u -n"

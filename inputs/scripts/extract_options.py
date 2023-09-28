@@ -76,9 +76,9 @@ result_df = None
 
 # Perform extraction for each folder
 for folder in folders:
-    folder_path = f'./pre-experiment/{folder}'
+    folder_path = f'./inputs/{folder}'
     folder_df = pd.DataFrame(extract_options(folder_path)).sort_values("Utility")
-    folder_df.sort_values("Utility").to_csv(f'./pre-experiment/options_{folder}.csv')
+    folder_df.sort_values("Utility").to_csv(f'./inputs/options_{folder}.csv')
 
     print(folder_df)
     result_df = folder_df if result_df is None else pd.merge(result_df, folder_df,on="Utility")
@@ -86,5 +86,5 @@ for folder in folders:
 
 # Print the final DataFrame
 print(result_df)
-result_df.sort_values("Utility").to_csv("./pre-experiment/options.csv")
+result_df.sort_values("Utility").to_csv("./inputs/options.csv")
 

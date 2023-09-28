@@ -46,7 +46,7 @@ catch_errors_from_nested_script() {
 }
 
 # The measurement of the energy consumption
-# e.g., ./test-configs/energy_measurement.sh ../pre-experiment/exe-ToyBox-v089 ./test-configs/wc-02.sh
+# e.g., ./test-configs/energy_measurement.sh ../inputs/exe-ToyBox-v089 ./test-configs/wc-02.sh
 # basically, we call a specific test/example and send as argument the path of the program that we want it to run
 run_thecase_and_measure_energy() {
     local thecase_path="$1"
@@ -60,10 +60,10 @@ main() {
     check_arguments "$@"
 
     # Paths: 
-    # "../pre-experiment/exe-BusyBox-1360-final"
-    # "../pre-experiment/exe-ToyBox-v089"
-    # "./pre-experiment/exe-GNU-v93"
-    local program_path="../pre-experiment/exe-ToyBox-v089"
+    # "../inputs/exe-BusyBox-1360-final"
+    # "../inputs/exe-ToyBox-v089"
+    # "./inputs/exe-GNU-v93"
+    local program_path="../inputs/exe-ToyBox-v089"
     local the_case="$1"     # e.g., "./wc-02.sh"
     local juleit="../src/jouleit.sh"
 

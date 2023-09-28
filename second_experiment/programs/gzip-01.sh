@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local zip="gzip-1.3_p0.2train"
-    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+    if [ "$program_path" = "../inputs/bloated" ]; then
         zip=${zip%%_*}
     fi
     local source="./small_inputs/34file"
@@ -39,8 +39,8 @@ perform_zip() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/zip [OPTION]... [FILE]...
-    #    or:  ../pre-experiment/exe-GNU-v93/zip [OPTION]... --files0-from=F
+    # Usage: ../inputs/exe-GNU-v93/zip [OPTION]... [FILE]...
+    #    or:  ../inputs/exe-GNU-v93/zip [OPTION]... --files0-from=F
     #       Write ziped concatenation of all FILE(s) to standard output.
     local program="$program_path/$zip_command -c $source"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"

@@ -38,7 +38,7 @@ perform_md5sum() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/md5sum [OPTION]... [FILE]...
+    # Usage: ../inputs/GNU/md5sum [OPTION]... [FILE]...
     #   Print or check MD5 (128-bit) checksums.
     local program="$program_path/$md5sum_command -c $file"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

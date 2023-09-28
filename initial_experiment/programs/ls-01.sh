@@ -31,7 +31,7 @@ perform_ls() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/ls [OPTION]... [FILE]...
+    # Usage: ../inputs/exe-GNU-v93/ls [OPTION]... [FILE]...
     # List information about the FILEs (the current directory by default).
     # Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
     local program="$program_path/$ls_command -R $path_to_directory"

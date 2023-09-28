@@ -38,8 +38,8 @@ perform_wc() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/wc [OPTION]... [FILE]...
-    #    or:  ../pre-experiment/GNU/wc [OPTION]... --files0-from=F
+    # Usage: ../inputs/GNU/wc [OPTION]... [FILE]...
+    #    or:  ../inputs/GNU/wc [OPTION]... --files0-from=F
     #   Print newline, word, and byte counts for each FILE, and a total line if
     #   more than one FILE is specified.  A word is a non-zero-length sequence of
     #   printable characters delimited by white space.

@@ -41,7 +41,7 @@ perform_cksum() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/cksum [OPTION]... [FILE]...
+    # Usage: ../inputs/GNU/cksum [OPTION]... [FILE]...
     #   Print or verify checksums.
     #   By default use the 32 bit CRC algorithm.
     local program="$program_path/$cksum_command $file"

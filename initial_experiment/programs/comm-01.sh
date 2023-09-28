@@ -48,7 +48,7 @@ perform_comm() {
     sort $file1 -o $file1_srt
     sort $file2 -o $file2_srt
 
-    # Usage: ../pre-experiment/GNU/comm [OPTION]... FILE1 FILE2
+    # Usage: ../inputs/GNU/comm [OPTION]... FILE1 FILE2
     #   Compare sorted files FILE1 and FILE2 line by line.
     local program="$program_path/$comm_command $file1_srt $file2_srt"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

@@ -7,7 +7,7 @@ main() {
     local program_path="$1"
     local repetition="$3"
     local date="date-8.21_I2"
-    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+    if [ "$program_path" = "../inputs/bloated" ]; then
         date=${date%%_*}
     fi
     local epoch_timestamp=1689590096 # Current epoch timestemp
@@ -33,8 +33,8 @@ perform_date() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/date [OPTION]... [+FORMAT]
-    #    or:  ../pre-experiment/GNU/date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+    # Usage: ../inputs/GNU/date [OPTION]... [+FORMAT]
+    #    or:  ../inputs/GNU/date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
     #   Display date and time in the given FORMAT.
     # local program="$program_path/$date_command -d @$epoch_timestamp +'%Y-%m-%d %H:%M:%S'"
     local program="$program_path/$date_command -r /home/debloat/Documents/GitHub/bloat-energy-consumption/debloat_benchmark/small_inputs/out3.txt" 

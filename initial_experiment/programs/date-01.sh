@@ -29,8 +29,8 @@ perform_date() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/date [OPTION]... [+FORMAT]
-    #    or:  ../pre-experiment/GNU/date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+    # Usage: ../inputs/GNU/date [OPTION]... [+FORMAT]
+    #    or:  ../inputs/GNU/date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
     #   Display date and time in the given FORMAT.
     local program="$program_path/$date_command +'%Y-%m-%d %H:%M:%S'"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

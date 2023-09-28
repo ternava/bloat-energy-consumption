@@ -6,7 +6,7 @@
 main() {
     local program_path="$1"
     local printtoken="printtokens2_p0.3train"
-    if [ "$program_path" = "../pre-experiment/bloated" ]; then
+    if [ "$program_path" = "../inputs/bloated" ]; then
         printtoken=${printtoken%%_*}
     fi
     local source="./small_inputs/uslin.314"
@@ -39,8 +39,8 @@ perform_printtoken() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/printtoken [OPTION]... [FILE]...
-    #    or:  ../pre-experiment/exe-GNU-v93/printtoken [OPTION]... --files0-from=F
+    # Usage: ../inputs/exe-GNU-v93/printtoken [OPTION]... [FILE]...
+    #    or:  ../inputs/exe-GNU-v93/printtoken [OPTION]... --files0-from=F
     #       Write printtokened concatenation of all FILE(s) to standard output.
     local program="$program_path/$printtoken_command $source"
     $JOULEIT -o "$outputfile.csv" "./mains/wrapper.sh" "$program"

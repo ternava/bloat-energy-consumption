@@ -32,7 +32,7 @@ perform_mkdir() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/mkdir [OPTION]... DIRECTORY...
+    # Usage: ../inputs/GNU/mkdir [OPTION]... DIRECTORY...
     # Create the DIRECTORY(ies), if they do not already exist.
     local program="$program_path/$mkdir_command -p $new_dir"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

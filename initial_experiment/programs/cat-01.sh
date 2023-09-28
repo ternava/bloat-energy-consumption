@@ -38,7 +38,7 @@ perform_cat() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/exe-GNU-v93/cat [OPTION]... [FILE]...
+    # Usage: ../inputs/exe-GNU-v93/cat [OPTION]... [FILE]...
     #   Concatenate FILE(s) to standard output.
     local program="$program_path/$cat_command -v $file"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"

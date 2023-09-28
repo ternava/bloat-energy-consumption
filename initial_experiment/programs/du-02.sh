@@ -38,7 +38,7 @@ perform_du() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Example: "sudo ../src/jouleit.sh -n 1 ../pre-experiment/exe-ToyBox-v089/wc ./test-inputs/align.sh" 
+    # Example: "sudo ../src/jouleit.sh -n 1 ../inputs/exe-ToyBox-v089/wc ./test-inputs/align.sh" 
 
     # Usage: du [OPTION]... [FILE]...
     #    or:  du [OPTION]... --files0-from=F

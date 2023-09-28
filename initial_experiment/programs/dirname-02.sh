@@ -42,7 +42,7 @@ perform_dirname() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/dirname [OPTION] NAME...
+    # Usage: ../inputs/GNU/dirname [OPTION] NAME...
     #   Output each NAME with its last non-slash component and trailing slashes
     #   removed; if NAME contains no /'s, output '.' (meaning the current directory).
     local program="$program_path/$dirname_command $file"

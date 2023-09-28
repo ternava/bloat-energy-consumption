@@ -42,8 +42,8 @@ perform_echo() {
 
     outputfile="$(basename "$0" .sh)_$(basename "$program_path")"
 
-    # Usage: ../pre-experiment/GNU/echo [SHORT-OPTION]... [STRING]...
-    #    or:  ../pre-experiment/GNU/echo LONG-OPTION
+    # Usage: ../inputs/GNU/echo [SHORT-OPTION]... [STRING]...
+    #    or:  ../inputs/GNU/echo LONG-OPTION
     #   Echo the STRING(s) to standard output.
     local program="$program_path/$echo_command $input_text"
     $JOULEIT -o "$repetition/$outputfile.csv" "./mains/wrapper.sh" "$program"
