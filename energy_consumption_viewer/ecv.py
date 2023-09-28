@@ -1,6 +1,8 @@
 import argparse
 import re
+import subprocess
 import sys
+import time
 
 from statistics import mean
 
@@ -8,6 +10,13 @@ import pandas as pd
 
 from progress.bar import FillingSquaresBar
 from progress.colors import color
+
+
+def get_psys_energy():
+    with open('/sys/class/powercap/intel-rapl:0/energy_uj') as f:
+        psys_energy = int(f.read().strip())
+    return psys_energy  # Convert from microjoules to joules
+
 
 if __name__ == '__main__':
 
@@ -42,6 +51,10 @@ if __name__ == '__main__':
 
     # Add the options/arguments you want to support
     parser.add_argument('--command', '-c', type=str, help="Linux command without options (example ls)")
+    parser.add_argument('--repeat', '-r', type=int, help="Number of repetitions for measurement")
+    parser.add_argument('--show', '-s', action='store_true', help="Show the results of our studies for a given command")
+    parser.add_argument('--measure', '-m', action='store_true',
+                        help="Measure the energy consumption of the command given in parameter with option --command")
     parser.add_argument('--equivalent', '-e', action='store_true',
                         help="Display an equivalence in time of use of a light bulb, a GPU and an HDD.")
     parser.add_argument('--details', '-d', action='store_true', help="Get details for each configuration tested")
@@ -50,7 +63,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Access the option values
-    if args.command:
+    if args.command and args.show:
         # print(f"Input file: {args.command}")
         command = args.command
 
@@ -79,7 +92,7 @@ if __name__ == '__main__':
             # Create a dictionary to store the extracted values for each pattern
             extracted_values = {}
             # print(df)
-            print("\n============", utility, "|", command, "============", flush=True)
+            print("\n============", command, "|", utility, "============", flush=True)
 
             # Extract values for columns matching the specified pattern and store them in the dictionary
             for col in df.columns:
@@ -99,7 +112,7 @@ if __name__ == '__main__':
                     extracted_values["all"] += extracted_values[key]
                 for key in keys:
                     if "all" not in key:
-                        del(extracted_values[key])
+                        del (extracted_values[key])
 
             # print("Values for columns starting with the pattern '{}':".format(pattern))
             for config, values in extracted_values.items():
@@ -109,8 +122,9 @@ if __name__ == '__main__':
                 mean_val = mean(values)
                 config = config.replace("_", "")
                 print(''.join(
-                    ["==> Config ", config, " == Max (µJ): ", str(round(max_val,0)), " | Min (µJ): ", str(round(min_val,0)), " | Mean (x",
-                     str(len(values)), ") config (µJ): ", str(round(mean_val,0))]))
+                    ["==> Config ", config, " == Max (µJ): ", str(round(max_val, 0)), " | Min (µJ): ",
+                     str(round(min_val, 0)), " | Mean (x",
+                     str(len(values)), ") config (µJ): ", str(round(mean_val, 0))]))
 
                 bar = FillingSquaresBar(color("(Less)", 'green'), suffix=color("(More)\n", 'red'),
                                         index=mean_val, max=max_value_utilities, min=min_value_utilities)
@@ -120,23 +134,84 @@ if __name__ == '__main__':
                     # divide by 1000 000 to have Joules and after by 3600 to have Wh
                     e_wh = mean_val / 1000000 / 3600
 
-                    string_consumption_equivalences = "|-------------- Consumption equivalences for "+utility+" - "+ command+" - config "+config+" ----------------|"
-                    dash_string = "|"+''.join(["-" for _ in range(0,len(string_consumption_equivalences)-2)])+"|"
+                    # string_consumption_equivalences = "|-------------- Consumption equivalences for "+utility+" - "+ command+" - config "+config+" ----------------|"
+                    # dash_string = "|"+''.join(["-" for _ in range(0,len(string_consumption_equivalences)-2)])+"|"
 
-                    print(dash_string, flush=True)
-                    print(string_consumption_equivalences, flush=True)
-                    print(dash_string, flush=True)
+                    # print(dash_string, flush=True)
+                    # print(string_consumption_equivalences, flush=True)
+                    # print(dash_string, flush=True)
 
                     for key_device in consumption_equivalences.keys():
                         # t of use (in seconds) = E (Wh) command / power of the device * 3600 (to have the time in seconds
                         # and not in hours)
                         time_device_use = round((e_wh / consumption_equivalences[key_device]["power"]) * 3600, 6)
-                        print(''.join(["| ", str(time_device_use), " seconds of ",
-                                       str(consumption_equivalences[key_device]["device"]),
-                                       " use (", str(consumption_equivalences[key_device]["power"]), "W, ",
-                                       str(consumption_equivalences[key_device]["model"]), ")"]), flush=True)
+                        # print(''.join(["| ", str(time_device_use), " seconds of ",
+                        #                str(consumption_equivalences[key_device]["device"]),
+                        #                " use (", str(consumption_equivalences[key_device]["power"]), "W, ",
+                        #                str(consumption_equivalences[key_device]["model"]), ")"]), flush=True)
 
-                    print(dash_string, flush=True)
+                        print(''.join([str(time_device_use), " seconds of ",
+                                       str(consumption_equivalences[key_device]["device"]),
+                                       " use (", str(consumption_equivalences[key_device]["power"]), "W)"]), flush=True)
+
+                    # print(dash_string, flush=True)
+
+    elif args.measure and args.command:
+        n = 1
+        values_measured = []
+        if args.repeat:
+            n = args.repeat
+
+        for i in range(0, n):
+            # Execute the command
+            start_time = time.time()
+            initial_psys_energy = get_psys_energy()
+            subprocess.run(args.command, shell=True)
+            final_psys_energy = get_psys_energy()
+            end_time = time.time()
+
+            psys_energy_consumption = final_psys_energy - initial_psys_energy
+            values_measured.append(psys_energy_consumption)
+
+        max_val = max(values_measured)
+        min_val = min(values_measured)
+        mean_val = mean(values_measured)
+
+        print(''.join(
+            ["==> Command ", args.command, " == Max (µJ): ", str(round(max_val, 0)), " | Min (µJ): ",
+             str(round(min_val, 0)),
+             " | Mean (x",
+             str(len(values_measured)), ") config (µJ): ", str(round(mean_val, 0))]))
+
+        if n > 1:
+            bar = FillingSquaresBar(color("(Less)", 'green'), suffix=color("(More)\n", 'red'),
+                                    index=mean_val, max=max_val, min=min_val)
+            bar.update()
+
+        # divide by 1000 000 to have Joules and after by 3600 to have Wh
+        e_wh = mean_val / 1000000 / 3600
+
+        string_consumption_equivalences = "|-------------- Consumption equivalences for " + args.command + " ----------------|"
+        dash_string = "|" + ''.join(["-" for _ in range(0, len(string_consumption_equivalences) - 2)]) + "|"
+
+        # print(dash_string, flush=True)
+        # print(string_consumption_equivalences, flush=True)
+        # print(dash_string, flush=True)
+
+        for key_device in consumption_equivalences.keys():
+            # t of use (in seconds) = E (Wh) command / power of the device * 3600 (to have the time in seconds
+            # and not in hours)
+            time_device_use = round((e_wh / consumption_equivalences[key_device]["power"]) * 3600, 6)
+            # print(''.join(["| ", str(time_device_use), " seconds of ",
+            #                str(consumption_equivalences[key_device]["device"]),
+            #                " use (", str(consumption_equivalences[key_device]["power"]), "W, ",
+            #                str(consumption_equivalences[key_device]["model"]), ")"]), flush=True)
+
+            print(''.join([str(time_device_use), " seconds of ",
+                           str(consumption_equivalences[key_device]["device"]),
+                           " use (", str(consumption_equivalences[key_device]["power"]), "W)"]), flush=True)
+
+        # print(dash_string, flush=True)
     else:
         parser.print_help()
         sys.exit(2)

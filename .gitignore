@@ -130,7 +130,7 @@ dmypy.json
 .pyre/
 
 # Folders
-benchmark/inputs/
-benchmark/outputs/
-debloat_benchmark/inputs/
-debloat_benchmark/outputs/
+initial_experiment/inputs/
+initial_experiment/outputs/
+second_experiment/inputs/
+second_experiment/outputs/
