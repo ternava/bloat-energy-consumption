@@ -15,10 +15,10 @@ mkdir;bloated;289446.3
 mkdir;chisel;287996.7
 mkdir;cov;287615.3
 mkdir;debop;287520.6
-printokens2;bloated;282000.05
-printokens2;chisel;281304.4
-printokens2;cov;285134.15
-printokens2;debop;281771.2
+printtokens2;bloated;282000.05
+printtokens2;chisel;281304.4
+printtokens2;cov;285134.15
+printtokens2;debop;281771.2
 sed;bloated;285567.55
 sed;chisel;288768.75
 sed;cov;290404.5
