@@ -1,0 +1,331 @@
+ 611-if (size) { + 
+ 612-if (! result) { + 
+ 618-} + 
+ 703-if (size <= asize) { + 
+ 704-if (*up) { + 
+ 711-tmp___0 = malloc(asize); + 
+ 712-tmp___1 = tmp___0; + 
+ 716-if (p) { + 
+ 717-*up = p; + 
+ 718-if ((size_t )p % pagesize == 0UL) { + 
+ 721-tmp___2 = p + (pagesize - (size_t )p % pagesize); + 
+ 740-if (pagesize) { + 
+ 741-if ((bufalloc / 5UL) % pagesize == 0UL) { + 
+ 742-bufsalloc = bufalloc / 5UL; + 
+ 743-} else { + 
+ 746-} else { + 
+ 751-if (pagesize == 0UL) { + 
+ 756-if (8192UL > pagesize) { + 
+ 758-} else { + 
+ 761-if (ubufsalloc % pagesize == 0UL) { + 
+ 763-} else { + 
+ 767-if (bufsalloc < ubufsalloc) { + 
+ 773-if (bufalloc / 5UL != bufsalloc) { + 
+ 779-if (bufalloc + 1UL < bufalloc) { + 
+ 788-if (! buffer) { + 
+ 799-buflim = buffer; + 
+ 801-tmp___2 = fstat(fd, & stats->stat); + 
+ 803-if (tmp___2 != 0) { + 
+ 810-if ((unsigned int )directories == 2U) { + 
+ 815-if ((stats->stat.st_mode & 61440U) == 32768U) { + 
+ 816-if (file) { + 
+ 817-bufoffset = (off_t )0; + 
+ 818-} else { + 
+ 830-initial_bufoffset = bufoffset; + 
+ 831-if (mmap_option) { + 
+ 838-tmp___4 = 0; + 
+ 840-bufmapped = tmp___4; + 
+ 841-} else { + 
+ 874-if (bufsalloc < save) { + 
+ 962-if (bufmapped) { + 
+ 994-if (! fillsize) { + 
+ 996-while (1) { + 
+ 1001-if (bytesread < 0L) { + 
+ 1009-goto while_break___0; + 
+ 1015-if (bytesread < 0L) { + 
+ 1021-bufoffset = (off_t )((size_t )bufoffset + fillsize); + 
+ 1127-tmp___1 = ferror(stdout); + 
+ 1129-if (tmp___1) { + 
+ 1137-return; + 
+ 1192-if (! out_quiet) { + 
+ 1193-if (pending > 0) { + 
+ 1200-if (! out_quiet) { + 
+ 1233-if (out_before) { + 
+ 1298-if (out_quiet) { + 
+ 1304-return; + 
+ 1329-if ((unsigned long )b == (unsigned long )lim) { + 
+ 1348-if (done_on_match) { + 
+ 1407-if (! tmp) { + 
+ 1410-if (file) { + 
+ 1411-if ((unsigned int )directories == 1U) { + 
+ 1428-} + 
+ 1431-lastout = (char *)0; + 
+ 1432-totalnl = (off_t )0; + 
+ 1433-pending = 0; + 
+ 1434-nlines = 0; + 
+ 1439-if (! tmp___5) { + 
+ 1459-if (! out_quiet) { + 
+ 1468-if (eol) { + 
+ 1470-} else { + 
+ 1479-tmp___8 = 0; + 
+ 1481-} else { + 
+ 1486-if (not_text) { + 
+ 1491-done_on_match += not_text; + 
+ 1497-if (lastout) { + 
+ 1508-if ((unsigned long )lim > (unsigned long )beg) { + 
+ 1512-} else { + 
+ 1520-if ((unsigned long )beg < (unsigned long )lim) { + 
+ 1525-if (pending) { + 
+ 1530-if (nlines) { + 
+ 1531-if (done_on_match) { + 
+ 1536-} + 
+ 1572-if ((unsigned long )beg != (unsigned long )lastout) { + 
+ 1573-lastout = (char *)0; + 
+ 1574-} + 
+ 1577-if (out_line) { + 
+ 1585-if (! tmp___12) { + 
+ 1615-if (pending) { + 
+ 1661-while (1) { + 
+ 1666-if (desc < 0) { + 
+ 1674-goto while_break; + 
+ 1739-if (count < 0) { + 
+ 1758-if (file) { + 
+ 1760-while (1) { + 
+ 1765-if (! (tmp___8 != 0)) { + 
+ 1766-goto while_break___0; + 
+ 1781-} + 
+ 1783-return (status); + 
+ 1958-if (matcher) { + 
+ 1970-return; + 
+ 1983-if (! matchers[i].name) { + 
+ 2097-if (options) { + 
+ 2135-return; + 
+ 2194-if (prog) { + 
+ 2196-tmp___0 = strrchr((char const   *)prog, '/'); + 
+ 2198-if (tmp___0) { + 
+ 2204-} + 
+ 2207-keycc = (size_t )0; + 
+ 2208-with_filenames = 0; + 
+ 2213-default_context = 0; + 
+ 2215-setlocale(6, ""); + 
+ 2216-bindtextdomain("grep", "/nfs/spectre/u4/jin/research/experiments/grep/docs/grep_2.4.2/lib/locale"); + 
+ 2217-textdomain("grep"); + 
+ 2218-tmp___1 = getenv("GREP_OPTIONS"); + 
+ 2219-prepend_default_options((char const   *)tmp___1, & argc, & argv); + 
+ 2232-if (opt == 48) { + 
+ 2235-if (opt == 49) { + 
+ 2238-if (opt == 50) { + 
+ 2241-if (opt == 51) { + 
+ 2244-if (opt == 52) { + 
+ 2247-if (opt == 53) { + 
+ 2250-if (opt == 54) { + 
+ 2253-if (opt == 55) { + 
+ 2256-if (opt == 56) { + 
+ 2259-if (opt == 57) { + 
+ 2262-if (opt == 65) { + 
+ 2265-if (opt == 66) { + 
+ 2423-goto switch_break; + 
+ 2659-if (out_after < 0) { + 
+ 2662-if (out_before < 0) { + 
+ 2681-if (show_help) { + 
+ 2686-if (keys) { + 
+ 2693-if (optind < argc) { + 
+ 2700-} else { + 
+ 2709-if (! tmp___29) { + 
+ 2735-status = 1; + 
+ 2743-if (tmp___33 == 0) { + 
+ 2750-status &= tmp___34; + 
+ 2765-tmp___37 = fclose(stdout); + 
+ 2767-if (tmp___37 == -1) { + 
+ 2774-if (errseen) { + 
+ 2777-tmp___38 = status; + 
+ 2780-exit(tmp___38); + 
+ 2863-if (! r) { + 
+ 2883-if (! r) { + 
+ 2903-if (! r) { + 
+ 2926-return; + 
+ 2934-*(c + (unsigned long )b / (8UL * sizeof(int ))) &= ~ (1 << (unsigned long )b % (8UL * sizeof(int ))); + 
+ 2935-return; + 
+ 2955-return; + 
+ 2975-return; + 
+ 2995-return; + 
+ 3030-while (1) { + 
+ 3032-if (! (i < dfa->cindex)) { + 
+ 3033-goto while_break; + 
+ 3045-if (dfa->cindex >= dfa->calloc) { + 
+ 3062-(dfa->cindex) ++; + 
+ 3079-case_fold = fold; + 
+ 3081-return; + 
+ 3706-while (1) { + 
+ 3708-if ((unsigned long )p != (unsigned long )lim) { + 
+ 3709-if (! ((unsigned int )*p - 48U <= 9U)) { + 
+ 3712-} else { + 
+ 3715-if (lo___0 < 0) { + 
+ 3717-} else { + 
+ 3725-if ((unsigned long )p != (unsigned long )lim) { + 
+ 3726-if ((int const   )*p == 44) { + 
+ 3750-} else { + 
+ 3753-if ((unsigned long )p == (unsigned long )lim) { + 
+ 3756-if ((int const   )*p != 125) { + 
+ 3759-if (lo___0 < 0) { + 
+ 3762-if (32767 < hi___0) { + 
+ 3765-if (0 <= hi___0) { + 
+ 3794-if ((unsigned int )c - 48U <= 9U) { + 
+ 3797-while (1) { + 
+ 3817-if (! ((unsigned int )c - 48U <= 9U)) { + 
+ 3824-} else { + 
+ 3830-if ((int )c == 44) { + 
+ 3982-if (! (syntax_bits & ((((((1UL << 1) << 1) << 1) << 1) << 1) << 1))) { + 
+ 3987-if (syntax_bits & (((((((1UL << 1) << 1) << 1) << 1) << 1) << 1) << 1)) { + 
+ 4356-laststart = 0; + 
+ 4406-if (dfa->tindex >= dfa->talloc) { + 
+ 4408-while (1) { + 
+ 4426-if ((int )t == 264) { + 
+ 4429-if ((int )t == 265) { + 
+ 4432-if ((int )t == 266) { + 
+ 4435-if ((int )t == 268) { + 
+ 4436-goto case_268; + 
+ 4438-if ((int )t == 269) { + 
+ 4441-if ((int )t == 270) { + 
+ 4442-goto case_268; + 
+ 4444-if ((int )t == 256) { + 
+ 4447-goto switch_default; + 
+ 4451-goto switch_break; + 
+ 4455-depth --; + 
+ 4456-goto switch_break; + 
+ 4460-depth ++; + 
+ 4461-goto switch_break; + 
+ 4464-if (depth > dfa->depth) { + 
+ 4465-dfa->depth = depth; + 
+ 4466-} + 
+ 4467-return; + 
+ 4562-return; + 
+ 4573-if ((int )*(dfa->tokens + (tindex - 1)) == 264) { + 
+ 4576-if ((int )*(dfa->tokens + (tindex - 1)) == 265) { + 
+ 4579-if ((int )*(dfa->tokens + (tindex - 1)) == 266) { + 
+ 4582-if ((int )*(dfa->tokens + (tindex - 1)) == 268) { + 
+ 4585-if ((int )*(dfa->tokens + (tindex - 1)) == 269) { + 
+ 4588-if ((int )*(dfa->tokens + (tindex - 1)) == 270) { + 
+ 4591-goto switch_default; + 
+ 4659-ntokens = nsubtoks(dfa->tindex); + 
+ 4660-tindex = dfa->tindex - ntokens; + 
+ 4662-if (maxrep < 0) { + 
+ 4672-i = 1; + 
+ 4674-while (1) { + 
+ 4676-if (! (i < minrep)) { + 
+ 4677-goto while_break___0; + 
+ 4688-while (1) { + 
+ 4690-if (! (i < maxrep)) { + 
+ 4691-goto while_break___1; + 
+ 4714-return; + 
+ 4746-return; + 
+ 4758-while (1) { + 
+ 4767-if (toplevel) { + 
+ 4771-} else { + 
+ 4779-return; + 
+ 4790-lexstart = lexptr; + 
+ 4792-lasttok = (token )-1; + 
+ 4793-laststart = 1; + 
+ 4794-parens = 0; + 
+ 4795-if (! syntax_bits_set) { + 
+ 4803-depth = d->depth; + 
+ 4806-if ((int )tok != -1) { + 
+ 4816-if (d->nregexps) { + 
+ 4821-(d->nregexps) ++; + 
+ 4822-return; + 
+ 4843-return; + 
+ 4856-while (1) { + 
+ 4865-goto __Cont; + 
+ 4873-(s->elems + i)->constraint |= p.constraint; + 
+ 4896-return; + 
+ 4920-while (1) { + 
+ 4922-if (i < s1->nelem) { + 
+ 4923-if (! (j < s2->nelem)) { + 
+ 4924-goto while_break; + 
+ 4957-while (1) { + 
+ 4959-if (! (i < s1->nelem)) { + 
+ 4960-goto while_break___0; + 
+ 4962-tmp___6 = m->nelem; + 
+ 4965-i ++; + 
+ 4971-while (1) { + 
+ 4984-return; + 
+ 5041-hash = 0; + 
+ 5042-if (newline___0) { + 
+ 5045-newline___0 = 0; + 
+ 5047-if (letter) { + 
+ 5050-letter = 0; + 
+ 5056-if (! (i < s->nelem)) { + 
+ 5057-goto while_break; + 
+ 5059-hash = (int )((unsigned int )hash ^ ((s->elems + i)->strchr + (s->elems + i)->constraint)); + 
+ 5060-i ++; + 
+ 5064-i = 0; + 
+ 5066-while (1) { + 
+ 5071-if (hash != (d->states + i)->hash) { + 
+ 5072-goto __Cont; + 
+ 5112-if (d->sindex >= d->salloc) { + 
+ 5114-while (1) { + 
+ 5116-if (! (d->sindex >= d->salloc)) { + 
+ 5117-goto while_break___2; + 
+ 5129-(d->states + i)->hash = hash; + 
+ 5137-(d->states + i)->first_end = 0; + 
+ 5141-while (1) { + 
+ 5143-if (! (j < s->nelem)) { + 
+ 5144-goto while_break___3; + 
+ 5148-if (newline___0) { + 
+ 5151-tmp___1 = 0; + 
+ 5153-if (constraint & (1 << (tmp___1 + 4))) { + 
+ 5154-if (letter) { + 
+ 5157-tmp___2 = 0; + 
+ 5159-if (constraint & (1 << tmp___2)) { + 
+ 5160-(d->states + i)->constraint = (unsigned char )((int )(d->states + i)->constraint | constraint); + 
+ 5161-} else { + 
+ 5164-} else { + 
+ 5220-if (! (d->states + i)->first_end) { + 
+ 5221-(d->states + i)->first_end = (int )*(d->tokens + (s->elems + j)->strchr); + 
+ 5222-} + 
+ 5224-if ((int )*(d->tokens + (s->elems + j)->strchr) == 257) { + 
+ 5229-j ++; + 
+ 5255-if (! (i < d->tindex)) { + 
+ 5256-goto while_break; + 
+ 5258-*(visited + i) = 0; + 
+ 5259-i ++; + 
+ 5263-i = 0; + 
+ 5265-while (1) { + 
+ 5271-if ((int )*(d->tokens + (s->elems + i)->strchr) != 257) { + 
+ 5350-free((void *)visited); + 
+ 5352-return; + 
+ 5422-i = 0; + 
+ 5425-while (1) { + 
+ 5427-if (! (i < d->tindex)) { + 
+ 5428-goto while_break; + 
+ 5430-*(nalloc + i) = 0; + 
+ 5431-i ++; + 
+ 5464-if ((int )*(d->tokens + i) == 269) { + 
+ 5589-if (*(nullable + -1)) { + 
+ 5603-*(nfirstpos + -2) += *(nfirstpos + -1); + 
+ 5607-if (*(nullable + -1)) { + 
+ 5610-if (*(nullable + -2)) { + 
+ 5613-tmp___15 = 0; + 
+ 5616-*(nullable + -2) = tmp___15; + 
+ 5617-nullable --; + 
+ 5643-goto switch_break; + 
+ 5685-merged.nelem = 0; + 
+ 5702-wants_newline = 0; + 
+ 5711-if (((merged.elems + i)->constraint & 192U) >> 2 != ((merged.elems + i)->constraint & 48U)) { + 
+ 5720-d->sindex = 0; + 
+ 5721-tmp___24 = xmalloc_1((unsigned long )d->salloc * sizeof(dfa_state )); + 
+ 5722-d->states = (dfa_state *)tmp___24; + 
+ 5724-free((void *)o_nullable); + 
+ 5725-free((void *)o_nfirst); + 
+ 5726-free((void *)o_firstpos); + 
+ 5727-free((void *)o_nlast); + 
+ 5728-free((void *)o_lastpos); + 
+ 5729-free((void *)nalloc); + 
+ 5730-free((void *)merged.elems); + 
+ 5732-return; + 
+ 7435-if ((unsigned long )mp < (unsigned long )(musts + 2)) { + 
+ 9814-reg_syntax_t re_set_syntax(reg_syntax_t syntax ) + 
+ 9819-ret = re_syntax_options; + 
+ 9820-re_syntax_options = syntax; + 
+ 9821-return (ret); + 
+ 12913-if (! pending_exact) { + 

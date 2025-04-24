@@ -1,5 +1,5 @@
-Program,Utility
-base64,BusyBox
+Program,Utility,All_Significant,Mean_U_stat,Effect
+base64,BusyBox,True,96.0,Higher
 base64,ToyBox,True,100.0,Higher
 cat,BusyBox,True,100.0,Higher
 cat,ToyBox,True,100.0,Higher

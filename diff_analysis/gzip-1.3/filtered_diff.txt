@@ -1,0 +1,146 @@
+ 283-zfile = zipfile; + 
+ 284-bi_buf = (unsigned short)0; + 
+ 285-bi_valid = 0; + 
+ 286-if (zfile != -1) { + 
+ 289-return; + 
+ 302-if (outcnt < 16382U) { + 
+ 309-} else { + 
+ 333-return; + 
+ 368-if (outcnt < 16382U) { + 
+ 375-} else { + 
+ 405-bi_buf = (unsigned short)0; + 
+ 406-bi_valid = 0; + 
+ 407-return; + 
+ 538-if (pack_level < 1) { + 
+ 543-if (pack_level > 9) { + 
+ 551-memset((voidp )((char *)(prev + 32768)), 0, (unsigned long )((unsigned int )(1 << 15)) * sizeof(*(prev + 32768))); + 
+ 564-strstart = 0U; + 
+ 565-block_start = 0L; + 
+ 569-tmp = 65536U; + 
+ 575-if (lookahead == 0U) { + 
+ 580-if (lookahead == 4294967295U) { + 
+ 586-eofile = 0; + 
+ 588-while (1) { + 
+ 590-if (lookahead < 262U) { + 
+ 595-goto while_break; + 
+ 603-ins_h = 0U; + 
+ 604-j___0 = 0U; + 
+ 606-while (1) { + 
+ 608-if (! (j___0 < 2U)) { + 
+ 609-goto while_break___0; + 
+ 611-ins_h = ((ins_h << 5) ^ (unsigned int )window[j___0]) & ((unsigned int )(1 << 15) - 1U); + 
+ 612-j___0 ++; + 
+ 616-return; + 
+ 652-if ((int )*(match + best_len) != (int )scan_end) { + 
+ 653-goto __Cont; + 
+ 655-if ((int )*(match + (best_len - 1)) != (int )scan_end1) { + 
+ 656-goto __Cont; + 
+ 736-scan_end = *(scan + best_len); + 
+ 765-if (more == 4294967295U) { + 
+ 768-if (strstart >= 65274U) { + 
+ 815-if (! eofile) { + 
+ 830-return; + 
+ 980-match_length = 2U; + 
+ 983-if (strstart - hash_head <= 32506U) { + 
+ 988-if (match_length > lookahead) { + 
+ 989-match_length = lookahead; + 
+ 990-} + 
+ 1024-if (flush) { + 
+ 1044-if (tmp___3) { + 
+ 1064-while (1) { + 
+ 1066-if (lookahead < 262U) { + 
+ 1067-if (! (! eofile)) { + 
+ 1068-goto while_break___1; + 
+ 1070-} else { + 
+ 1071-goto while_break___1; + 
+ 1082-if (match_available) { + 
+ 1087-if (block_start >= 0L) { + 
+ 1089-} else { + 
+ 1095-return (tmp___5); + 
+ 2695-input_len = 0L; + 
+ 2696-compressed_len = input_len; + 
+ 2697-if ((int )static_dtree[0].dl.len != 0) { + 
+ 2700-length = 0; + 
+ 2781-bits = 0; + 
+ 2785-if (! (bits <= 15)) { + 
+ 2786-goto while_break___5; + 
+ 2788-bl_count[bits] = (ush )0; + 
+ 2789-bits ++; + 
+ 2793-n = 0; + 
+ 2795-while (1) { + 
+ 2797-if (! (n <= 143)) { + 
+ 2798-goto while_break___6; + 
+ 2800-tmp___2 = n; + 
+ 2801-n ++; + 
+ 2802-static_ltree[tmp___2].dl.len = (ush )8; + 
+ 2803-bl_count[8] = (ush )((int )bl_count[8] + 1); + 
+ 2808-while (1) { + 
+ 2810-if (! (n <= 255)) { + 
+ 2811-goto while_break___7; + 
+ 2813-tmp___3 = n; + 
+ 2814-n ++; + 
+ 2815-static_ltree[tmp___3].dl.len = (ush )9; + 
+ 2816-bl_count[9] = (ush )((int )bl_count[9] + 1); + 
+ 2821-while (1) { + 
+ 2823-if (! (n <= 279)) { + 
+ 2824-goto while_break___8; + 
+ 2826-tmp___4 = n; + 
+ 2827-n ++; + 
+ 2828-static_ltree[tmp___4].dl.len = (ush )7; + 
+ 2829-bl_count[7] = (ush )((int )bl_count[7] + 1); + 
+ 2834-while (1) { + 
+ 2842-bl_count[8] = (ush )((int )bl_count[8] + 1); + 
+ 2858-tmp___6 = bi_reverse((unsigned int )n, 5); + 
+ 2859-static_dtree[n].fc.code = (ush )tmp___6; + 
+ 2876-n = 0; + 
+ 2878-while (1) { + 
+ 2880-if (! (n < 286)) { + 
+ 2881-goto while_break; + 
+ 2883-dyn_ltree[n].fc.freq = (ush )0; + 
+ 2884-n ++; + 
+ 2888-n = 0; + 
+ 2890-while (1) { + 
+ 2892-if (! (n < 30)) { + 
+ 2893-goto while_break___0; + 
+ 2895-dyn_dtree[n].fc.freq = (ush )0; + 
+ 2896-n ++; + 
+ 2900-n = 0; + 
+ 2902-while (1) { + 
+ 2904-if (! (n < 19)) { + 
+ 2905-goto while_break___1; + 
+ 2907-bl_tree[n].fc.freq = (ush )0; + 
+ 2908-n ++; + 
+ 2914-opt_len = static_len; + 
+ 2915-last_flags = 0U; + 
+ 2916-last_dist = last_flags; + 
+ 2917-last_lit = last_dist; + 
+ 2918-flags = (uch )0; + 
+ 2919-flag_bit = (uch )1; + 
+ 2920-return; + 
+ 3023-if (n >= base) { + 
+ 3024-xbits = *(extra + (n - base)); + 
+ 3025-} + 
+ 3108-code = (ush )0; + 
+ 3131-goto __Cont; + 
+ 3182-depth[n] = (uch )0; + 
+ 3184-(tree + n)->dl.len = (ush )0; + 
+ 3215-n = heap_len / 2; + 
+ 3245-if ((int )depth[n] >= (int )depth[m]) { + 
+ 3247-} else { + 
+ 3248-tmp___1 = (int )depth[m]; + 
+ 3289-max_count = 7; + 
+ 3290-min_count = 4; + 
+ 3291-if (nextlen == 0) { + 
+ 3292-max_count = 138; + 
+ 3293-min_count = 3; + 
+ 3294-} + 
+ 3318-if (curlen != prevlen) { + 
+ 3332-prevlen = curlen; + 
+ 3338-max_count = 6; + 
+ 3350-return; + 
+ 3371-min_count = 3; + 
+ 3439-max_count = 6; + 
+ 3478-opt_len += (ulg )(((3 * (max_blindex + 1) + 5) + 5) + 4); + 
+ 3573-compressed_len = (off_t )((ulg )compressed_len + (3UL + opt_len)); + 
+ 3584-compressed_len += 7L; + 
+ 3662-return (tmp___3); + 

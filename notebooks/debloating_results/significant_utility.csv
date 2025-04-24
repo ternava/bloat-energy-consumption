@@ -1,0 +1,3 @@
+Program,Utility,All_Significant,Mean_U_stat,Effect
+grep,chisel,True,100.0,Higher
+gzip,chisel,True,100.0,Higher

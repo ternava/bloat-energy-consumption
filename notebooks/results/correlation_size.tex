@@ -1,10 +1,10 @@
-\begin{tabular}{lccc}
+\begin{tabular}{l|cc||cc||cc}
 \toprule
- & \textbf{Spearman} & \textbf{p-value_s} & \textbf{Pearson} & \textbf{p-value_p} \\
-Utilities &  &  &  &  \\
+ & \multicolumn{2}{c}{Energy/Size} & \multicolumn{2}{c}{Energy/Options} & \multicolumn{2}{c}{Energy/Perf} \\
+ & Spearman Correlation & p-value & Spearman Correlation & p-value & Spearman Correlation & p-value \\
 \midrule
-BusyBox & 0.3 & 0.11 & 0.12 & 0.56 \\
-GNU & 0.25 & 0.2 & 0.038 & 0.85 \\
-ToyBox & 0.35 & 0.068 & -0.051 & 0.8 \\
+\textit{BusyBox} & \hatchedCell{0.305} & \hatchedCell{0.115} & \hatchedCell{0.271} & \hatchedCell{0.164} & 0.959 & 7.98e-16 \\
+\textit{GNU} & \hatchedCell{0.251} & \hatchedCell{0.197} & 0.461 & 0.014 & 0.891 & 2.07e-10 \\
+\textit{ToyBox} & \hatchedCell{0.350} & \hatchedCell{0.068} & 0.392 & 0.039 & 0.966 & 1.02e-16 \\
 \bottomrule
 \end{tabular}
