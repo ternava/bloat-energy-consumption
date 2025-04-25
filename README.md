@@ -22,7 +22,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About this repository
 ### Context
-This repository is a companion repository of the submitted paper "On the Effect of Feature Reduction on Energy Consumption: An Empirical Study" it contains all the source code and the result artifact.
+This repository is a companion repository of the submitted paper "On the Effect of Feature Reduction on Energy Consumption:An Exploratory Study" it contains all the source code and the result artifact.
 
 ### Structure
 * ```initial_experiment``` : Scripts used to execute the first experiment
@@ -31,6 +31,8 @@ This repository is a companion repository of the submitted paper "On the Effect 
 * ```energy_consumption_viewer``` : Energy Consumption Viewer tool
 * ```result``` : Results of the different experiments described in the paper.
 * ```inputs``` : Inputs used on the experiments as well as the scripts used to compute metrics such as binary size, number of option ...
+* ```debloat_snippets``` : Analysis of optimizing code snippets deleted by chisel
+
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
