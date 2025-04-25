@@ -1,7 +1,7 @@
 This document discusses several code snippets identified by a differential analysis of coverage for grep-2.4.2 and gzip-1.3, compared to their debloated counterparts produced by Chisel. Our aim is to explore the reasons behind the observed increase in energy consumption induced by feature reduction. The snippets below illustrate optimized code that Chisel removed.
 
 
-### Exemple 1 conditional deletion causing extra function call
+### Snippet 1 conditional deletion causing extra function call
 In grep :
 
 ```c 
@@ -15,7 +15,7 @@ prpending is now executed 76 times ([cf coverage report, line 1249](./grep-2.4.2
 
 Note that the prpending function also performs the (pending > 0) check; thus, the primary overhead is the extra function call.
 
-### Exemple 2  - conditional deletion causing extra realloc
+### Snippet 2  - conditional deletion causing extra realloc
 In grep : 
 
 ```c
@@ -29,7 +29,7 @@ In grep :
 
 If we have a look on the coverage report, the realloc is now executed 3 times.
 
-### Exemple 3 - deleted early return :
+### Snippet 3 - deleted early return :
 
 in ct_init method , in [annotated_gzip](./result/annotated_gzip-1.3.c) line 2676
 ```C
@@ -75,7 +75,7 @@ void ct_init(attr, methodp)
     }
 ```
 
-## Exemple 5 - free not executed 
+## Snippet 5 - free not executed 
 
 in huft_free :
 
